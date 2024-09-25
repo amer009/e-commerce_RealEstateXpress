@@ -1,0 +1,51 @@
+:root {
+    --color1: #FFC107;
+    --color2: #FFEB3B;
+    --color3: #CC29E8;
+    --color4: #795548;
+    --color5: #4CAF50;
+    --color6: #B2FF59;
+    --color7: white;
+    --color8: black;
+  }
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+}
+h2 {
+    font-size: 45px;
+}
+h3 {
+    font-size: 35px;
+}
+h4 {
+    font-size: 30px;
+}
+h5 {
+    font-size: 25px;
+}
+h6 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: var(--color5);
+    color: var(--color7);
+    border: 2px solid var(--color5);
+    padding: 8px 8px;
+    text-decoration: none;
+    transition: background-color 0.5s, color 0.5s;
+    width: 132px;
+  }
+.btn:hover {
+    background-color: var(--color8); /* Fondo negro con opacidad */
+    color: #ffffff; /* Cambia el texto a blanco */
+    border-color: var(--color8);
+}
+
