@@ -1,3 +1,4 @@
+/*Paleta de colores*/
 :root {
     --color1: #FFC107;
     --color2: #FFEB3B;
@@ -9,43 +10,73 @@
     --color8: black;
   }
 
+
+/*Estilos de texto (fuente y tamaño)*/
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
 h1 {
-    font-size: 80px;
-    font-weight: bold;
+    font-size: 80px !important;
+    font-weight: bold !important;
 }
 h2 {
-    font-size: 45px;
+    font-size: 45px !important;
 }
 h3 {
-    font-size: 35px;
+    font-size: 35px !important;
 }
 h4 {
-    font-size: 30px;
+    font-size: 30px !important;
 }
 h5 {
-    font-size: 25px;
+    font-size: 25px !important;
 }
 h6 {
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 p {
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 17px !important;
+    font-weight: bold !important;
 }
 
+
+/*Estilos de boton*/
 .btn {
-    background-color: var(--color5);
-    color: var(--color7);
-    border: 2px solid var(--color5);
-    padding: 8px 8px;
-    text-decoration: none;
-    transition: background-color 0.5s, color 0.5s;
-    width: 132px;
+    background-color: var(--color5) !important;
+    color: var(--color7) !important;
+    border: 2px solid var(--color5) !important;
+    padding: 8px 8px !important;
+    text-decoration: none !important;
+    transition: background-color 0.5s, color 0.5s !important;
+    width: 132px !important;
   }
 .btn:hover {
-    background-color: var(--color8); /* Fondo negro con opacidad */
-    color: #ffffff; /* Cambia el texto a blanco */
-    border-color: var(--color8);
+    background-color: var(--color8) !important;
+    color: #ffffff !important;
+    border-color: var(--color8) !important;
 }
 
+
+
+/*Estilos de card*/
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    max-height: 300px;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 350px !important;
+  }
+
+.card:hover {
+    transform: scale(1.05);
+  }
