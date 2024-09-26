@@ -12,7 +12,7 @@
 }
 
 .navbar-brand:hover i {
-    color: #4CAF50;
+    color: #B2FF59;
 }
 
 .navtex {
@@ -21,11 +21,21 @@
 }
 
 .navtex:hover {
-    color: #4CAF50 !important;
+    color: #B2FF59 !important;
 }
 
 .navbar-links .navtex {
     font-size: 15px;
 }
+
+.highlight {
+    background-color: #4CAF50; /* Cambia este color por el que prefieras */
+    color: #000000; /* Cambia el color del texto si es necesario */
+    padding: 8px 12px; /* Añade algo de padding para que el enlace se vea mejor */
+  }
+  
+  .highlight:hover {
+    background-color: #000000; /* Color de fondo al pasar el mouse */
+  }
 
 
