@@ -1,0 +1,31 @@
+.navbar-links {
+    display: flex;
+    gap: 5px;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar-brand i {
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover i {
+    color: #4CAF50;
+}
+
+.navtex {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navtex:hover {
+    color: #4CAF50 !important;
+}
+
+.navbar-links .navtex {
+    font-size: 15px;
+}
+
+
