@@ -1,6 +1,6 @@
 /* Estilos para el banner */
 .banner {
-    background-image: url('img/banner2.jpg');
+    background-image: url('../img/banner2.jpg');
     /* Cambia por la ruta de tu imagen */
     background-size: cover;
     background-position: center;
