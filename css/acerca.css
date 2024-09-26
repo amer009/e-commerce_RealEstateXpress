@@ -2,6 +2,10 @@ h2,.misvis {
     text-align: center ;
 }
 
+.card {
+  height: 500px !important;
+}
+
 .carousel-inner img {
     width: 100%;
     height: 300px;
