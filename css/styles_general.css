@@ -10,7 +10,6 @@
     --color8: black;
   }
 
-
 /*Estilos de texto (fuente y tamaño)*/
 body {
     font-family: 'Roboto', sans-serif !important;
@@ -41,7 +40,6 @@ p {
     font-weight: bold !important;
 }
 
-
 /*Estilos de boton*/
 .btn {
     background-color: var(--color5) !important;
@@ -57,8 +55,6 @@ p {
     color: #ffffff !important;
     border-color: var(--color8) !important;
 }
-
-
 
 /*Estilos de card*/
 .card-img-top {
