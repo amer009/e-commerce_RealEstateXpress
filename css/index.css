@@ -1,0 +1,58 @@
+/* Estilos para el banner */
+.banner {
+    background-image: url('img/banner2.jpg');
+    /* Cambia por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Tamaño completo de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.property-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    /* Ajustamos el margen inferior */
+}
+
+.property-card img {
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+    /* Ajustamos el ancho de las imágenes */
+}
+
+.property-cardInit {
+    
+    margin-bottom: 20px;
+    
+}
+
+.property-cardInit img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    
+    /* Ajustamos el ancho de las imágenes */
+}
+
+.property-info {
+    padding: 15px;
+}
+
+.property-info h5 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.property-info p {
+    margin-bottom: 5px;
+}
+
+.property-price {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+}
