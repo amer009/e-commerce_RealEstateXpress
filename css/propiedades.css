@@ -1,0 +1,96 @@
+/* Product Cards */
+.property-img {
+    position: relative; /* Necesario para posicionar elementos hijos de manera absoluta */
+    width: 300px; /* Ancho de la tarjeta */
+    height: 200px; /* Alto de la tarjeta */
+    overflow: hidden; /* Para que el contenido no sobresalga */
+}
+
+.property-img img {
+    width: 100%; /* Que la imagen ocupe todo el ancho */
+    height: 100%; /* Que la imagen ocupe toda la altura */
+    object-fit: cover; /* Ajusta la imagen para que siempre cubra todo el espacio sin deformarse */
+    transition: filter 0.3s ease; /* Transición suave para el efecto hover */
+    filter: brightness(50%); /* Aplica una reducción del brillo al 50% para oscurecer */
+}
+
+.price p{
+    position: absolute; /* Posicionamiento absoluto dentro de .property-thumb */
+    bottom: 5px; /* A 10px del borde inferior */
+    left: 10px; /* A 10px del borde izquierdo */
+    background-color: var(--color11); /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.card {
+    border: none !important;
+    border-radius: 0px !important;
+    box-shadow: 0 1px 4px var(--color9);; /* Sombra suave */
+}
+
+h3{
+    font-size: larger !important;
+    font-weight: bolder !important;
+}
+
+.bi {
+    font-size: small;
+}
+
+.bi-geo-alt-fill {
+    font-size: small;
+    color: var(--color11); /* Cambia el color del icono a rojo */
+}
+
+.location-text {
+    color: gray;
+    font-size: small;
+    font-weight: lighter;
+}
+
+.status-text {
+    font-size: small;
+    background-color: var(--color12);
+    color: white;
+    padding: 3%;
+}
+
+.row {
+    padding: 2%;
+}
+
+.details-text {
+    font-size: small;
+    color: gray;
+}
+.card:hover .property-img img {
+    filter: brightness(100%); /* Restablece el brillo al 100% al pasar el mouse */
+}
+
+.card:hover .price p {
+    box-shadow: 0 2px 6px var(--color9);; /* Sombra suave */
+}
+
+.card .btn-primary {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 0px !important;
+    background-color: var(--color5) !important;
+    border-color: var(--color5) !important;
+}
+
+.card .btn-secondary {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    white-space: nowrap !important; /* Previene que el texto se divida en dos líneas */
+    border-radius: 0px !important;
+    background-color:black !important;
+    border-color: black !important;
+}
+
+.card .btn-secondary:hover {
+    transform: scale(1.05);
+}

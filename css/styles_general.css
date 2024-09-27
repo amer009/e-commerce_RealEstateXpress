@@ -8,7 +8,11 @@
     --color6: #B2FF59;
     --color7: white;
     --color8: black;
-  }
+    --color9: #0000001a; /* Sombras */
+    --color10: #000000b3; /* Fondo negro con transparencia */
+    --color11: #5EA51D;
+    --color12: #FD5C64;
+}
 
 /*Estilos de texto (fuente y tamaño)*/
 body {
@@ -20,19 +24,19 @@ h1 {
     font-weight: bold !important;
 }
 h2 {
-    font-size: 45px !important;
+    font-size: 55px !important;
 }
 h3 {
-    font-size: 35px !important;
+    font-size: 45px !important;
 }
 h4 {
-    font-size: 30px !important;
+    font-size: 35px !important;
 }
 h5 {
     font-size: 25px !important;
 }
 h6 {
-    font-size: 20px !important;
+    font-size: 15px !important;
 }
 
 p {
@@ -50,6 +54,7 @@ p {
     transition: background-color 0.5s, color 0.5s !important;
     width: 132px !important;
   }
+
 .btn:hover {
     background-color: var(--color8) !important;
     color: #ffffff !important;
@@ -68,10 +73,11 @@ p {
     overflow: hidden;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
+}
 
 .card:hover {
     transform: scale(1.05);
-  }
+    /* Cambio hecho por Andrés */
+    box-shadow: 0 2px 6px var(--color9);
+}
