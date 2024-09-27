@@ -1,0 +1,325 @@
+.body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+
+/* Estilos para el banner */
+.banner {
+    background-image: url('../img/Banner.jpg');
+    filter: brightness(90%);
+    /* Cambia por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    /* Tamaño completo de la ventana */
+    max-width: 2000px;
+    /* Ancho máximo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.bottom-banner {
+    background-image: url('../img/Lote.jpg');
+    /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px 0;
+    /* Espaciado interno */
+    color: white;
+}
+
+.bottom-banner .btn {
+    background-color: var(--color5) !important;
+    color: var(--color7) !important;
+    border: 2px solid var(--color5) !important;
+    padding: 10px 20px !important;
+    text-decoration: none !important;
+    transition: background-color 0.5s, color 0.5s !important;
+    margin-top: 20px;
+}
+
+.bottom-banner .btn:hover {
+    background-color: var(--color8) !important;
+    color: #ffffff !important;
+    border-color: var(--color8) !important;
+}
+
+
+
+
+
+/* Product Cards */
+.property-img {
+    position: relative;
+    /* Necesario para posicionar elementos hijos de manera absoluta */
+    height: 200px;
+    /* Alto de la tarjeta */
+    overflow: hidden;
+    /* Para que el contenido no sobresalga */
+}
+
+.property-imgcentral {
+    position: relative;
+    /* Necesario para posicionar elementos hijos de manera absoluta */
+    height: 534px;
+    /* Alto de la tarjeta */
+    overflow: hidden;
+    /* Para que el contenido no sobresalga */
+}
+
+.property-imgcentral img {
+    width: 100%;
+    /* Que la imagen ocupe todo el ancho */
+    height: 100%;
+    /* Que la imagen ocupe toda la altura */
+    object-fit: cover;
+    /* Ajusta la imagen para que siempre cubra todo el espacio sin deformarse */
+    transition: filter 0.3s ease;
+    /* Transición suave para el efecto hover */
+    filter: brightness(50%);
+    /* Aplica una reducción del brillo al 50% para oscurecer */
+}
+
+.property-img img {
+    width: 100%;
+    /* Que la imagen ocupe todo el ancho */
+    height: 100%;
+    /* Que la imagen ocupe toda la altura */
+    object-fit: cover;
+    /* Ajusta la imagen para que siempre cubra todo el espacio sin deformarse */
+    transition: filter 0.3s ease;
+    /* Transición suave para el efecto hover */
+    filter: brightness(50%);
+    /* Aplica una reducción del brillo al 50% para oscurecer */
+}
+
+.price p {
+    position: absolute;
+    /* Posicionamiento absoluto dentro de .property-thumb */
+    bottom: 5px;
+    /* A 10px del borde inferior */
+    left: 10px;
+    /* A 10px del borde izquierdo */
+    background-color: var(--color11);
+    /* Fondo verde */
+    color: white;
+    /* Texto blanco */
+    padding: 5px 10px;
+    /* Espaciado interno */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    font-weight: bold;
+    /* Texto en negrita */
+}
+
+.cardproduct {
+    border: none !important;
+    border-radius: 0px !important;
+    box-shadow: 0 1px 4px var(--color9);
+    ;
+    /* Sombra suave */
+}
+
+h3 {
+    font-size: larger !important;
+    font-weight: bolder !important;
+}
+
+.bi {
+    font-size: small;
+}
+
+.bi-geo-alt-fill {
+    font-size: small;
+    color: var(--color11);
+    /* Cambia el color del icono a rojo */
+}
+
+.location-text {
+    color: gray;
+    font-size: small;
+    font-weight: lighter;
+}
+
+.status-text {
+    font-size: small;
+    background-color: var(--color12);
+    color: white;
+    padding: 3%;
+}
+
+
+.details-text {
+    font-size: small;
+    color: gray;
+}
+
+.cardproduct:hover .property-img img {
+    filter: brightness(100%);
+    /* Restablece el brillo al 100% al pasar el mouse */
+}
+
+.cardproduct:hover .property-imgcentral img {
+    filter: brightness(100%);
+    /* Restablece el brillo al 100% al pasar el mouse */
+}
+
+.cardproduct:hover .price p {
+    box-shadow: 0 2px 6px var(--color9);
+    ;
+    /* Sombra suave */
+}
+
+
+
+.carousel-control-next, .carousel-control-prev {
+
+    width: 2%;
+}
+
+.navbar-links .navtex.active,
+.navbar-brand.navtex.active {
+    color: #B2FF59 !important;
+    /* Cambiar a color verde */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 5px;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar-brand i {
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover i {
+    color: #B2FF59;
+}
+
+.navtex {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navtex:hover {
+    color: #B2FF59 !important;
+}
+
+.navbar-links .navtex {
+    font-size: 15px;
+}
+
+.highlight {
+    background-color: #4CAF50;
+    /* Cambia este color por el que prefieras */
+    color: #000000;
+    /* Cambia el color del texto si es necesario */
+    padding: 8px 12px;
+    /* Añade algo de padding para que el enlace se vea mejor */
+}
+
+.highlight:hover {
+    background-color: #000000;
+    /* Color de fondo al pasar el mouse */
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Secciones del footer */
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px;
+    /* Asegura un mínimo ancho en pantallas pequeñas */
+}
+
+/* Títulos de las secciones del footer */
+.footer-section h5 {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color5);
+    /* Línea decorativa bajo el título */
+    padding-bottom: 10px;
+}
+
+/* Estilo para los enlaces del footer */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    /* Alinea el icono con el texto */
+}
+
+.footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 8px;
+    /* Espacio entre el icono y el texto */
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #B2FF59;
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    /* Espacio entre los iconos */
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+
+.footer-bottom p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
