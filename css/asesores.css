@@ -1,0 +1,159 @@
+.card {
+    height: 600px !important;
+    
+  }
+  .card-img-top {
+      width: 100%;
+      height: auto;
+      object-fit: cover; 
+      max-height: 280px !important;
+      background-color:#4CAF50;
+  } 
+
+    /* Estilos para centrar el texto sobre la imagen */
+    .col-md-1 {
+      position: relative;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto; /* Para que la imagen sea responsive */
+      object-fit: cover;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centra el texto */
+      background-color: #4CAF50; /* Color verde con opacidad */
+      color: white;
+      padding: 10px 20px;
+      border: 2px solid black; /* Borde negro */
+      font-size: 1.5rem; /* Tamaño de texto responsive */
+      font-weight: bold;
+    }
+
+    .navbar-links .navtex.active, .navbar-brand.navtex.active {
+      color: #4CAF50 !important; /* Cambiar a color verde */
+  }
+  
+.navbar-links {
+    display: flex;
+    gap: 5px;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar-brand i {
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover i {
+    color: #4CAF50;
+}
+
+.navtex {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navtex:hover {
+    color: #4CAF50 !important;
+}
+
+.navbar-links .navtex {
+    font-size: 15px;
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Secciones del footer */
+  .footer-section {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px; /* Asegura un mínimo ancho en pantallas pequeñas */
+  }
+  
+  /* Títulos de las secciones del footer */
+  .footer-section h5 {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color5); /* Línea decorativa bajo el título */
+    padding-bottom: 10px;
+  }
+  
+  /* Estilo para los enlaces del footer */
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Alinea el icono con el texto */
+  }
+  
+  .footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 8px; /* Espacio entre el icono y el texto */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--color5);
+  }
+  
+  /* Estilo para los iconos de redes sociales */
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+  }
+  
+  .social-icons li {
+    list-style: none;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  
+  .footer-bottom p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-section {
+      margin-bottom: 20px;
+    }
+  }
+
+  
