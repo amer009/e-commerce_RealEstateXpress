@@ -3,9 +3,22 @@
 }
 
 
-
+.h1 {
+    font-size: 80px !important;
+    font-weight: bold !important;
+}
+.h2 {
+    font-size:45px ;
+}
+.h3{
+    font-size:35px ;
+}
+.h4 {
+    font-size: 30px ;
+}
 /* Estilos para el banner */
 .banner {
+    
     background-image: url('../img/Banner.jpg');
     filter: brightness(90%);
     /* Cambia por la ruta de tu imagen */
@@ -24,7 +37,6 @@
 
 .bottom-banner {
     background-image: url('../img/Lote.jpg');
-    /* Reemplaza con tu imagen */
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -34,19 +46,16 @@
 }
 
 .bottom-banner .btn {
-    background-color: var(--color5) !important;
-    color: var(--color7) !important;
-    border: 2px solid var(--color5) !important;
-    padding: 10px 20px !important;
-    text-decoration: none !important;
-    transition: background-color 0.5s, color 0.5s !important;
-    margin-top: 20px;
-}
-
-.bottom-banner .btn:hover {
-    background-color: var(--color8) !important;
-    color: #ffffff !important;
-    border-color: var(--color8) !important;
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    border-radius: 0; 
+    cursor: pointer; 
 }
 
 

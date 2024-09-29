@@ -43,9 +43,7 @@ body {
     cursor: pointer;
     width: 100%;
   }
-  .login-form button:hover {
-  background-color: #3b945e;
-  }
+  
   .login-form .social-icons {
     display: flex;
     justify-content: center;
