@@ -1,3 +1,18 @@
+:root {
+    --color1: #FFC107;
+    --color2: #FFEB3B;
+    --color3: #CC29E8;
+    --color4: #795548;
+    --color5: #4CAF50;
+    --color6: #B2FF59;
+    --color7: white;
+    --color8: black;
+    --color9: #0000001a; /* Sombras */
+    --color10: #000000b3; /* Fondo negro con transparencia */
+    --color11: #5EA51D;
+    --color12: #FD5C64;
+}
+
 .body {
     font-family: 'Roboto', sans-serif !important;
 }
