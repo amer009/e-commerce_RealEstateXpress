@@ -199,7 +199,11 @@ h3 {
     /* Sombra suave */
 }
 
-
+.card:hover {
+    transform: scale(1.05);
+    /* Cambio hecho por Andrés */
+    box-shadow: 0 2px 6px var(--color9);
+}
 
 .carousel-control-next, .carousel-control-prev {
 
@@ -255,7 +259,6 @@ h3 {
     background-color: #000000;
     /* Color de fondo al pasar el mouse */
 }
-
 /* Contenedor principal del footer */
 .footer-container {
     display: flex;
@@ -264,86 +267,83 @@ h3 {
     color: white;
     padding: 40px;
     flex-wrap: wrap;
-}
-
-/* Secciones del footer */
-.footer-section {
+  }
+  
+  /* Secciones del footer */
+  .footer-section {
     flex: 1;
     margin: 0 20px;
-    min-width: 200px;
-    /* Asegura un mínimo ancho en pantallas pequeñas */
-}
-
-/* Títulos de las secciones del footer */
-.footer-section h5 {
+    min-width: 200px; /* Asegura un mínimo ancho en pantallas pequeñas */
+  }
+  
+  /* Títulos de las secciones del footer */
+  .footer-section h5 {
     margin-bottom: 15px;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 2px solid var(--color5);
-    /* Línea decorativa bajo el título */
+    border-bottom: 2px solid var(--color5); /* Línea decorativa bajo el título */
     padding-bottom: 10px;
-}
-
-/* Estilo para los enlaces del footer */
-.footer-section ul {
+  }
+  
+  /* Estilo para los enlaces del footer */
+  .footer-section ul {
     list-style: none;
     padding: 0;
-}
-
-.footer-section ul li {
+  }
+  
+  .footer-section ul li {
     margin-bottom: 10px;
     display: flex;
-    align-items: center;
-    /* Alinea el icono con el texto */
-}
-
-.footer-section ul li a {
+    align-items: center; /* Alinea el icono con el texto */
+  }
+  
+  .footer-section ul li a {
     color: #ecf0f1;
     text-decoration: none;
-    margin-left: 8px;
-    /* Espacio entre el icono y el texto */
+    margin-left: 8px; /* Espacio entre el icono y el texto */
     transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #B2FF59;
-}
-
-/* Estilo para los iconos de redes sociales */
-.social-icons {
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--color5);
+  }
+  
+  /* Estilo para los iconos de redes sociales */
+  .social-icons {
     display: flex;
-    gap: 15px;
-    /* Espacio entre los iconos */
-}
-
-.social-icons li {
+    gap: 15px; /* Espacio entre los iconos */
+  }
+  
+  .social-icons li {
     list-style: none;
-}
-
-.social-icons a {
+  }
+  
+  .social-icons a {
     color: white;
     font-size: 24px;
     transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
+  }
+  
+  .social-icons a:hover {
     transform: scale(1.1);
-}
-
-
-.footer-bottom p {
+  }
+  
+  
+  .footer-bottom p {
     margin: 5px 0;
     font-size: 14px;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
-
+  
     .footer-section {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
-}
+  }
+
+  
