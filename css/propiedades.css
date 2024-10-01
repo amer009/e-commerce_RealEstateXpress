@@ -1,3 +1,47 @@
+.navbar-links .navtex.active, .navbar-brand.navtex.active {
+    color: #B2FF59 !important; /* Cambiar a color verde */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 5px;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar-brand i {
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover i {
+    color: #B2FF59;
+}
+
+.navtex {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navtex:hover {
+    color: #B2FF59 !important;
+}
+
+.navbar-links .navtex {
+    font-size: 15px;
+}
+
+.highlight {
+  background-color: #4CAF50; /* Cambia este color por el que prefieras */
+  color: #000000; /* Cambia el color del texto si es necesario */
+  padding: 8px 12px; /* Añade algo de padding para que el enlace se vea mejor */
+}
+
+.highlight:hover {
+  background-color: #000000; /* Color de fondo al pasar el mouse */
+}
+
 /* Product Cards */
 .property-img {
     position: relative; /* Necesario para posicionar elementos hijos de manera absoluta */
@@ -141,7 +185,7 @@ h3{
 }
 
 .footer-section ul li a:hover {
-    color: var(--color5);
+    color: #B2FF59;
 }
 
 /* Estilo para los iconos de redes sociales */
