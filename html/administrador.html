@@ -1,0 +1,78 @@
+<div class="container mt-5">
+    <h2>Añadir Nueva Propiedad</h2>
+    <form id="adminForm">
+        <div class="mb-3">
+            <label for="propertyName" class="form-label">Nombre de la Propiedad</label>
+            <input type="text" class="form-control" id="propertyName" placeholder="Ingresa el nombre de la propiedad">
+        </div>
+        
+        <div class="mb-3">
+            <label for="propertyPrice" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="propertyPrice" placeholder="Ingresa el precio">
+        </div>
+    
+        <div class="mb-3">
+            <label for="propertyLocation" class="form-label">Ubicación</label>
+            <input type="text" class="form-control" id="propertyLocation" placeholder="Ingresa la ubicación">
+        </div>
+    
+        <div class="mb-3">
+            <label for="propertyStatus" class="form-label">Estado de la Propiedad</label>
+            <select class="form-control" id="propertyStatus">
+                <option value="en venta">En venta</option>
+                <option value="vendido">Vendido</option>
+            </select>
+        </div>
+    
+        <div class="mb-3">
+            <label for="propertyAcres" class="form-label">Tamaño en Acres</label>
+            <input type="text" class="form-control" id="propertyAcres" placeholder="Ingresa el tamaño en acres">
+        </div>
+    
+        <div class="mb-3">
+            <label for="propertySqft" class="form-label">Tamaño en pies cuadrados (sq. ft.)</label>
+            <input type="number" class="form-control" id="propertySqft" placeholder="Ingresa los pies cuadrados">
+        </div>
+        
+        <div class="mb-3">
+            <label for="propertyImage" class="form-label">Subir Imagen</label>
+            <input type="file" class="form-control" id="propertyImage">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Agregar Propiedad</button>
+    </form>
+    
+    
+</div>
+
+<script>
+document.getElementById('adminForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('propertyName').value;
+    const price = document.getElementById('propertyPrice').value;
+    const location = document.getElementById('propertyLocation').value;
+    const status = document.getElementById('propertyStatus').value;
+    const acres = document.getElementById('propertyAcres').value;
+    const sqft = document.getElementById('propertySqft').value;
+    const image = document.getElementById('propertyImage').files[0];
+
+    const newProperty = {
+        name: name,
+        price: price,
+        location: location,
+        status: status,
+        acres: acres,
+        sqft: sqft,
+        image: URL.createObjectURL(image)
+    };
+
+    // Guardar en localStorage
+    let properties = JSON.parse(localStorage.getItem('properties')) || [];
+    properties.push(newProperty);
+    localStorage.setItem('properties', JSON.stringify(properties));
+
+    alert('Propiedad añadida exitosamente!');
+});
+
+</script>

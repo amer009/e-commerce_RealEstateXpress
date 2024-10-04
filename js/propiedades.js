@@ -54,3 +54,57 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 
 // Llamar a la función al cargar la página
 window.onload = activateCurrentNavLink;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const properties = JSON.parse(localStorage.getItem('properties')) || [];
+    const propertyContainer = document.getElementById('propertyContainer');
+
+    properties.forEach(function(property) {
+        const propertyCard = `
+            <div class="col-md-3 mb-5"> <!-- Añadido 'mb-4' para margen inferior -->
+                <div class="card" style="width: 18rem;">
+                    <div class="property-img">
+                        <img src="${property.image}" alt="Imagen de la propiedad ${property.name}" width="100%">
+                        <div class="price">
+                            <p>$${property.price}</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-6">
+                            <div class="col-12">
+                                <h3 class="card-title">${property.name}<br>${property.location}</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="location-text">${property.location}</span>
+                            </div>
+                            <div class="col-7">
+                                <span class="status-text">${property.status}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <i class="bi bi-bounding-box-circles"></i>
+                                <span class="details-text">${property.acres} Acres</span>
+                            </div>
+                            <div class="col-6">
+                                <i class="bi bi-rulers"></i>
+                                <span class="details-text">${property.sqft} sq. ft.</span> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex mt-3">
+                                <a href="#" class="btn btn-primary flex-fill">Detalles</a>
+                                <a href="#" class="btn btn-secondary flex-fill add-to-cart" data-property="${property.name}" data-price="${property.price}" style="min-width: 150px;">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        propertyContainer.innerHTML += propertyCard;
+    });
+});
+
