@@ -1,0 +1,199 @@
+.navbar-links {
+  display: flex;
+  gap: 5px;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.navbar-brand i {
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover i {
+  color: #B2FF59;
+}
+
+.navtex {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.navtex:hover {
+  color: #B2FF59 !important;
+}
+
+.navbar-links .navtex {
+  font-size: 15px;
+}
+
+.highlight {
+  background-color: #4CAF50; /* Cambia este color por el que prefieras */
+  color: #000000; /* Cambia el color del texto si es necesario */
+  padding: 8px 12px; /* Añade algo de padding para que el enlace se vea mejor */
+}
+
+.highlight:hover {
+  background-color: #000000; /* Color de fondo al pasar el mouse */
+}
+
+
+
+  
+  body {
+    font-family: 'Roboto', sans-serif !important;
+    margin: 0;
+    background-color: #f1f1f1;
+    padding-top: 100px;
+  
+}
+
+  
+  .register-container {
+    background-color: white;
+    border-radius: 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+  }
+  .register-form {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+  }
+  .register-form h2 {
+    margin-bottom: 30px;
+    color:  #4CAF50
+  }
+  .register-form input {
+    /* margin-bottom: 20px; */
+    padding: 15px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  .register-form button {
+    padding: 15px;
+    border-radius: 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .register-form button:hover {
+    background-color: white;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+
+    }
+  
+  .register-right {
+    background-color: #4CAF50 !important;
+    align-items: center;
+    color: white;
+    padding: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  .register-right h2 {
+    margin-bottom: 20px;
+  }
+  .register-right a {
+    color: white;
+    background-color: #4CAF50;
+    border: 1px solid white;
+    padding: 10px 30px;
+    border-radius: 0;
+    text-decoration: none;
+  }
+  .register-right a:hover {
+    background-color: #fff;
+    color: #4CAF50;
+  }
+  /* Contenedor principal del footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* Secciones del footer */
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px; /* Asegura un mínimo ancho en pantallas pequeñas */
+}
+
+/* Títulos de las secciones del footer */
+.footer-section h5 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid #4CAF50; /* Línea decorativa bajo el título */
+  padding-bottom: 10px;
+}
+
+/* Estilo para los enlaces del footer */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* Alinea el icono con el texto */
+}
+
+.footer-section ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-left: 8px; /* Espacio entre el icono y el texto */
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #B2FF59;
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icons {
+  display: flex;
+  gap: 15px; /* Espacio entre los iconos */
+}
+
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+
+.footer-bottom p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+
+
