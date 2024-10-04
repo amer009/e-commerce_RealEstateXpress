@@ -220,6 +220,11 @@ h3 {
     width: 2%;
 }
 
+.card-body{
+ height: 200px;
+ 
+}
+
 .navbar-links .navtex.active,
 .navbar-brand.navtex.active {
     color: #B2FF59 !important;
@@ -288,10 +293,10 @@ h3 {
   
   /* Títulos de las secciones del footer */
   .footer-section h5 {
-    margin-bottom: 15px;
+    margin-bottom: 25px !important;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 2px solid var(--color5); /* Línea decorativa bajo el título */
+    border-bottom: 2px solid #4CAF50; /* Línea decorativa bajo el título */
     padding-bottom: 10px;
   }
   

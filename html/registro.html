@@ -32,17 +32,47 @@
 
         </div>
     </nav>
-
+    <br>
     <div class="container">
         <div class="row justify-content-center g-0"> <!-- Aquí añadimos g-0 para eliminar el espacio -->
             <div class="col-lg-6 col-md-12">
                 <div class="register-form p-4">
                     <h2>Crear una cuenta</h2>
-                    <input type="text" class="form-control mb-4" placeholder="Nombre" required>
-                    <input type="email" class="form-control mb-4" placeholder="Correo" required>
-                    <input type="password" class="form-control mb-4" placeholder="Contraseña" required>
-                    <input type="password" class="form-control mb-4" placeholder="Confirma contraseña" required>
-                    <button type="submit" class="btn btn-success btn-block">Registrar</button>
+                    <form action="#" id="miFormulario" novalidate>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre Completo" id="nombre" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu nombre.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" placeholder="Número Teléfono" id="telefono"
+                                required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu teléfono.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" id="email" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa un correo electrónico válido.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa una contraseña.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="confirmPassword" class="form-control"
+                                placeholder="Confirma contraseña" required>
+                            <div class="invalid-feedback">
+                                Las contraseñas no coinciden.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Registrar</button>
+                    </form>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -54,10 +84,8 @@
             </div>
         </div>
     </div>
-    
-    
-    <br><br><br>
 
+    <br><br><br>
     <footer>
         <div class="footer-container">
             <!-- Sección de Enlaces Legales -->

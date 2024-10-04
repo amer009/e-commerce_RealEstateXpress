@@ -152,7 +152,7 @@ body {
   margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom: 2px solid var(--color5); /* Línea decorativa bajo el título */
+  border-bottom: 2px solid #4CAF50; /* Línea decorativa bajo el título */
   padding-bottom: 10px;
 }
 
@@ -205,15 +205,5 @@ body {
   font-size: 14px;
 }
 
-/* Estilos responsivos */
-/* @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .footer-section {
-    margin-bottom: 20px;
-  }
-} */
 

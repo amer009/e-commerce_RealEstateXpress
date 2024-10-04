@@ -10,7 +10,7 @@ function activateCurrentNavLink() {
     navbarLinks.forEach(link => {
         // Obtener solo el último fragmento del href del enlace
         const linkPath = link.getAttribute('href').split('/').pop();
-        
+
         // Si coincide con la ruta actual, agregar la clase 'active'
         if (linkPath === currentPath) {
             link.classList.add('active');
@@ -23,4 +23,44 @@ function activateCurrentNavLink() {
 
 // Llamar a la función al cargar la página
 window.onload = activateCurrentNavLink;
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var formulario = document.getElementById('miFormulario');
+
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Validación de contraseñas
+        var password = document.getElementById('password');
+        var confirmPassword = document.getElementById('confirmPassword');
+
+        // Clear previous validity messages
+        confirmPassword.setCustomValidity('');
+        if (password.value !== confirmPassword.value) {
+            confirmPassword.setCustomValidity('Las contraseñas no coinciden.');
+        }
+
+        // Validación del formulario
+        if (formulario.checkValidity()) {
+            // Create a JSON object
+            var formData = {
+                nombre: document.getElementById('nombre').value,
+                telefono: document.getElementById('telefono').value,
+                email: document.getElementById('email').value,
+                password: password.value
+            };
+
+            // Store JSON object in localStorage
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Optionally, clear the form or provide feedback
+            alert('Datos guardados en localStorage.');
+            formulario.reset(); // Clear the form fields
+        } else {
+            formulario.classList.add('was-validated');
+        }
+    }, false);
+});
 

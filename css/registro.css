@@ -70,7 +70,7 @@
     color:  #4CAF50
   }
   .register-form input {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding: 15px;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -118,7 +118,7 @@
   }
   .register-right a:hover {
     background-color: #fff;
-    color: #43B581;
+    color: #4CAF50;
   }
   /* Contenedor principal del footer */
 .footer-container {
@@ -142,7 +142,7 @@
   margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom: 2px solid var(--color5); /* Línea decorativa bajo el título */
+  border-bottom: 2px solid #4CAF50; /* Línea decorativa bajo el título */
   padding-bottom: 10px;
 }
 
@@ -195,15 +195,5 @@
   font-size: 14px;
 }
 
-/* Estilos responsivos */
-/* @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .footer-section {
-    margin-bottom: 20px;
-  }
-} */
 
