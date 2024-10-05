@@ -216,17 +216,17 @@ h3{
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-
     .card .btn-primary, .card .btn-secondary {
         width: auto; /* Cambiar a ancho automático en pantallas más grandes */
+
     }
 
     .footer-container {
-    flex-direction: column;
-    text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
 
     .footer-section {
-    margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 }

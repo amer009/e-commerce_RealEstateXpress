@@ -155,7 +155,7 @@
     text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
     word-break: break-word; /* Rompe las palabras largas para evitar que se desborden */
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 h3 {
