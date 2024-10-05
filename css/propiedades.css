@@ -45,7 +45,7 @@
 /* Product Cards */
 .property-img {
     position: relative; /* Necesario para posicionar elementos hijos de manera absoluta */
-    width: 300px; /* Ancho de la tarjeta */
+    width: 400px; /* Ancho de la tarjeta */
     height: 200px; /* Alto de la tarjeta */
     overflow: hidden; /* Para que el contenido no sobresalga */
 }
@@ -69,10 +69,19 @@
     font-weight: bold; /* Texto en negrita */
 }
 
+body {
+    padding-top: 130px;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
 .card {
     border: none !important;
     border-radius: 0px !important;
     box-shadow: 0 1px 4px var(--color9); /* Sombra suave */
+}
+
+h2 {
+    font-size: 55px !important;
 }
 
 h3{

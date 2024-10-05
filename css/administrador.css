@@ -1,0 +1,78 @@
+body {
+    padding-top: 130px;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+h1 {
+    font-size: 80px !important;
+    font-weight: bold !important;
+}
+h2 {
+    font-size: 55px !important;
+}
+h3 {
+    font-size: 45px !important;
+}
+h4 {
+    font-size: 35px !important;
+}
+h5 {
+    font-size: 25px !important;
+}
+h6 {
+    font-size: 15px !important;
+}
+
+p {
+    font-size: 17px !important;
+}
+
+.btn {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border: 2px solid var(--color5) !important;
+    padding: 8px 8px !important;
+    text-decoration: none !important;
+    transition: background-color 0.5s, color 0.5s !important;
+    width: 200px !important;
+  }
+
+  .navbar-links {
+      display: flex;
+      gap: 5px;
+  }
+  
+  .navbar {
+      background-color: black;
+  }
+  
+  .navbar-brand i {
+      transition: color 0.3s ease;
+  }
+  
+  .navbar-brand:hover i {
+      color: #B2FF59;
+  }
+  
+  .navtex {
+      color: white !important;
+      transition: color 0.3s ease;
+  }
+  
+  .navtex:hover {
+      color: #B2FF59 !important;
+  }
+  
+  .navbar-links .navtex {
+      font-size: 15px;
+  }
+  
+  .highlight {
+    background-color: #4CAF50; /* Cambia este color por el que prefieras */
+    color: #000000; /* Cambia el color del texto si es necesario */
+    padding: 8px 12px; /* Añade algo de padding para que el enlace se vea mejor */
+  }
+  
+  .highlight:hover {
+    background-color: #000000; /* Color de fondo al pasar el mouse */
+  }
