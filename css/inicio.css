@@ -22,15 +22,19 @@
     font-size: 80px !important;
     font-weight: bold !important;
 }
+
 .h2 {
     font-size:45px ;
 }
+
 .h3{
     font-size:35px ;
 }
+
 .h4 {
     font-size: 30px ;
 }
+
 /* Estilos para el banner */
 .banner {
     
@@ -48,7 +52,6 @@
     justify-content: center;
     color: white;
 }
-
 
 .bottom-banner {
     background-image: url('../img/Lote.jpg');
@@ -72,10 +75,6 @@
     border-radius: 0; 
     cursor: pointer; 
 }
-
-
-
-
 
 /* Product Cards */
 .property-img {
@@ -156,7 +155,7 @@
     text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
     word-break: break-word; /* Rompe las palabras largas para evitar que se desborden */
     display: block;
-    text-align: left;
+    text-align: center;
 }
 
 h3 {
@@ -221,8 +220,8 @@ h3 {
 }
 
 .card-body{
- height: 200px;
- 
+height: 200px;
+
 }
 
 .navbar-links .navtex.active,
@@ -274,6 +273,7 @@ h3 {
     background-color: #000000;
     /* Color de fondo al pasar el mouse */
 }
+
 /* Contenedor principal del footer */
 .footer-container {
     display: flex;
@@ -282,73 +282,68 @@ h3 {
     color: white;
     padding: 40px;
     flex-wrap: wrap;
-  }
-  
-  /* Secciones del footer */
-  .footer-section {
+}
+
+/* Secciones del footer */
+.footer-section {
     flex: 1;
     margin: 0 20px;
     min-width: 200px; /* Asegura un mínimo ancho en pantallas pequeñas */
-  }
-  
-  /* Títulos de las secciones del footer */
-  .footer-section h5 {
+}
+
+/* Títulos de las secciones del footer */
+.footer-section h5 {
     margin-bottom: 25px !important;
     text-transform: uppercase;
     font-weight: bold;
     border-bottom: 2px solid #4CAF50; /* Línea decorativa bajo el título */
     padding-bottom: 10px;
-  }
-  
-  /* Estilo para los enlaces del footer */
-  .footer-section ul {
+}
+
+/* Estilo para los enlaces del footer */
+.footer-section ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-section ul li {
+}
+
+.footer-section ul li {
     margin-bottom: 10px;
     display: flex;
     align-items: center; /* Alinea el icono con el texto */
-  }
-  
-  .footer-section ul li a {
+}
+
+.footer-section ul li a {
     color: #ecf0f1;
     text-decoration: none;
     margin-left: 8px; /* Espacio entre el icono y el texto */
     transition: color 0.3s ease;
-  }
-  
-  .footer-section ul li a:hover {
+}
+
+.footer-section ul li a:hover {
     color: var(--color5);
-  }
-  
-  /* Estilo para los iconos de redes sociales */
-  .social-icons {
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icons {
     display: flex;
     gap: 15px; /* Espacio entre los iconos */
-  }
-  
-  .social-icons li {
+}
+
+.social-icons li {
     list-style: none;
-  }
-  
-  .social-icons a {
+}
+
+.social-icons a {
     color: white;
     font-size: 24px;
     transition: transform 0.3s ease;
-  }
-  
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     transform: scale(1.1);
-  }
-  
-  
-  .footer-bottom p {
+}
+
+.footer-bottom p {
     margin: 5px 0;
     font-size: 14px;
-  }
-  
-
-
-  
+}
