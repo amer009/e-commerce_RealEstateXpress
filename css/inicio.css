@@ -35,6 +35,9 @@
     font-size: 30px ;
 }
 
+.title-principal {
+    text-align: center;
+}
 /* Estilos para el banner */
 .banner {
     
