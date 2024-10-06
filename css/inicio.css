@@ -7,8 +7,8 @@
     --color6: #B2FF59;
     --color7: white;
     --color8: black;
-    --color9: #0000001a; /* Sombras */
-    --color10: #000000b3; /* Fondo negro con transparencia */
+    --color9: #0000001a;
+    --color10: #000000b3;
     --color11: #5EA51D;
     --color12: #FD5C64;
 }
@@ -39,17 +39,13 @@
     text-align: center;
 }
 /* Estilos para el banner */
-.banner {
-    
+.banner { 
     background-image: url('../img/Banner.jpg');
     filter: brightness(90%);
-    /* Cambia por la ruta de tu imagen */
     background-size: cover;
     background-position: center;
     height: 50vh;
-    /* Tamaño completo de la ventana */
     max-width: 2000px;
-    /* Ancho máximo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +58,6 @@
     background-position: center;
     text-align: center;
     padding: 50px 0;
-    /* Espaciado interno */
     color: white;
 }
 
@@ -82,81 +77,55 @@
 /* Product Cards */
 .property-img {
     position: relative;
-    /* Necesario para posicionar elementos hijos de manera absoluta */
     height: 200px;
-    /* Alto de la tarjeta */
     overflow: hidden;
-    /* Para que el contenido no sobresalga */
 }
 
 .property-imgcentral {
     position: relative;
-    /* Necesario para posicionar elementos hijos de manera absoluta */
     height: 534px;
-    /* Alto de la tarjeta */
     overflow: hidden;
-    /* Para que el contenido no sobresalga */
 }
 
 .property-imgcentral img {
     width: 100%;
-    /* Que la imagen ocupe todo el ancho */
     height: 100%;
-    /* Que la imagen ocupe toda la altura */
     object-fit: cover;
-    /* Ajusta la imagen para que siempre cubra todo el espacio sin deformarse */
     transition: filter 0.3s ease;
-    /* Transición suave para el efecto hover */
     filter: brightness(50%);
-    /* Aplica una reducción del brillo al 50% para oscurecer */
 }
 
 .property-img img {
     width: 100%;
-    /* Que la imagen ocupe todo el ancho */
     height: 100%;
-    /* Que la imagen ocupe toda la altura */
     object-fit: cover;
-    /* Ajusta la imagen para que siempre cubra todo el espacio sin deformarse */
     transition: filter 0.3s ease;
-    /* Transición suave para el efecto hover */
     filter: brightness(50%);
-    /* Aplica una reducción del brillo al 50% para oscurecer */
 }
 
 .price p {
     position: absolute;
-    /* Posicionamiento absoluto dentro de .property-thumb */
     bottom: 5px;
-    /* A 10px del borde inferior */
     left: 10px;
-    /* A 10px del borde izquierdo */
     background-color: var(--color11);
-    /* Fondo verde */
     color: white;
-    /* Texto blanco */
     padding: 5px 10px;
-    /* Espaciado interno */
     font-size: 16px;
-    /* Tamaño de la fuente */
     font-weight: bold;
-    /* Texto en negrita */
 }
 
 .cardproduct {
     border: none !important;
     border-radius: 0px !important;
     box-shadow: 0 1px 4px var(--color9);
-    
-    /* Sombra suave */
 }
 
 .card-title {
-    max-height: 60px; /* Establece una altura máxima basada en el número de líneas que esperas */
-    white-space: normal; /* Permite que el texto se divida en líneas múltiples si es necesario */
-    overflow: hidden; /* Oculta el texto que exceda la altura máxima */
-    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
-    word-break: break-word; /* Rompe las palabras largas para evitar que se desborden */
+    max-height: 60px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
     display: block;
     text-align: left;
 }
@@ -173,7 +142,6 @@ h3 {
 .bi-geo-alt-fill {
     font-size: small;
     color: var(--color11);
-    /* Cambia el color del icono a rojo */
 }
 
 .location-text {
@@ -197,23 +165,18 @@ h3 {
 
 .cardproduct:hover .property-img img {
     filter: brightness(100%);
-    /* Restablece el brillo al 100% al pasar el mouse */
 }
 
 .cardproduct:hover .property-imgcentral img {
     filter: brightness(100%);
-    /* Restablece el brillo al 100% al pasar el mouse */
 }
 
 .cardproduct:hover .price p {
     box-shadow: 0 2px 6px var(--color9);
-    ;
-    /* Sombra suave */
 }
 
 .card:hover {
     transform: scale(1.05);
-    /* Cambio hecho por Andrés */
     box-shadow: 0 2px 6px var(--color9);
 }
 
@@ -223,14 +186,16 @@ h3 {
 }
 
 .card-body{
-height: 200px;
-
+    height: 130px;
 }
 
-.navbar-links .navtex.active,
-.navbar-brand.navtex.active {
+.card-body-tes{
+    height: 200px;
+}
+
+/*---------------------------------Seccion del nav----------------------------------------*/
+.navbar-links .navtex.active,.navbar-brand.navtex.active {
     color: #B2FF59 !important;
-    /* Cambiar a color verde */
 }
 
 .navbar-links {
@@ -263,20 +228,37 @@ height: 200px;
     font-size: 15px;
 }
 
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 767px) {
+    .navbar-links {
+        flex-direction: column;
+        align-items: right;
+    }
+
+    .navbar-links a {
+        width: 92%;
+        text-align: right;
+    }
+
+    .highlight {
+        background-color: #000000 !important;
+        width: 95% !important;
+    }
+}
+
 .highlight {
     background-color: #4CAF50;
-    /* Cambia este color por el que prefieras */
     color: #000000;
-    /* Cambia el color del texto si es necesario */
     padding: 8px 12px;
-    /* Añade algo de padding para que el enlace se vea mejor */
 }
 
 .highlight:hover {
     background-color: #000000;
-    /* Color de fondo al pasar el mouse */
 }
 
+/*------------------------------Fin Secciones del nav-------------------------------------*/
+/* ------------------------------Secciones del footer------------------------------------ */
 /* Contenedor principal del footer */
 .footer-container {
     display: flex;
@@ -286,12 +268,10 @@ height: 200px;
     padding: 40px;
     flex-wrap: wrap;
 }
-
-/* Secciones del footer */
 .footer-section {
     flex: 1;
     margin: 0 20px;
-    min-width: 200px; /* Asegura un mínimo ancho en pantallas pequeñas */
+    min-width: 200px;
 }
 
 /* Títulos de las secciones del footer */
@@ -299,8 +279,9 @@ height: 200px;
     margin-bottom: 25px !important;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 2px solid #4CAF50; /* Línea decorativa bajo el título */
+    border-bottom: 2px solid #4CAF50;
     padding-bottom: 10px;
+    font-size: 25px;
 }
 
 /* Estilo para los enlaces del footer */
@@ -312,13 +293,13 @@ height: 200px;
 .footer-section ul li {
     margin-bottom: 10px;
     display: flex;
-    align-items: center; /* Alinea el icono con el texto */
+    align-items: center;
 }
 
 .footer-section ul li a {
     color: #ecf0f1;
     text-decoration: none;
-    margin-left: 8px; /* Espacio entre el icono y el texto */
+    margin-left: 8px;
     transition: color 0.3s ease;
 }
 
@@ -329,7 +310,7 @@ height: 200px;
 /* Estilo para los iconos de redes sociales */
 .social-icons {
     display: flex;
-    gap: 15px; /* Espacio entre los iconos */
+    gap: 15px;
 }
 
 .social-icons li {
@@ -350,3 +331,4 @@ height: 200px;
     margin: 5px 0;
     font-size: 14px;
 }
+/* ----------------------------fin Secciones del footer---------------------------------- */

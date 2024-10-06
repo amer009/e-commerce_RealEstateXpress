@@ -16,6 +16,7 @@ function activateCurrentNavLink() {
             link.classList.add('active');
             link.style.color = '#4CAF50'; // Cambia el color a verde
         } else {
+            link.classList.remove('active'); // Eliminar la clase 'active' si no coincide
             link.style.color = 'white'; // Restablecer el color para otros enlaces
         }
     });
@@ -23,4 +24,3 @@ function activateCurrentNavLink() {
 
 // Llamar a la función al cargar la página
 window.onload = activateCurrentNavLink;
-

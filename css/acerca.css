@@ -19,11 +19,13 @@
 }
 
 body {
-  padding-top: 130px;
+  padding-top: 60px;
+  font-family: 'Roboto', sans-serif !important;
 }
 
-.navbar-links .navtex.active, .navbar-brand.navtex.active {
-    color: #B2FF59 !important; /* Cambiar a color verde */
+/*---------------------------------Seccion del nav----------------------------------------*/
+.navbar-links .navtex.active,.navbar-brand.navtex.active {
+    color: #B2FF59 !important;
 }
 
 .navbar-links {
@@ -56,16 +58,38 @@ body {
     font-size: 15px;
 }
 
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 767px) {
+    .navbar-links {
+        flex-direction: column;
+        align-items: right;
+    }
+
+    .navbar-links a {
+        width: 92%;
+        text-align: right;
+    }
+
+    .highlight {
+        background-color: #000000 !important;
+        width: 95% !important;
+    }
+}
+
 .highlight {
-  background-color: #4CAF50; /* Cambia este color por el que prefieras */
-  color: #000000; /* Cambia el color del texto si es necesario */
-  padding: 8px 12px; /* Añade algo de padding para que el enlace se vea mejor */
+    background-color: #4CAF50;
+    color: #000000;
+    padding: 8px 12px;
 }
 
 .highlight:hover {
-  background-color: #000000; /* Color de fondo al pasar el mouse */
+    background-color: #000000;
 }
 
+/*------------------------------Fin Secciones del nav-------------------------------------*/
+/* ------------------------------Secciones del footer------------------------------------ */
+/* Contenedor principal del footer */
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -73,78 +97,69 @@ body {
     color: white;
     padding: 40px;
     flex-wrap: wrap;
-  }
-  
-  .footer-section {
+}
+.footer-section {
     flex: 1;
     margin: 0 20px;
     min-width: 200px;
-  }
-  
-  .footer-section h5 {
-    margin-bottom: 15px;
+}
+
+/* Títulos de las secciones del footer */
+.footer-section h5 {
+    margin-bottom: 25px !important;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 2px solid var(--color5);
+    border-bottom: 2px solid #4CAF50;
     padding-bottom: 10px;
-  }
-  
-  .footer-section ul {
+    font-size: 25px;
+}
+
+/* Estilo para los enlaces del footer */
+.footer-section ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-section ul li {
+}
+
+.footer-section ul li {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-  }
-  
-  .footer-section ul li a {
+}
+
+.footer-section ul li a {
     color: #ecf0f1;
     text-decoration: none;
     margin-left: 8px;
     transition: color 0.3s ease;
-  }
-  
-  .footer-section ul li a:hover {
-    color: #B2FF59;
-  }
-  
-  .social-icons {
+}
+
+.footer-section ul li a:hover {
+    color: var(--color5);
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icons {
     display: flex;
     gap: 15px;
-  }
-  
-  .social-icons li {
+}
+
+.social-icons li {
     list-style: none;
-  }
-  
-  .social-icons a {
+}
+
+.social-icons a {
     color: white;
     font-size: 24px;
     transition: transform 0.3s ease;
-  }
-  
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     transform: scale(1.1);
-  }
-  
-  
-  .footer-bottom p {
+}
+
+.footer-bottom p {
     margin: 5px 0;
     font-size: 14px;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-section {
-      margin-bottom: 20px;
-    }
-  }
-
+}
+/* ----------------------------fin Secciones del footer---------------------------------- */
   

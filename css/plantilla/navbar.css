@@ -1,3 +1,8 @@
+/*---------------------------------Seccion del nav----------------------------------------*/
+.navbar-links .navtex.active,.navbar-brand.navtex.active {
+    color: #B2FF59 !important;
+}
+
 .navbar-links {
     display: flex;
     gap: 5px;
@@ -28,14 +33,33 @@
     font-size: 15px;
 }
 
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 767px) {
+    .navbar-links {
+        flex-direction: column;
+        align-items: right;
+    }
+
+    .navbar-links a {
+        width: 92%;
+        text-align: right;
+    }
+
+    .highlight {
+        background-color: #000000 !important;
+        width: 95% !important;
+    }
+}
+
 .highlight {
-    background-color: #4CAF50; /* Cambia este color por el que prefieras */
-    color: #000000; /* Cambia el color del texto si es necesario */
-    padding: 8px 12px; /* Añade algo de padding para que el enlace se vea mejor */
-  }
-  
-  .highlight:hover {
-    background-color: #000000; /* Color de fondo al pasar el mouse */
-  }
+    background-color: #4CAF50;
+    color: #000000;
+    padding: 8px 12px;
+}
 
+.highlight:hover {
+    background-color: #000000;
+}
 
+/*------------------------------Fin Secciones del nav-------------------------------------*/
