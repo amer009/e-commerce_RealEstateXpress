@@ -12,151 +12,164 @@
 </head>
 <body>
     <nav class="navbar navbar-dark fixed-top navbar-expand-md">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <a class="navbar-brand navtex" href="/html/inicio.html">RealEstateXpress</a>
-            
-            <!-- Botón de menú para móviles -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/html/inicio.html">RealEstateXpress</a>
+    
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-    
-        <!-- Enlaces que se colapsarán en móviles -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <div class="navbar-links d-flex flex-column flex-md-row justify-content-center">
-                <a class="navbar-brand navtex mx-2" href="/html/inicio.html">Inicio</a>
-                <a class="navbar-brand navtex mx-2" href="/html/propiedades.html">Propiedades</a>
-                <a class="navbar-brand navtex mx-2" href="/html/acerca.html">Acerca de nosotros</a>
-                <a class="navbar-brand navtex mx-2 highlight" href="/html/contactanos.html">Contáctanos</a>
-                <a class="navbar-brand" href="/html/login.html">
-                    <i class="fas fa-user"></i>
-                </a>
-                <a class="navbar-brand" href="/html/carrito.html">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/propiedades.html">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/acerca.html">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link highlight" href="/html/contactanos.html">Contáctanos</a>
+                    </li>
+
+                    <div class="icon-container">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/login.html">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/carrito.html">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
             </div>
         </div>
     </nav>
 
-        <div class="container-fluid"> 
-            <div class="row">
-                <div class="text-center">
-                    <h2 class="text"><strong>Póngase en contacto con nosotros</strong></h2>
-                </div>
-            </div>
-            <br><br>
-            <div class="row with-gap">
-                <div class="col-md-2 col-sm-12 mb-4"></div>
-                <div class="col-md-4 col-sm-12 mb-4">
-                    <form action="https://formspree.io/f/xzzpnplz" method="POST">
-                        <label>
-                            <h4><b>Formulario de contacto</b></h4>
-                            <input type="text" name="full-name" required placeholder="Ingrese su nombre completo">
-                        </label>
-                        <label>
-                            <input type="number" name="phone" required placeholder="Ingrese su número de teléfono">
-                        </label>
-                        <label>
-                            <input type="email" name="email" required placeholder="Ingrese su correo electrónico">
-                        </label>
-                        <label>
-                            <textarea name="message" required placeholder="Déjanos tu comentario"></textarea>
-                        </label>
-                        <button class="btn" type="submit">Enviar</button>
-                    </form>
-                </div>
-        
-                <!-- Columna para la información de contacto -->
-                <div class="col-md-4 col-sm-12 mb-4">
-                    <div class="ContactInfo">
-                        <h4><b>Información de contacto</b></h4>
-                        <p>
-                            ¿Tienes alguna pregunta o deseas colaborar con nosotros? Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.
-                        </p>
-                        <ul class="list-unstyled">
-                            <li>
-                                <i class="bi bi-telephone-fill"></i> +1 910-626-8523
-                            </li>
-                            <li>
-                                <i class="bi bi-geo-alt-fill"></i> 123 Fifth Ave, New York, NY 10160
-                            </li>
-                            <li>
-                                <i class="bi bi-envelope-fill"></i> realestatexpress2024@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-        
-                <div class="col-md-2 col-sm-12 mb-4"></div>
+    <div class="container-fluid"> 
+        <div class="row">
+            <div class="text-center">
+                <h2 class="text"><strong>Póngase en contacto con nosotros</strong></h2>
             </div>
         </div>
+        <br><br>
+        <div class="row with-gap">
+            <div class="col-md-2 col-sm-12 mb-4"></div>
+            <div class="col-md-4 col-sm-12 mb-4">
+                <form action="https://formspree.io/f/xzzpnplz" method="POST">
+                    <label>
+                        <h4><b>Formulario de contacto</b></h4>
+                        <input type="text" name="full-name" required placeholder="Ingrese su nombre completo">
+                    </label>
+                    <label>
+                        <input type="number" name="phone" required placeholder="Ingrese su número de teléfono">
+                    </label>
+                    <label>
+                        <input type="email" name="email" required placeholder="Ingrese su correo electrónico">
+                    </label>
+                    <label>
+                        <textarea name="message" required placeholder="Déjanos tu comentario"></textarea>
+                    </label>
+                    <button class="btn" type="submit">Enviar</button>
+                </form>
+            </div>
     
-        <footer>
-            <div class="footer-container">
-                <!-- Sección de Enlaces Legales -->
-                <div class="footer-section">
-                    <h5>Soporte</h5>
-                    <ul>
+            <!-- Columna para la información de contacto -->
+            <div class="col-md-4 col-sm-12 mb-4">
+                <div class="ContactInfo">
+                    <h4><b>Información de contacto</b></h4>
+                    <p>
+                        ¿Tienes alguna pregunta o deseas colaborar con nosotros? Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.
+                    </p>
+                    <ul class="list-unstyled">
                         <li>
-                            <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
+                            <i class="bi bi-telephone-fill"></i> +1 910-626-8523
                         </li>
                         <li>
-                            <i class="fas fa-question-circle"></i> <a href="#support">Soporte</a>
+                            <i class="bi bi-geo-alt-fill"></i> 123 Fifth Ave, New York, NY 10160
                         </li>
                         <li>
-                            <i class="fas fa-question-circle"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
-                        </li>
-                    </ul>
-                </div>
-        
-                <!-- Sección de Información de Contacto -->
-                <div class="footer-section">
-                    <h5>Contáctanos</h5>
-                    <ul>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:RealXpress@proyecto.com">RealXpress@proyecto.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:SoporteReal@proyecto.com">SoporteReal@proyecto.com</a>
-                        </li>
-                        <li>
-                          <i class="fas fa-users"></i>
-                          <a href="/html/asesores.html">Nuestros asesores</a>
-                        </li>
-                    </ul>
-                </div>
-        
-                <!-- Sección de Redes Sociales y Promociones -->
-                <div class="footer-section">
-                    <h5>Síguenos en Redes Sociales</h5>
-                    <p>Síguenos para recibir las últimas promociones y novedades:</p>
-                    <ul class="social-icons">
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/realstatexpress/">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://x.com/Realstatexpress">
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@realestatexpress-z8h">
-                                <i class="fab fa-youtube"></i>
-                            </a>
+                            <i class="bi bi-envelope-fill"></i> realestatexpress2024@gmail.com
                         </li>
                     </ul>
                 </div>
             </div>
-        </footer>
+    
+            <div class="col-md-2 col-sm-12 mb-4"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Sección de Enlaces Legales -->
+            <div class="footer-section">
+                <h5>Soporte</h5>
+                <ul>
+                    <li>
+                        <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-question-circle"></i> <a href="#support">Soporte</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-question-circle"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Sección de Información de Contacto -->
+            <div class="footer-section">
+                <h5>Contáctanos</h5>
+                <ul>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:RealXpress@proyecto.com">RealXpress@proyecto.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:SoporteReal@proyecto.com">SoporteReal@proyecto.com</a>
+                    </li>
+                    <li>
+                    <i class="fas fa-users"></i>
+                    <a href="/html/asesores.html">Nuestros asesores</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Sección de Redes Sociales y Promociones -->
+            <div class="footer-section">
+                <h5>Síguenos en Redes Sociales</h5>
+                <p>Síguenos para recibir las últimas promociones y novedades:</p>
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/realstatexpress/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/Realstatexpress">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@realestatexpress-z8h">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
     <script src="../js/contactanos.js"></script>

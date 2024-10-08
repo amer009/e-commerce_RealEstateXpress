@@ -1,65 +1,93 @@
 /*---------------------------------Seccion del nav----------------------------------------*/
-.navbar-links .navtex.active,.navbar-brand.navtex.active {
+/* Estilo general para la navbar */
+.navbar {
+    background-color: black;
+    padding: 0;
+}
+
+/* Estilo para los enlaces de la navbar */
+.navbar-nav .nav-link {
+    padding: 8px 15px;
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.navbar-nav .nav-link:hover {
     color: #B2FF59 !important;
 }
 
-.navbar-links {
-    display: flex;
-    gap: 5px;
+/* Estilo especial para el botón "Contáctanos" */
+.navbar-nav .highlight {
+    background-color: #4CAF50;
+    padding: 8px 20px;
 }
 
-.navbar {
-    background-color: black;
+.navbar-nav .highlight:hover {
+    background-color: #000;
 }
 
-.navbar-brand i {
-    transition: color 0.3s ease;
+/* Estilo para los íconos */
+.navbar-nav .nav-link i {
+    font-size: 18px;
+    color: white;
 }
 
-.navbar-brand:hover i {
+.navbar-nav .nav-link i:hover {
     color: #B2FF59;
 }
 
-.navtex {
-    color: white !important;
-    transition: color 0.3s ease;
-}
-
-.navtex:hover {
+.navbar-brand:hover {
     color: #B2FF59 !important;
 }
 
-.navbar-links .navtex {
-    font-size: 15px;
+.navbar-toggler {
+    border-color: white;
 }
 
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
 /* Ajuste para pantallas pequeñas */
-@media (max-width: 767px) {
-    .navbar-links {
+@media (max-width: 768px) {
+    /* El logo y los enlaces deben centrarse en pantallas pequeñas */
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav {
         flex-direction: column;
-        align-items: right;
+        align-items: center;
     }
 
-    .navbar-links a {
-        width: 92%;
-        text-align: right;
+    .navbar-brand {
+        font-size: 20px;
+        justify-content: center;
     }
 
-    .highlight {
-        background-color: #000000 !important;
-        width: 95% !important;
+    .navbar-nav .nav-link {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .navbar-toggler {
+        border: none;
     }
 }
-
-.highlight {
-    background-color: #4CAF50;
-    color: #000000;
-    padding: 8px 12px;
-}
-
-.highlight:hover {
-    background-color: #000000;
-}
-
 /*------------------------------Fin Secciones del nav-------------------------------------*/
