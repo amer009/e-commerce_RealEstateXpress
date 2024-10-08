@@ -75,6 +75,20 @@
     color: #4CAF50;
   }
 
+  .form-group {
+    position: relative;
+}
+
+  .form-group i {
+    position: absolute;
+    top: 65%;
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+}
+
+
 /*---------------------------------Seccion del nav----------------------------------------*/
 .navbar-links .navtex.active,.navbar-brand.navtex.active {
   color: #B2FF59 !important;
