@@ -11,192 +11,205 @@
 </head>
 <body>
   <nav class="navbar navbar-dark fixed-top navbar-expand-md">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-        <a class="navbar-brand navtex" href="/html/inicio.html">RealEstateXpress</a>
-        
-        <!-- Botón de menú para móviles -->
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/html/inicio.html">RealEstateXpress</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    </div>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/html/inicio.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/html/propiedades.html">Propiedades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/html/acerca.html">Acerca de Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="/html/contactanos.html">Contáctanos</a>
+                </li>
 
-    <!-- Enlaces que se colapsarán en móviles -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <div class="navbar-links d-flex flex-column flex-md-row justify-content-center">
-            <a class="navbar-brand navtex mx-2" href="/html/inicio.html">Inicio</a>
-            <a class="navbar-brand navtex mx-2" href="/html/propiedades.html">Propiedades</a>
-            <a class="navbar-brand navtex mx-2" href="/html/acerca.html">Acerca de nosotros</a>
-            <a class="navbar-brand navtex mx-2 highlight" href="/html/contactanos.html">Contáctanos</a>
-            <a class="navbar-brand" href="/html/login.html">
-                <i class="fas fa-user"></i>
-            </a>
-            <a class="navbar-brand" href="/html/carrito.html">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
+                <div class="icon-container">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/login.html">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/carrito.html">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </div>
+            </ul>
         </div>
     </div>
   </nav>
 
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <img src="/img/asesores.png" alt="Imagen de ejemplo">
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <img src="/Img/amer.png" class="card-img-top" alt="Imagen de ejemplo"/>
-              <div class="card-body">
-                <h4 class="card-title">Amer Abdalla</h4>
-                <p>Desarrollador Full Stack Java</p>
-                <p>Correo: amer@gmail.com</p>
-                <p>teléfono: 123456789</p>
-                <button class="btn btn-success flex-grow-1 ml-1" data-bs-toggle="modal" data-bs-target="#detailModalAmer">Conocer</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <img src="/Img/andres.png" class="card-img-top-andres" alt="Imagen de ejemplo"/>
-              <div class="card-body">
-                <h4 class="card-title">Andrés León Durán</h4>
-                <p>Desarrollador Full Stack Java</p>
-                <p>Correo: andres@gmail.com</p>
-                <p>teléfono: 123456789</p>
-                <button class="btn btn-success flex-grow-1 ml-1" data-bs-toggle="modal" data-bs-target="#detailModalAndres">Conocer</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <img src="/Img/yecibeth.png" class="card-img-top" alt="Imagen de ejemplo"/>
-              <div class="card-body">
-                <h4 class="card-title">Yecibeth Rivera</h4>
-                <p>Desarrollador Full Stack Java</p>
-                <p>Correo: yecibeth@gmail.com</p>
-                <p>teléfono: 123456789</p>
-                <button class="btn btn-success flex-grow-1 ml-1" data-bs-toggle="modal" data-bs-target="#detailModalYeci">Conocer</button>
-              </div>
-            </div>
-          </div>
-          <div class="modal fade" id="detailModalAmer" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalLabel">Acerca de mi</h5>
-                </div>
-                <div class="modal-body">
-                  <p>"Soy un desarrollador Full Stack con una sólida experiencia en el ecosistema Java. Mi especialidad incluye el desarrollo tanto del front-end como del back-end, utilizando tecnologías como Java, Spring Boot, y frameworks modernos para la creación de aplicaciones robustas y eficientes. Poseo habilidades avanzadas en la integración de bases de datos SQL y NoSQL, así como en la implementación de soluciones escalables y seguras. Mi enfoque se centra en entregar soluciones tecnológicas de alta calidad que satisfagan las necesidades del usuario final y contribuyan al éxito del negocio."</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-                </div>
-              </div>
-          </div>
-          <div class="modal fade" id="detailModalAndres" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalLabel">Acerca de mi</h5>
-                </div>
-                <div class="modal-body">
-                  <p>"Desarrollador Full Stack Java con experiencia en la creación de aplicaciones empresariales completas utilizando Java, Spring Boot, y tecnologías relacionadas. Mi experiencia incluye el diseño e implementación de APIs RESTful, la integración de sistemas con bases de datos relacionales y no relacionales, y el desarrollo de interfaces de usuario interactivas y responsivas con tecnologías front-end modernas. Estoy familiarizado con herramientas y prácticas de desarrollo ágil, incluyendo Git, CI/CD, y pruebas automatizadas, lo que me permite entregar productos de software de alta calidad de manera eficiente."</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-                </div>
-              </div>
-          </div>
-          <div class="modal fade" id="detailModalYeci" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalLabel">Acerca de mi</h5>
-                </div>
-                <div class="modal-body">
-                  <p>"Desarrolladora Full Stack con experiencia integral en el desarrollo de aplicaciones basadas en Java. Mi habilidad para trabajar en todas las capas del desarrollo de software me permite abordar desafíos técnicos complejos y proporcionar soluciones efectivas. Con un sólido conocimiento en Java, Spring Boot, y tecnologías front-end como HTML, CSS y JavaScript, me dedico a construir aplicaciones robustas y escalables que cumplen con los estándares de la industria. Mi pasión por la tecnología y mi compromiso con la mejora continua me impulsan a buscar siempre las mejores prácticas y a mantenerme al tanto de las últimas tendencias en desarrollo de software."</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-                </div>
-              </div>
-          </div>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <img src="/img/asesores.png" alt="Imagen de ejemplo">
         </div>
       </div>
-
-    <footer>
-        <div class="footer-container">
-            <!-- Sección de Enlaces Legales -->
-            <div class="footer-section">
-                <h5>Soporte</h5>
-                <ul>
-                    <li>
-                        <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-question-circle"></i> <a href="#support">Soporte</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-question-circle"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
-                    </li>
-                </ul>
+      <br>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+              <img src="/Img/amer.png" class="card-img-top" alt="Imagen de ejemplo"/>
+            <div class="card-body">
+              <h4 class="card-title">Amer Abdalla</h4>
+              <p>Desarrollador Full Stack Java</p>
+              <p>Correo: amer@gmail.com</p>
+              <p>teléfono: 123456789</p>
+              <button class="btn btn-success flex-grow-1 ml-1" data-bs-toggle="modal" data-bs-target="#detailModalAmer">Conocer</button>
             </div>
-    
-            <!-- Sección de Información de Contacto -->
-            <div class="footer-section">
-                <h5>Contáctanos</h5>
-                <ul>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:RealXpress@proyecto.com">RealXpress@proyecto.com</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:SoporteReal@proyecto.com">SoporteReal@proyecto.com</a>
-                    </li>
-                    <li>
-                      <i class="fas fa-users"></i>
-                      <a href="/html/asesores.html">Nuestros asesores</a>
-                    </li>
-                </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+              <img src="/Img/andres.png" class="card-img-top-andres" alt="Imagen de ejemplo"/>
+            <div class="card-body">
+              <h4 class="card-title">Andrés León Durán</h4>
+              <p>Desarrollador Full Stack Java</p>
+              <p>Correo: andres@gmail.com</p>
+              <p>teléfono: 123456789</p>
+              <button class="btn btn-success flex-grow-1 ml-1" data-bs-toggle="modal" data-bs-target="#detailModalAndres">Conocer</button>
             </div>
-    
-            <!-- Sección de Redes Sociales y Promociones -->
-            <div class="footer-section">
-                <h5>Síguenos en Redes Sociales</h5>
-                <p>Síguenos para recibir las últimas promociones y novedades:</p>
-                <ul class="social-icons">
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/realstatexpress/">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/Realstatexpress">
-                          <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/@realestatexpress-z8h">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+              <img src="/Img/yecibeth.png" class="card-img-top" alt="Imagen de ejemplo"/>
+            <div class="card-body">
+              <h4 class="card-title">Yecibeth Rivera</h4>
+              <p>Desarrollador Full Stack Java</p>
+              <p>Correo: yecibeth@gmail.com</p>
+              <p>teléfono: 123456789</p>
+              <button class="btn btn-success flex-grow-1 ml-1" data-bs-toggle="modal" data-bs-target="#detailModalYeci">Conocer</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="detailModalAmer" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Acerca de mi</h5>
+              </div>
+              <div class="modal-body">
+                <p>"Soy un desarrollador Full Stack con una sólida experiencia en el ecosistema Java. Mi especialidad incluye el desarrollo tanto del front-end como del back-end, utilizando tecnologías como Java, Spring Boot, y frameworks modernos para la creación de aplicaciones robustas y eficientes. Poseo habilidades avanzadas en la integración de bases de datos SQL y NoSQL, así como en la implementación de soluciones escalables y seguras. Mi enfoque se centra en entregar soluciones tecnológicas de alta calidad que satisfagan las necesidades del usuario final y contribuyan al éxito del negocio."</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+              </div>
             </div>
         </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../js/asesores.js"></script>
+        <div class="modal fade" id="detailModalAndres" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Acerca de mi</h5>
+              </div>
+              <div class="modal-body">
+                <p>"Desarrollador Full Stack Java con experiencia en la creación de aplicaciones empresariales completas utilizando Java, Spring Boot, y tecnologías relacionadas. Mi experiencia incluye el diseño e implementación de APIs RESTful, la integración de sistemas con bases de datos relacionales y no relacionales, y el desarrollo de interfaces de usuario interactivas y responsivas con tecnologías front-end modernas. Estoy familiarizado con herramientas y prácticas de desarrollo ágil, incluyendo Git, CI/CD, y pruebas automatizadas, lo que me permite entregar productos de software de alta calidad de manera eficiente."</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="detailModalYeci" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Acerca de mi</h5>
+              </div>
+              <div class="modal-body">
+                <p>"Desarrolladora Full Stack con experiencia integral en el desarrollo de aplicaciones basadas en Java. Mi habilidad para trabajar en todas las capas del desarrollo de software me permite abordar desafíos técnicos complejos y proporcionar soluciones efectivas. Con un sólido conocimiento en Java, Spring Boot, y tecnologías front-end como HTML, CSS y JavaScript, me dedico a construir aplicaciones robustas y escalables que cumplen con los estándares de la industria. Mi pasión por la tecnología y mi compromiso con la mejora continua me impulsan a buscar siempre las mejores prácticas y a mantenerme al tanto de las últimas tendencias en desarrollo de software."</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+      <div class="footer-container">
+          <!-- Sección de Enlaces Legales -->
+          <div class="footer-section">
+              <h5>Soporte</h5>
+              <ul>
+                  <li>
+                      <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
+                  </li>
+                  <li>
+                      <i class="fas fa-question-circle"></i> <a href="#support">Soporte</a>
+                  </li>
+                  <li>
+                      <i class="fas fa-question-circle"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
+                  </li>
+              </ul>
+          </div>
+  
+          <!-- Sección de Información de Contacto -->
+          <div class="footer-section">
+              <h5>Contáctanos</h5>
+              <ul>
+                  <li>
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:RealXpress@proyecto.com">RealXpress@proyecto.com</a>
+                  </li>
+                  <li>
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:SoporteReal@proyecto.com">SoporteReal@proyecto.com</a>
+                  </li>
+                  <li>
+                    <i class="fas fa-users"></i>
+                    <a href="/html/asesores.html">Nuestros asesores</a>
+                  </li>
+              </ul>
+          </div>
+  
+          <!-- Sección de Redes Sociales y Promociones -->
+          <div class="footer-section">
+              <h5>Síguenos en Redes Sociales</h5>
+              <p>Síguenos para recibir las últimas promociones y novedades:</p>
+              <ul class="social-icons">
+                  <li>
+                      <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
+                          <i class="fab fa-facebook"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.instagram.com/realstatexpress/">
+                          <i class="fab fa-instagram"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://x.com/Realstatexpress">
+                        <i class="fa-brands fa-x-twitter"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.youtube.com/@realestatexpress-z8h">
+                          <i class="fab fa-youtube"></i>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../js/asesores.js"></script>
 </body>
 </html>
