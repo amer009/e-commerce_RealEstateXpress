@@ -41,7 +41,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             confirmButtonText: 'Aceptar'
         });
         return;
-    
     }
 
     // Mostrar en consola los valores 
@@ -65,17 +64,21 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
 
     // Verificar las credenciales de usuario normal
-    const user = users.find(user => user.email === email && user.password === password);
+    const user = users.find(user => user.email === email);
 
     if (user) {
-        Swal.fire({
-            title: '¡Inicio de sesión exitoso!',
-            text: 'Serás redirigido a la página de inicio.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        }).then(() => {
-            window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
-        });
+        // Desencriptar la contraseña almacenada
+        const passwordDesencriptada = CryptoJS.AES.decrypt(user.password, 'passwordEncrypted').toString(CryptoJS.enc.Utf8);
+        if (passwordDesencriptada === password) {
+            Swal.fire({
+                title: '¡Inicio de sesión exitoso!',
+                text: 'Serás redirigido a la página de inicio.',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
+            });
+        }
     } else {
         console.log("Usuario no encontrado o credenciales inválidas");
         Swal.fire({
