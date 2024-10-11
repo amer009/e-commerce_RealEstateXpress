@@ -89,6 +89,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 });
 
 // Evento para alternar la visibilidad de la contraseña
+
 const togglePassword = document.getElementById('togglePassword');
 togglePassword.addEventListener('click', function () {
     const passwordField = document.getElementById('password');
