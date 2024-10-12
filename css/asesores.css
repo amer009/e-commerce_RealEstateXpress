@@ -106,6 +106,10 @@ p {
 }
 
 /* Estilo para los enlaces de la navbar */
+.navbar-nav .nav-link.active {
+  color: #B2FF59 !important;
+}
+
 .navbar-nav .nav-link {
   padding: 8px 15px;
   color: white !important;
