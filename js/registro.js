@@ -92,12 +92,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        const passwordEncriptada = CryptoJS.AES.encrypt(password.value, 'passwordEncrypted').toString();
+
         // Si todos los campos son válidos, procesar el formulario
         var formData = {
             nombre: nombre.value,
             telefono: telefono.value,
             email: email.value,
-            password: password.value
+            password: passwordEncriptada
         };
 
         var registros = JSON.parse(localStorage.getItem('formData')) || [];

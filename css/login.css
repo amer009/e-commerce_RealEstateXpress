@@ -87,6 +87,19 @@ body {
     background-color: #fff;
     color: #43B581;
   }
+
+  .form-group {
+    position: relative;
+}
+
+  .form-group i {
+    position: absolute;
+    top: 65%;
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+}
   
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
