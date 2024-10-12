@@ -81,11 +81,20 @@
 
   .form-group i {
     position: absolute;
-    top: 65%;
+    top: 40%;
     right: 30px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #aaa;
+}
+
+.form-group span {
+  position: absolute;
+  top: 65%;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
 }
 
 

@@ -69,16 +69,27 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     if (user) {
         // Desencriptar la contraseña almacenada
         const passwordDesencriptada = CryptoJS.AES.decrypt(user.password, 'passwordEncrypted').toString(CryptoJS.enc.Utf8);
-        if (passwordDesencriptada === password) {
+        
+        // Si el correo es correcto pero la contraseña es incorrecta
+        if (passwordDesencriptada !== password) {
             Swal.fire({
-                title: '¡Inicio de sesión exitoso!',
-                text: 'Serás redirigido a la página de inicio.',
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            }).then(() => {
-                window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
+                title: 'Error',
+                text: 'Contraseña incorrecta.',
+                icon: 'error',
+                confirmButtonText: 'Intentar de nuevo'
             });
+            return; // Salimos de la función si la contraseña es incorrecta
         }
+
+        // Si tanto el correo como la contraseña son correctos
+        Swal.fire({
+            title: '¡Inicio de sesión exitoso!',
+            text: 'Serás redirigido a la página de inicio.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        }).then(() => {
+            window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
+        });
     } else {
         console.log("Usuario no encontrado o credenciales inválidas");
         Swal.fire({
@@ -87,12 +98,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             icon: 'error',
             confirmButtonText: 'Intentar de nuevo'
         });
-        //errorMessage.textContent = 'Email o contraseña inválidos.';
     }
 });
 
 // Evento para alternar la visibilidad de la contraseña
-
 const togglePassword = document.getElementById('togglePassword');
 togglePassword.addEventListener('click', function () {
     const passwordField = document.getElementById('password');
