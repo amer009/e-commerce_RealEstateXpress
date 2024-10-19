@@ -1,0 +1,287 @@
+
+
+/* Paleta de colores */
+:root {
+    --color1: #FFC107;
+    --color2: #FFEB3B;
+    --color3: #CC29E8;
+    --color4: #795548;
+    --color5: #4CAF50;
+    --color6: #B2FF59;
+    --color7: white;
+    --color8: black;
+    --color9: #0000001a; /* Sombras */
+    --color10: #000000b3; /* Fondo negro con transparencia */
+    --color11: #5EA51D;
+    --color12: #FD5C64;
+}
+
+/* Estilos de texto */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color7);
+    color: var(--color8);
+    padding-top: 60px;
+}
+
+/*h1 {
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--color5);
+}*/
+
+h2 {
+    font-size: 55px!important;
+}
+h4{
+    font-size: 35px !important;
+}
+
+p {
+    font-size: 17px;
+}
+
+/* Estilos para el Acordeón de Preguntas Frecuentes */
+.accordion-button {
+    background-color: var(--color5)!important;
+    color: var(--color8)!important;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 2px solid black; /* Añade borde negro por defecto */
+    outline: none!important; /* Elimina el borde por defecto */
+    box-shadow: none!important;
+
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--color6);
+    color: var(--color8);
+}
+
+.accordion-button:focus {
+
+    outline: none;
+    border: 2px solid black; /* Borde negro cuando está enfocado */
+    box-shadow: none!important;
+}
+
+.accordion-body {
+    background-color: var(--color7)!important;
+    color: var(--color8)!important;
+}
+.accordion-button:active {
+    border: 2px solid black; /* Asegura que el borde se mantenga negro al presionar */
+    box-shadow: none!important;
+    outline: none!important;
+}
+/* Estilos de Botón */
+.btn {
+    background-color: var(--color5);
+    color: var(--color7);
+    border: none var(--color5)!important;
+    padding: 8px 8px;
+    text-decoration: none;
+    transition: background-color 0.5s, color 0.5s;
+    width: 132px;
+}
+
+.btn:hover {
+    background-color: var(--color8);
+    color: #ffffff;
+    border-color: var(--color8);
+}
+.btn-contact {
+    background-color: var(--color5); /* Usas el color definido en tus variables */
+    color: var(--color7); /* Mantienes el color de texto según tu configuración */
+    border: none; /* Elimina el borde */
+    padding: 8px 8px!important; /* Usas el mismo padding que en .btn */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 0!important; /* Aquí ajustas los bordes redondeados */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transición suave */
+    
+}
+
+.btn-contact:hover {
+    background-color: var(--color8); /* Cambia el fondo al color definido en la variable */
+    color: #ffffff; /* Cambia el texto a blanco al pasar el ratón */
+    border-color: var(--color8); /* Ajusta el color del borde si es necesario */
+}
+
+
+
+
+
+
+/*---------------------------------Seccion del nav----------------------------------------*/
+/* Estilo general para la navbar */
+.navbar {
+    background-color: black;
+    padding: 0;
+}
+
+/* Estilo para los enlaces de la navbar */
+.navbar-nav .nav-link {
+    padding: 8px 15px;
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #B2FF59 !important;
+}
+
+/* Estilo especial para el botón "Contáctanos" */
+.navbar-nav .highlight {
+    background-color: #4CAF50;
+    padding: 8px 20px;
+}
+
+.navbar-nav .highlight:hover {
+    background-color: #000;
+}
+
+/* Estilo para los íconos */
+.navbar-nav .nav-link i {
+    font-size: 18px;
+    color: white;
+}
+
+.navbar-nav .nav-link i:hover {
+    color: #B2FF59;
+}
+
+.navbar-brand:hover {
+    color: #B2FF59 !important;
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* El logo y los enlaces deben centrarse en pantallas pequeñas */
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+}
+/*------------------------------Fin Secciones del nav-------------------------------------*/
+
+
+
+
+
+
+/* ------------------------------Secciones del footer------------------------------------ */
+/* Contenedor principal del footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px;
+  }
+  
+  /* Títulos de las secciones del footer */
+  .footer-section h5 {
+    margin-bottom: 25px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  /* Estilo para los enlaces del footer */
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--color5);
+  }
+  
+  /* Estilo para los iconos de redes sociales */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons li {
+    list-style: none;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  /* ----------------------------fin Secciones del footer---------------------------------- */
