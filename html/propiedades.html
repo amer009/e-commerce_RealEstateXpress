@@ -23,6 +23,9 @@
             
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item" id="greeting-item"> 
+                        <span id="greeting-message"></span>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/html/inicio.html">Inicio</a>
                     </li>
@@ -37,7 +40,12 @@
                     </li>
 
                     <div class="icon-container">
-                        <li class="nav-item">
+                        <li class="nav-item" id="logout-icon" style="display: none;">
+                            <a class="nav-link" id="logoutButton">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="login-icon">
                             <a class="nav-link" href="/html/login.html">
                                 <i class="fas fa-user"></i>
                             </a>
@@ -550,73 +558,72 @@
     </div>
 </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <!-- Sección de Enlaces Legales -->
-            <div class="footer-section">
-                <h5>Soporte</h5>
-                <ul>
-                    <li>
-                        <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-question-circle"></i> <a href="#support">Soporte</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-question-circle"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
-                    </li>
-                </ul>
-            </div>
-    
-            <!-- Sección de Información de Contacto -->
-            <div class="footer-section">
-                <h5>Contáctanos</h5>
-                <ul>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:RealXpress@proyecto.com">RealXpress@proyecto.com</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:SoporteReal@proyecto.com">SoporteReal@proyecto.com</a>
-                    </li>
-                    <li>
-                      <i class="fas fa-users"></i>
-                      <a href="/html/asesores.html">Nuestros asesores</a>
-                    </li>
-                </ul>
-            </div>
-    
-            <!-- Sección de Redes Sociales y Promociones -->
-            <div class="footer-section">
-                <h5>Síguenos en Redes Sociales</h5>
-                <p>Síguenos para recibir las últimas promociones y novedades:</p>
-                <ul class="social-icons">
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/realstatexpress/">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/Realstatexpress">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/@realestatexpress-z8h">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<footer>
+    <div class="footer-container">
+        <!-- Sección de Enlaces Legales -->
+        <div class="footer-section">
+            <h5>Soporte</h5>
+            <ul>
+                <li>
+                    <i class="fas fa-search"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i> <a href="#support">Términos y condiciones</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
+                </li>
+            </ul>
         </div>
-    </footer>
+
+        <!-- Sección de Información de Contacto -->
+        <div class="footer-section">
+            <h5>Contáctanos</h5>
+            <ul>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:realestatexpress2024@gmail.com">realestatexpress2024@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="/html/contactanos.html">Formulario de contacto</a>
+                </li>
+                <li>
+                  <i class="fas fa-users"></i>
+                  <a href="/html/asesores.html">Nuestros asesores</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sección de Redes Sociales y Promociones -->
+        <div class="footer-section">
+            <h5>Síguenos en Redes Sociales</h5>
+            <p>Síguenos para recibir las últimas promociones y novedades:</p>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/realstatexpress/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/Realstatexpress">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@realestatexpress-z8h">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
 
     <!-- Enlazar tu archivo scripts.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

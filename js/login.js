@@ -1,10 +1,17 @@
 // Función para activar el enlace del navbar correspondiente a la vista actual
 function activateCurrentNavLink() {
-    const navbarLinks = document.querySelectorAll('.navbar-links .navtex');
+    // Obtener todos los enlaces del navbar
+    const navbarLinks = document.querySelectorAll('.nav-link');
+
+    // Obtener el path actual de la URL (sin la parte del dominio)
     const currentPath = window.location.pathname.split('/').pop();
 
+    // Recorrer cada enlace del navbar y verificar si el href coincide con la ruta actual
     navbarLinks.forEach(link => {
+        // Obtener solo el último fragmento del href del enlace
         const linkPath = link.getAttribute('href').split('/').pop();
+        
+        // Si coincide con la ruta actual, agregar la clase 'active' y cambiar el color
         if (linkPath === currentPath) {
             link.classList.add('active');
             link.style.color = '#4CAF50'; // Cambia el color a verde
@@ -14,8 +21,8 @@ function activateCurrentNavLink() {
         }
     });
 }
+window.addEventListener('load', activateCurrentNavLink);
 
-window.onload = activateCurrentNavLink;
 
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -51,6 +58,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
     // Verificar si el correo y la contraseña son del administrador
     if (email === adminEmail && password === adminPassword) {
+        localStorage.setItem('userEmail', email);
         console.log("Correo y contraseña de administrador detectados");
         Swal.fire({
             title: '¡Inicio de sesión como administrador!',
@@ -88,6 +96,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             icon: 'success',
             confirmButtonText: 'Aceptar'
         }).then(() => {
+            localStorage.setItem('loggedInUser', email);
             window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
         });
     } else {
