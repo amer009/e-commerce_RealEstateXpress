@@ -107,7 +107,6 @@ body {
   background-color: black;
   padding: 0;
 }
-
 /* Estilo para los enlaces de la navbar */
 .navbar-nav .nav-link.active {
   color: #B2FF59 !important;
@@ -198,6 +197,7 @@ body {
   }
 }
 /*------------------------------Fin Secciones del nav-------------------------------------*/
+
 
 /* ------------------------------Secciones del footer------------------------------------ */
 /* Contenedor principal del footer */
