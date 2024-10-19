@@ -100,6 +100,51 @@ body {
     cursor: pointer;
     color: #aaa;
 }
+.login-form button:focus {
+  outline: none!important;
+  background-color: #4CAF50; /* Mantén el color verde */
+  color: white; /* Mantén el texto blanco */
+}
+
+.login-form button:active {
+  background-color: #4CAF51!important; /* Mantén el color verde también al hacer clic */
+  color: white; /* Mantén el texto blanco */
+  border: none; /* Evita cualquier borde azul predeterminado */
+}
+input {
+  outline: none !important; /* Eliminar cualquier outline por defecto */
+  border: 1px solid #ccc; /* Borde por defecto gris claro */
+}
+
+input:focus {
+  outline: none !important; /* Eliminar el outline de foco */
+  border: 2px solid black !important; /* Aplicar un borde negro al estar en foco */
+  box-shadow: none !important; /* Eliminar cualquier sombra */
+  -webkit-box-shadow: none !important; /* Eliminar sombra en navegadores Webkit */
+  -moz-box-shadow: none !important; /* Eliminar sombra en navegadores Mozilla */
+}
+/* Para Chrome, Safari y navegadores Webkit (elimina el color azul de auto-relleno) */
+input:-webkit-autofill {
+  background-color: white !important;
+  border: 2px solid black !important; /* Borde negro */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Mantén el fondo blanco */
+  box-shadow: 0 0 0px 1000px white inset !important; /* Mantén el fondo blanco */
+}
+
+/* Estilos generales para todos los campos */
+input {
+  background-color: white !important; /* Fondo blanco por defecto */
+  border: 1px solid #000; /* Borde negro por defecto */
+  outline: none; /* Eliminar el borde del navegador */
+}
+
+/* Cuando el campo está en foco */
+input:focus {
+  background-color: white !important; /* Mantener fondo blanco */
+  border: 2px solid black; /* Borde negro al enfocar */
+}
+
+
   
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */

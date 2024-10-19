@@ -97,6 +97,52 @@
   color: #aaa;
 }
 
+.register-form button:focus {
+  outline: none!important;
+  background-color: #4CAF50; /* Mantén el color verde */
+  color: white; /* Mantén el texto blanco */
+}
+/* Estilo general para los campos de entrada */
+input {
+  outline: none !important; /* Elimina cualquier outline predeterminado */
+  background-color: white !important; /* Fondo blanco siempre */
+  border: 1px solid #ccc; /* Define un borde gris claro por defecto */
+}
+
+/* Estilos para los campos cuando están en foco */
+input:focus {
+  background-color: white !important; /* Mantener fondo blanco al estar enfocado */
+  border: 2px solid black !important; /* Borde negro al enfocarse */
+  box-shadow: none !important; /* Elimina cualquier sombra */
+  -webkit-box-shadow: none !important; /* Elimina la sombra en navegadores Webkit (Chrome/Safari) */
+  -moz-box-shadow: none !important; /* Elimina la sombra en navegadores Mozilla */
+}
+
+/* Para Chrome y navegadores Webkit (Safari), si hay auto-relleno */
+input:-webkit-autofill {
+  border: 2px solid black !important; /* Aplica el borde negro en campos auto-rellenados */
+  background-color: white !important; /* Mantener fondo blanco en auto-relleno */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Elimina el fondo azul en autofill */
+}
+
+/* Mantener el fondo blanco en auto-rellenado para Firefox */
+input:-moz-autofill {
+  background-color: white !important; /* Fondo blanco en auto-relleno */
+  border: 2px solid black !important;
+  box-shadow: 0 0 0px 1000px white inset !important; /* Elimina el efecto azul en autofill */
+}
+
+
+
+/* Estilo para el botón cuando se hace clic */
+.register-form button:active {
+  background-color: #4CAF51 !important; /* Mantén el color verde también al hacer clic */
+  color: white; /* Mantén el texto blanco */
+  border: none; /* Evita cualquier borde azul predeterminado */
+}
+
+
+
 
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
