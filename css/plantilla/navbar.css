@@ -60,6 +60,17 @@
     align-items: center;
 }
 
+#greeting-item {
+    padding: 8px 15px;
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
     /* El logo y los enlaces deben centrarse en pantallas pequeñas */

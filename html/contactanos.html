@@ -21,6 +21,9 @@
             
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item" id="greeting-item"> 
+                        <span id="greeting-message"></span>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/html/inicio.html">Inicio</a>
                     </li>
@@ -35,7 +38,12 @@
                     </li>
 
                     <div class="icon-container">
-                        <li class="nav-item">
+                        <li class="nav-item" id="logout-icon" style="display: none;">
+                            <a class="nav-link" id="logoutButton">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="login-icon">
                             <a class="nav-link" href="/html/login.html">
                                 <i class="fas fa-user"></i>
                             </a>

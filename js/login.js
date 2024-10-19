@@ -95,6 +95,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             icon: 'success',
             confirmButtonText: 'Aceptar'
         }).then(() => {
+            localStorage.setItem('loggedInUser', email);
             window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
         });
     } else {

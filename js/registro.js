@@ -24,7 +24,6 @@ function activateCurrentNavLink() {
 window.addEventListener('load', activateCurrentNavLink);
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     var formulario = document.getElementById('miFormulario');
     var togglePassword = document.getElementById('togglePassword');
@@ -133,11 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.toggle('fa-eye');
     });
 });
-
-
-
-
-
 
 
 
