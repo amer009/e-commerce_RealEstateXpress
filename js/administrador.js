@@ -46,3 +46,20 @@ document.getElementById('adminForm').addEventListener('submit', function(e) {
         document.getElementById('adminForm').reset();
     });
 });
+
+const adminEmail = 'realestatexpress2024@gmail.com';
+
+// Función para verificar el acceso
+function verificarAccesoAdmin() {
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (userEmail !== adminEmail) {
+        // Redirigir a una página de acceso denegado o a la página de inicio
+        window.location.href = '/html/acceso_denegado.html'; // Cambia la ruta según tu estructura de carpetas
+    }
+}
+window.addEventListener('load', function() {
+    verificarAccesoAdmin();
+    // Aquí puedes agregar cualquier otra inicialización necesaria para la página de administración
+});
+

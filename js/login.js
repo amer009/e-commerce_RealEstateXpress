@@ -58,6 +58,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
     // Verificar si el correo y la contraseña son del administrador
     if (email === adminEmail && password === adminPassword) {
+        localStorage.setItem('userEmail', email);
         console.log("Correo y contraseña de administrador detectados");
         Swal.fire({
             title: '¡Inicio de sesión como administrador!',
