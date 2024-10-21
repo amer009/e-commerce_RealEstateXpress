@@ -58,59 +58,6 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 // Llamar a la función al cargar la página
 window.onload = activateCurrentNavLink;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const properties = JSON.parse(localStorage.getItem('properties')) || [];
-    const propertyContainer = document.getElementById('propertyContainer');
-
-    // Limpiar el contenedor antes de agregar nuevas propiedades
-    propertyContainer.innerHTML = '';
-
-    properties.forEach(function(property) {
-        const propertyCard = `
-            <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Ajusta el margen como sea necesario -->
-                <div class="card">
-                    <div class="property-img">
-                        <img src="${property.image}" alt="Imagen de la propiedad ${property.name}" width="100%">
-                        <div class="price">
-                            <p>$${property.price}</p>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">${property.name}<br>${property.location}</h3>
-                        <div class="row">
-                            <div class="col-5">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span class="location-text">${property.location}</span>
-                            </div>
-                            <div class="col-7">
-                                <span class="status-text">${property.status}</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                <i class="bi bi-bounding-box-circles"></i>
-                                <span class="details-text">${property.acres} Acres</span>
-                            </div>
-                            <div class="col-7">
-                                <i class="bi bi-rulers"></i>
-                                <span class="details-text">${property.sqft} sq. ft.</span> 
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="d-flex mt-3">
-                                <a href="#" class="btn btn-primary flex-fill">Detalles</a>
-                                <a href="#" class="btn btn-secondary flex-fill add-to-cart" data-property="${property.name}" data-price="$${property.price}" style="min-width: 150px;">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        propertyContainer.innerHTML += propertyCard;
-    });
-});
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
     const loggedInUserEmail = localStorage.getItem('loggedInUser');
@@ -145,4 +92,59 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Función para renderizar las propiedades desde el LocalStorage
+function renderizarPropiedades() {
+    const propertyContainer = document.getElementById('propertyContainer');
+    propertyContainer.innerHTML = '';
 
+    const properties = JSON.parse(localStorage.getItem('properties')) || [];
+
+    propiedades.forEach((propiedad) => {
+        const propiedadCard = `
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <div class="property-img">
+                        <img src="${property.image}" alt="Imagen de la propiedad ${property.name}" width="100%">
+                        <div class="price">
+                            <p>${property.price}</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">${property.name}<br>${property.location}</h3>
+                        <div class="row">
+                            <div class="col-5">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="location-text">${property.location.split(',')[0]}</span>
+                            </div>
+                            <div class="col-7">
+                                <span class="status-text">${property.status}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <i class="bi bi-bounding-box-circles"></i>
+                                <span class="details-text">${property.acres} Acres</span>
+                            </div>
+                            <div class="col-7">
+                                <i class="bi bi-rulers"></i>
+                                <span class="details-text">${property.sqft} sq. ft.</span> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex mt-3">
+                                <a href="#" class="btn btn-primary flex-fill">Detalles</a>
+                                <a href="#" class="btn btn-secondary flex-fill add-to-cart" data-property="${property.name}" data-price="${propiedad.price}" style="min-width: 150px;">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Añadir la propiedad al contenedor
+        propiedadesContainer.innerHTML += propiedadCard;
+    });
+}
+
+// Ejecutar la función al cargar la página
+document.addEventListener('DOMContentLoaded', renderizarPropiedades);
