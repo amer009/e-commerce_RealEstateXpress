@@ -2,7 +2,7 @@ document.getElementById('adminForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Obtener valores de los campos
-    const name = document.getElementById('propertyName').value;
+    const title = document.getElementById('propertyName').value;
     const price = document.getElementById('propertyPrice').value;
     const location = document.getElementById('propertyLocation').value;
     const status = document.getElementById('propertyStatus').value;
@@ -11,7 +11,7 @@ document.getElementById('adminForm').addEventListener('submit', function(e) {
     const image = document.getElementById('propertyImage').files[0];
 
     // Verificar si todos los campos están completos
-    if (!name || !price || !location || !status || !acres || !sqft || !image) {
+    if (!title || !price || !location || !status || !acres || !sqft || !image) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -20,31 +20,39 @@ document.getElementById('adminForm').addEventListener('submit', function(e) {
         return;
     }
 
-    const newProperty = {
-        name: name,
-        price: price,
-        location: location,
-        status: status,
-        acres: acres,
-        sqft: sqft,
-        image: URL.createObjectURL(image)
+    const reader = new FileReader();
+    
+    // Esperar a que el FileReader termine de leer la imagen
+    reader.onloadend = function() {
+        const newProperty = {
+            title: title,
+            price: price,
+            location: location,
+            status: status,
+            acres: acres,
+            sqft: sqft,
+            image: reader.result // Aquí ya tenemos la imagen en base64
+        };
+
+        // Guardar en localStorage
+        let properties = JSON.parse(localStorage.getItem('properties')) || [];
+        properties.push(newProperty);
+        localStorage.setItem('properties', JSON.stringify(properties));
+
+        // Mostrar alerta de éxito con SweetAlert
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'Propiedad añadida exitosamente!',
+            confirmButtonText: 'Aceptar'
+        }).then(() => {
+            // Limpiar el formulario después de que el usuario cierre la alerta de éxito
+            document.getElementById('adminForm').reset();
+        });
     };
 
-    // Guardar en localStorage
-    let properties = JSON.parse(localStorage.getItem('properties')) || [];
-    properties.push(newProperty);
-    localStorage.setItem('properties', JSON.stringify(properties));
-
-    // Mostrar alerta de éxito con SweetAlert
-    Swal.fire({
-        icon: 'success',
-        title: 'Éxito',
-        text: 'Propiedad añadida exitosamente!',
-        confirmButtonText: 'Aceptar'
-    }).then(() => {
-        // Limpiar el formulario después de que el usuario cierre la alerta de éxito
-        document.getElementById('adminForm').reset();
-    });
+    // Leer la imagen como una URL base64
+    reader.readAsDataURL(image);
 });
 
 const adminEmail = 'realestatexpress2024@gmail.com';

@@ -23,92 +23,117 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
+// Función para manejar el clic en el botón "Añadir al carrito"
+function addToCart(event) {
+    // Verifica si el clic fue en un botón "Añadir al carrito"
+    if (event.target.classList.contains('add-to-cart')) {
+        console.log('Botón Añadir al carrito clickeado');
+        event.preventDefault(); // Evitar el comportamiento por defecto del enlace
 
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function (event) {
-        event.preventDefault(); // No permitir que se ejecute el href = #.
+        const button = event.target; // Referencia al botón clickeado
 
-        // Obtener los datos de la propiedad y precio desde los atributos 'data-*'
-        const property = this.getAttribute('data-property');
-        const price = this.getAttribute('data-price');
+        // Encontrar el contenedor 'card' más cercano
+        const card = button.closest('.card');
 
-        // Crear un objeto con la propiedad y el precio
+        // Extraer los datos de la propiedad desde el DOM
+        const image = card.querySelector('.property-img img').getAttribute('src');
+        const price = card.querySelector('.price p').textContent.trim();
+        const title = card.querySelector('.card-title').textContent.trim();
+        const location = card.querySelector('.location-text').textContent.trim();
+        const status = card.querySelector('.status-text').textContent.trim();
+        const size = card.querySelectorAll('.details-text')[0].textContent.trim();
+        const area = card.querySelectorAll('.details-text')[1].textContent.trim();
+
+        // Crear un objeto con los datos de la propiedad
         const propertyData = {
-            property: property,
-            price: price
+            title: title,
+            price: price,
+            image: image,
+            location: location,
+            status: status,
+            size: size,
+            area: area,
         };
 
-        // Verificar si ya existe un carrito en el Local Storage
+        // Obtener el carrito del Local Storage o inicializarlo
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Añadir la propiedad al carrito
-        cart.push(propertyData);
+        cart.push(propertyData); // Agregar la nueva propiedad al carrito
 
         // Guardar el carrito actualizado en el Local Storage
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        // Mostrar en la consola qué propiedad fue añadida
-        console.log('Propiedad añadida al carrito:', propertyData);
+        // Mostrar alerta de confirmación con SweetAlert
+        Swal.fire({
+            title: '¡Agregado!',
+            text: `Propiedad añadida al carrito: ${title} - Precio: ${price}`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+}
 
-        // O puedes mostrarlo con un alert
-        alert(`Propiedad añadida al carrito: ${property} - Precio: ${price}`);
-    });
-});
-
-// Llamar a la función al cargar la página
-window.onload = activateCurrentNavLink;
-
+// Agregar el manejador de eventos para el contenedor de propiedades
 document.addEventListener('DOMContentLoaded', function() {
     const properties = JSON.parse(localStorage.getItem('properties')) || [];
+    console.log('Propiedades cargadas:', properties); // Verificar las propiedades
     const propertyContainer = document.getElementById('propertyContainer');
 
     // Limpiar el contenedor antes de agregar nuevas propiedades
     propertyContainer.innerHTML = '';
 
+    // Generar las cards para cada propiedad
     properties.forEach(function(property) {
         const propertyCard = `
-            <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Ajusta el margen como sea necesario -->
-                <div class="card">
-                    <div class="property-img">
-                        <img src="${property.image}" alt="Imagen de la propiedad ${property.name}" width="100%">
-                        <div class="price">
-                            <p>$${property.price}</p>
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+            <div class="card">
+                <div class="property-img">
+                    <img src="${property.image}" alt="Imagen de la propiedad ${property.title}" width="100%">
+                    <div class="price">
+                        <p>$${property.price}</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">${property.title}</h3>
+                    <p class="location-text">${property.location}</p>
+                    <div class="row">
+                        <div class="col-5">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span class="location-text">${property.location}</span>
+                        </div>
+                        <div class="col-7">
+                            <span class="status-text">${property.status}</span>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title">${property.name}<br>${property.location}</h3>
-                        <div class="row">
-                            <div class="col-5">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span class="location-text">${property.location}</span>
-                            </div>
-                            <div class="col-7">
-                                <span class="status-text">${property.status}</span>
-                            </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <i class="bi bi-bounding-box-circles"></i>
+                            <span class="details-text">${property.acres} Acres</span>
                         </div>
-                        <div class="row">
-                            <div class="col-5">
-                                <i class="bi bi-bounding-box-circles"></i>
-                                <span class="details-text">${property.acres} Acres</span>
-                            </div>
-                            <div class="col-7">
-                                <i class="bi bi-rulers"></i>
-                                <span class="details-text">${property.sqft} sq. ft.</span> 
-                            </div>
+                        <div class="col-7">
+                            <i class="bi bi-rulers"></i>
+                            <span class="details-text">${property.sqft} sq. ft.</span> 
                         </div>
-                        <div class="row">
-                            <div class="d-flex mt-3">
-                                <a href="#" class="btn btn-primary flex-fill">Detalles</a>
-                                <a href="#" class="btn btn-secondary flex-fill add-to-cart" data-property="${property.name}" data-price="$${property.price}" style="min-width: 150px;">Añadir al carrito</a>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="d-flex mt-3">
+                            <a href="#" class="btn btn-primary flex-fill">Detalles</a>
+                            <a href="#" class="btn btn-secondary flex-fill add-to-cart" style="min-width: 150px;">Añadir al carrito</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         `;
-        propertyContainer.innerHTML += propertyCard;
+        propertyContainer.innerHTML += propertyCard; // Agregar la card al contenedor
+    });
+
+    // Asignar el evento de clic a los botones "Añadir al carrito" generados dinámicamente
+    const dynamicAddToCartButtons = document.querySelectorAll('.add-to-cart');
+    dynamicAddToCartButtons.forEach(button => {
+        button.addEventListener('click', addToCart);
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -144,5 +169,4 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "/html/propiedades.html";
     });
 });
-
 
