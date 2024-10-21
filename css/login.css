@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Roboto', sans-serif !important;
     margin: 0;
@@ -16,14 +17,13 @@ body {
     padding: 60px;
     display: flex;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
   }
   .login-form h2 {
     margin-bottom: 30px;
-    color:#4CAF50;;
+    color: #4caf50 !important;;
   }
   .login-form input {
     margin-bottom: 20px;
@@ -32,22 +32,7 @@ body {
     border: 1px solid #ccc;
     width: 100%;
   }
-  .login-form button {
-    padding: 15px;
-    border-radius: 0;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .login-form button:hover {
-    background-color: white;
-    color: #4CAF50;
-    border: 1px solid #4CAF50;
-
-    }
+  
   
   .login-form .social-icons {
     display: flex;
@@ -61,11 +46,10 @@ body {
     text-decoration: none;
   }
   .login-right {
-    background-color: #4CAF50 !important;
+    background-color: #4CAF50 ;
     align-items: center;
     color: white;
     padding: 60px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,17 +60,21 @@ body {
     margin-bottom: 20px;
   }
   .login-right a {
+    background-color: #4CAF50; /* Color de fondo */
     color: white;
-    background-color: #4CAF50;
-    border: 1px solid white;
+    border: none;
     padding: 10px 30px;
-    border-radius: 0;
     text-decoration: none;
-  }
+    border-radius: 0;
+    font-size: 16px;
+    border: 1px solid white; /* Mantener un borde blanco */
+    cursor: pointer;
+}
   .login-right a:hover {
-    background-color: #fff;
-    color: #43B581;
-  }
+    background-color: white!important;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
 
   .form-group {
     position: relative;
@@ -102,56 +90,99 @@ body {
 }
 .login-form button:focus {
   outline: none!important;
-  background-color: #4CAF50; /* Mantén el color verde */
-  color: white; /* Mantén el texto blanco */
+  background-color: #4CAF50!important; /* Mantén el color verde */
+  color: white!important; /* Mantén el texto blanco */
 }
 
 .login-form button:active {
-  background-color: #4CAF51!important; /* Mantén el color verde también al hacer clic */
+  background-color: #4caf50!important; /* Mantén el color verde también al hacer clic */
   color: white; /* Mantén el texto blanco */
   border: none; /* Evita cualquier borde azul predeterminado */
 }
-input {
-  outline: none !important; /* Eliminar cualquier outline por defecto */
-  border: 1px solid #ccc; /* Borde por defecto gris claro */
+
+body .login-container .login-right {
+  background-color: #4CAF50 !important;
 }
 
-input:focus {
-  outline: none !important; /* Eliminar el outline de foco */
-  border: 2px solid black !important; /* Aplicar un borde negro al estar en foco */
-  box-shadow: none !important; /* Eliminar cualquier sombra */
-  -webkit-box-shadow: none !important; /* Eliminar sombra en navegadores Webkit */
-  -moz-box-shadow: none !important; /* Eliminar sombra en navegadores Mozilla */
-}
-/* Para Chrome, Safari y navegadores Webkit (elimina el color azul de auto-relleno) */
-input:-webkit-autofill {
-  background-color: white !important;
-  border: 2px solid black !important; /* Borde negro */
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Mantén el fondo blanco */
-  box-shadow: 0 0 0px 1000px white inset !important; /* Mantén el fondo blanco */
-}
-
-/* Estilos generales para todos los campos */
+/* Estilo general para los inputs */
 input {
   background-color: white !important; /* Fondo blanco por defecto */
-  border: 1px solid #000; /* Borde negro por defecto */
-  outline: none; /* Eliminar el borde del navegador */
+  border: 1px solid #ccc; /* Borde gris claro por defecto */
+  outline: none !important; /* Elimina cualquier outline */
+  padding: 10px; /* Padding interno */
+  width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+  border-radius: 4px; /* Añadir esquinas ligeramente redondeadas si deseas */
+  box-shadow: none !important; /* Eliminar cualquier sombra */
 }
 
-/* Cuando el campo está en foco */
+/* Cuando el campo está en foco (al hacer clic en el input) */
 input:focus {
-  background-color: white !important; /* Mantener fondo blanco */
-  border: 2px solid black; /* Borde negro al enfocar */
+  border: 2px solid black !important; /* Borde negro cuando está enfocado */
+  background-color: white !important; /* Mantener el fondo blanco al enfocar */
+  outline: none !important; /* Quitar el borde predeterminado */
+  box-shadow: none !important; /* Eliminar cualquier sombra de foco */
+}
+
+/* Para Chrome, Safari y navegadores Webkit (elimina el color azul de auto-relleno) */
+input:-webkit-autofill {
+  background-color: white !important; /* Mantener el fondo blanco al auto-rellenar */
+  color: black !important; /* Texto negro para autofill */
+  border: 1px solid black !important; /* Borde negro en autofill */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Fondo blanco para autofill */
+  box-shadow: 0 0 0px 1000px white inset !important; /* Fondo blanco para autofill */
+}
+
+/* Para Firefox (elimina el color azul de auto-relleno) */
+input:-moz-autofill {
+  background-color: white !important; /* Fondo blanco para autofill en Firefox */
+  color: black !important; /* Texto negro para autofill */
+  border: 1px solid black !important; /* Borde negro para autofill */
+}
+/* Estilos específicos para el botón de login */
+.btn-login {
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border-radius: 0; /* Sin bordes redondeados */
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Suavizar la transición */
+}
+
+/* Hover para el botón */
+
+
+/* Focus y active para mantener el estilo cuando se hace clic */
+.btn-login:focus, .btn-login:active {
+  outline: none!important; /* Elimina el borde por defecto */
+  background-color: #4CAF51 !important; /* Verde un poco más oscuro */
+  color: white; /* Mantén el texto en blanco */
+  transform: none !important;
+}
+.btn-register {
+  background-color: white !important;
+  color: #4CAF50 !important;
+  border: 0  white !important;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 0!important;
 }
 
 
-  
+
+
+
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
 .navbar {
   background-color: black;
   padding: 0;
 }
+
 /* Estilo para los enlaces de la navbar */
 .navbar-nav .nav-link.active {
   color: #B2FF59 !important;
@@ -211,6 +242,17 @@ input:focus {
   align-items: center;
 }
 
+#greeting-item {
+  padding: 8px 15px;
+  color: white !important;
+  transition: color 0.3s ease;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   /* El logo y los enlaces deben centrarse en pantallas pequeñas */
@@ -242,6 +284,7 @@ input:focus {
   }
 }
 /*------------------------------Fin Secciones del nav-------------------------------------*/
+
 
 
 /* ------------------------------Secciones del footer------------------------------------ */
@@ -290,7 +333,7 @@ input:focus {
 }
 
 .footer-section ul li a:hover {
-  color: var(--color5);
+  color: var(--color5)!important;
 }
 
 /* Estilo para los iconos de redes sociales */

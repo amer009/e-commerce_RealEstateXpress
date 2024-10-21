@@ -94,39 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const passwordEncriptada = CryptoJS.AES.encrypt(password.value, 'passwordEncrypted').toString();
 
-        // Si todos los campos son válidos, procesar el formulario
-       // var formData = {
-         //   nombre: nombre.value,
-            //telefono: telefono.value,
-          //  email: email.value,
-          //  password: passwordEncriptada
-        //};
-
-       // var registros = JSON.parse(localStorage.getItem('formData')) || [];
-        //registros.push(formData);
-        //localStorage.setItem('formData', JSON.stringify(registros));
-
-       // Swal.fire({
-        //    title: '¡Éxito!',
-        //    text: 'Datos guardados en localStorage.',
-         //   icon: 'success',
-           // confirmButtonText: 'Aceptar'
-       // }).then(() => {
-            // Segunda alerta - Redirección a inicio de sesión
-           // Swal.fire({
-            //    title: '¡Redirección!',
-             //   text: 'Serás redirigido a la página de inicio de sesión.',
-              //  icon: 'info',
-              //  confirmButtonText: 'Aceptar'
-          //  }).then(() => {
-          //      window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
-          //  });
-       // });
-
-
-        //formulario.reset(); // Limpiar campos del formulario
-   // }, false);
-
+        
         // Obtener los registros previos de localStorage
         var registros = JSON.parse(localStorage.getItem('formData')) || [];
 

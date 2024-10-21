@@ -1,235 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/preguntas_frecuentes.css">
-    <link rel="stylesheet" href="/css/styles_general.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Preguntas Frecuentes</title>
-</head>
-<body>
-    <nav class="navbar navbar-dark fixed-top navbar-expand-md">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/html/inicio.html">RealEstateXpress</a>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/html/inicio.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/html/propiedades.html">Propiedades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/html/acerca.html">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link highlight" href="/html/contactanos.html">Contáctanos</a>
-                    </li>
 
-                    <div class="icon-container">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/login.html">
-                                <i class="fas fa-user"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/carrito.html">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
- <!-- Sección de Preguntas Frecuentes -->
- <div class="container-fluid ">
-    <h2 class="text-center "><strong>Preguntas Frecuentes</strong></h2>
-    <br>
-    <p class="text-center">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/preguntas_frecuentes.css">
+  <link rel="stylesheet" href="/css/styles_general.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Preguntas Frecuentes</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top navbar-expand-md">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/html/inicio.html">RealEstateXpress</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item" id="greeting-item">
+            <span id="greeting-message"></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/propiedades.html">Propiedades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/acerca.html">Acerca de Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link highlight" href="/html/contactanos.html">Contáctanos</a>
+          </li>
+
+          <div class="icon-container">
+            <li class="nav-item" id="logout-icon" style="display: none;">
+              <a class="nav-link" id="logoutButton">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+            </li>
+            <li class="nav-item" id="login-icon">
+              <a class="nav-link" href="/html/login.html">
+                <i class="fas fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/html/carrito.html">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="faq-title-container">
+    <div class="container text-center">
+      <h2 class="faq-title text-center"><strong>Preguntas Frecuentes</strong></h2>
+    </div>
+  </section>
+  <div class="container">
+<br><br>
+    <p class="text-center" style="text-align: justify !important;">
       Bienvenido a nuestra sección de Preguntas Frecuentes (FAQ), donde puedes encontrar respuestas a
-       algunas de las preguntas más comunes sobre la compra y venta de lotes en Florida. Sabemos que invertir
-        en bienes raíces puede ser un proceso complejo, y estamos aquí para ayudarte en cada paso del camino.
-  </p>
-  <p class="text-center">
-      En esta sección, encontrarás respuestas a preguntas sobre cómo empezar a invertir en lotes, qué aspectos 
-      legales debes considerar, entre otras.
-  </p>
-  <p class="text-center">
-      Si no encuentras la respuesta a tu pregunta aquí, no dudes en contactarnos. Estaremos encantados de
-       proporcionarte la información que necesites para tomar la mejor decisión de inversión.
-  </p>
+      algunas de las preguntas más comunes sobre la compra y venta de lotes en Florida. Sabemos que invertir
+      en bienes raíces puede ser un proceso complejo, y estamos aquí para ayudarte en cada paso del camino.
+      En esta sección, encontrarás respuestas a preguntas sobre cómo empezar a invertir en lotes, qué aspectos
+      legales debes considerar, entre otras.Si no encuentras la respuesta a tu pregunta aquí, no dudes en
+      contactarnos. Estaremos encantados de
+      proporcionarte la información que necesites para tomar la mejor decisión de inversión.
+    </p>
+
+
     <div class="accordion" id="faqAccordion">
       <!-- Pregunta 1 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
             ¿Cuáles son los tamaños de los lotes disponibles?
           </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Ofrecemos lotes en una variedad de tamaños, desde 0.25 hasta 5 acres, dependiendo de la ubicación y la comunidad. Para información específica sobre el tamaño de los lotes en tu área de interés, consulta con uno de nuestros representantes.
+            Ofrecemos lotes en una variedad de tamaños, desde 0.25 hasta 5 acres, dependiendo de la ubicación y la
+            comunidad.
           </div>
         </div>
       </div>
-      
       <!-- Pregunta 2 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             ¿Cuáles son los requisitos para comprar un lote?
           </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Para comprar un lote, necesitas proporcionar una identificación válida, información financiera, y, en algunos casos, una carta de preaprobación de un banco si planeas financiar la compra.
+            Para comprar un lote, necesitas proporcionar una identificación válida, información financiera, y, en
+            algunos casos, una carta de preaprobación.
           </div>
         </div>
       </div>
-      
       <!-- Pregunta 3 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             ¿Es posible financiar la compra de un lote?
           </button>
         </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            ¡Sí! Y lo mejor es que es financiamiento privado, 
-            únicamente necesitarás: Identificación, dirección de residencia (puede ser internacional),
-            la cuota inicial y los gastos de cierre.
+            ¡Sí! Ofrecemos financiamiento privado, únicamente necesitarás: identificación, dirección de residencia y
+            cuota inicial.
           </div>
         </div>
       </div>
-      
       <!-- Pregunta 4 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             ¿Puedo construir inmediatamente después de comprar un lote?
           </button>
         </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+          data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Sí, muchos de nuestros lotes están listos para la construcción. Sin embargo, puede haber regulaciones específicas o permisos que necesitarás obtener según la jurisdicción local. Te recomendamos trabajar con un constructor que conozca las regulaciones locales.
+            Sí, muchos de nuestros lotes están listos para la construcción, aunque puede haber regulaciones o permisos
+            específicos.
           </div>
         </div>
       </div>
-      
       <!-- Pregunta 5 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             ¿Qué servicios están disponibles en las propiedades (agua, electricidad, etc.)?
           </button>
         </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+          data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            La mayoría de nuestros lotes incluyen acceso a servicios como electricidad, agua y alcantarillado. Algunos lotes pueden requerir instalaciones adicionales, como pozos o sistemas sépticos. Proporcionamos información detallada sobre los servicios disponibles para cada lote.
+            La mayoría de nuestros lotes incluyen acceso a servicios como electricidad, agua y alcantarillado. Algunos
+            lotes pueden requerir instalaciones adicionales.
           </div>
         </div>
       </div>
-
       <!-- Pregunta 6 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingSix">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
             ¿Existen restricciones para el uso de los lotes?
           </button>
         </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+          data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Algunas áreas tienen restricciones de zonificación que limitan el tipo de construcción o actividades permitidas en el lote. Te recomendamos revisar las regulaciones locales o hablar con uno de nuestros representantes para asegurarte de que el lote cumple con tus necesidades.
+            Algunas áreas tienen restricciones de zonificación que limitan el tipo de construcción o actividades
+            permitidas. Es recomendable revisar las regulaciones locales.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            ¿Cuáles son los costos asociados con la compra de un lote?
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Además del precio de compra, deberás considerar los gastos de cierre, impuestos y posibles costos de
+            instalación de servicios públicos si no están disponibles.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEight">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            ¿Necesito contratar a un abogado para comprar un lote?
+          </button>
+        </h2>
+        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Aunque no es obligatorio, es altamente recomendable contratar a un abogado especializado en bienes raíces
+            para revisar los documentos y asegurarte de que todo esté en orden.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 9 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingNine">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+            ¿Es necesario realizar una inspección antes de comprar un lote?
+          </button>
+        </h2>
+        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            No es obligatorio, pero es recomendable para asegurarte de que el terreno esté en buenas condiciones y
+            cumpla con tus necesidades antes de la compra.
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="container text-center my-5">
     <h4 class="question-heading"><strong>¿Aún tienes alguna pregunta?</strong></h4>
     <a href="/html/contactanos.html" class="btn btn-contact">Contáctanos</a>
-</div>
-  
-      <br><br>
-    <footer>
-        <div class="footer-container">
-            <!-- Sección de Enlaces Legales -->
-            <div class="footer-section">
-                <h5>Soporte</h5>
-                <ul>
-                    <li>
-                        <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-question-circle"></i> <a href="#support">Soporte</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-question-circle"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
-                    </li>
-                </ul>
-            </div>
-    
-            <!-- Sección de Información de Contacto -->
-            <div class="footer-section">
-                <h5>Contáctanos</h5>
-                <ul>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:RealXpress@proyecto.com">RealXpress@proyecto.com</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:SoporteReal@proyecto.com">SoporteReal@proyecto.com</a>
-                    </li>
-                    <li>
-                    <i class="fas fa-users"></i>
-                    <a href="/html/asesores.html">Nuestros asesores</a>
-                    </li>
-                </ul>
-            </div>
-    
-            <!-- Sección de Redes Sociales y Promociones -->
-            <div class="footer-section">
-                <h5>Síguenos en Redes Sociales</h5>
-                <p>Síguenos para recibir las últimas promociones y novedades:</p>
-                <ul class="social-icons">
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/realstatexpress/">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/Realstatexpress">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/@realestatexpress-z8h">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
-    <script src="../js/contactanos.js"></script>
+  </div>
+
+
+
+  <br><br>
+  <footer>
+    <div class="footer-container">
+      <!-- Sección de Enlaces Legales -->
+      <div class="footer-section">
+        <h5>Soporte</h5>
+        <ul>
+          <li>
+            <i class="fas fa-search"></i> <a href="#faq">Preguntas Frecuentes (FAQ)</a>
+          </li>
+          <li>
+            <i class="fas fa-file-alt"></i> <a href="#support">Términos y condiciones</a>
+          </li>
+          <li>
+            <i class="fas fa-file-alt"></i> <a href="#privacy-policy">Política de Privacidad</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sección de Información de Contacto -->
+      <div class="footer-section">
+        <h5>Contáctanos</h5>
+        <ul>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:realestatexpress2024@gmail.com">realestatexpress2024@gmail.com</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="/html/contactanos.html">Formulario de contacto</a>
+          </li>
+          <li>
+            <i class="fas fa-users"></i>
+            <a href="/html/asesores.html">Nuestros asesores</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sección de Redes Sociales y Promociones -->
+      <div class="footer-section">
+        <h5>Síguenos en Redes Sociales</h5>
+        <p>Síguenos para recibir las últimas promociones y novedades:</p>
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61566860610657&is_tour_completed">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/realstatexpress/">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/Realstatexpress">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@realestatexpress-z8h">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="../js/preguntas_frecuentes.js"></script>
 </body>
+
 </html>

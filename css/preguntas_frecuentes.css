@@ -1,50 +1,30 @@
 
-
-/* Paleta de colores */
-:root {
-    --color1: #FFC107;
-    --color2: #FFEB3B;
-    --color3: #CC29E8;
-    --color4: #795548;
-    --color5: #4CAF50;
-    --color6: #B2FF59;
-    --color7: white;
-    --color8: black;
-    --color9: #0000001a; /* Sombras */
-    --color10: #000000b3; /* Fondo negro con transparencia */
-    --color11: #5EA51D;
-    --color12: #FD5C64;
+/* Ajustes para el contenedor del título FAQ */
+.faq-title-container {
+    background-image: url('../img/preguntas.jpeg'); /* Asegúrate de poner la ruta correcta de tu imagen */
+    filter: brightness(90%);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    max-width: 2000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-/* Estilos de texto */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--color7);
-    color: var(--color8);
-    padding-top: 60px;
-}
-
-/*h1 {
-    font-size: 80px;
+/* Estilo del título */
+.faq-title {
+    font-size: 36px; /* Ajusta el tamaño del texto del título */
     font-weight: bold;
-    color: var(--color5);
-}*/
-
-h2 {
-    font-size: 55px!important;
-}
-h4{
-    font-size: 35px !important;
+    margin: 0; /* Elimina cualquier margen que pueda afectar la visualización */
 }
 
-p {
-    font-size: 17px;
-}
 
 /* Estilos para el Acordeón de Preguntas Frecuentes */
 .accordion-button {
-    background-color: var(--color5)!important;
-    color: var(--color8)!important;
+    background-color: var(--color7)!important;
+    color: var(--color5)!important;
     font-weight: bold;
     transition: background-color 0.3s ease;
     border: 2px solid black; /* Añade borde negro por defecto */
@@ -120,6 +100,10 @@ p {
 }
 
 /* Estilo para los enlaces de la navbar */
+.navbar-nav .nav-link.active {
+    color: #B2FF59 !important;
+}
+
 .navbar-nav .nav-link {
     padding: 8px 15px;
     color: white !important;
@@ -172,6 +156,17 @@ p {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+#greeting-item {
+    padding: 8px 15px;
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
 }
 
 /* Ajuste para pantallas pequeñas */

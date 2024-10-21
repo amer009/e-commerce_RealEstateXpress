@@ -1,3 +1,6 @@
+
+
+
   body {
     font-family: 'Roboto', sans-serif !important;
     margin: 0;
@@ -18,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
   .register-form h2 {
     margin-bottom: 30px;
@@ -40,19 +44,13 @@
     width: 100%;
   }
 
-  .register-form button:hover {
-    background-color: white;
-    color: #4CAF50;
-    border: 1px solid #4CAF50;
-
-    }
+  
   
   .register-right {
     background-color: #4CAF50 !important;
     align-items: center;
     color: white;
     padding: 60px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +65,7 @@
     background-color: #4CAF50;
     border: 1px solid white;
     padding: 10px 30px;
-    border-radius: 0;
+    border-radius: 0!important;
     text-decoration: none;
   }
   .register-right a:hover {
@@ -142,14 +140,13 @@ input:-moz-autofill {
 }
 
 
-
-
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
 .navbar {
   background-color: black;
   padding: 0;
 }
+
 /* Estilo para los enlaces de la navbar */
 .navbar-nav .nav-link.active {
   color: #B2FF59 !important;
@@ -209,6 +206,17 @@ input:-moz-autofill {
   align-items: center;
 }
 
+#greeting-item {
+  padding: 8px 15px;
+  color: white !important;
+  transition: color 0.3s ease;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   /* El logo y los enlaces deben centrarse en pantallas pequeñas */
@@ -242,7 +250,9 @@ input:-moz-autofill {
 /*------------------------------Fin Secciones del nav-------------------------------------*/
 
 
-/* ------------------------------Secciones del footer------------------------------------ */
+
+
+/*------------------------------Secciones del footer------------------------------------ */
 /* Contenedor principal del footer */
 .footer-container {
   display: flex;
@@ -288,7 +298,7 @@ input:-moz-autofill {
 }
 
 .footer-section ul li a:hover {
-  color: var(--color5);
+  color: var(--color5)!important;
 }
 
 /* Estilo para los iconos de redes sociales */
