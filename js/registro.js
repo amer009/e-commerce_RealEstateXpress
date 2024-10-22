@@ -94,7 +94,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const passwordEncriptada = CryptoJS.AES.encrypt(password.value, 'passwordEncrypted').toString();
 
-        // Si todos los campos son válidos, procesar el formulario
+        
+        // Obtener los registros previos de localStorage
+        var registros = JSON.parse(localStorage.getItem('formData')) || [];
+
+        // Verificar si el correo ya está registrado (aquí agregamos la verificación)
+        var correoExistente = registros.find(function (registro) {
+            return registro.email === email.value;
+        });
+
+        if (correoExistente) {
+            // Si el correo ya existe, mostrar una alerta y no guardar el registro
+            Swal.fire({
+                title: 'Error',
+                text: 'Este correo ya está registrado.',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            });
+            return; // Salir de la función para no guardar el registro duplicado
+        }
+
+        // Si no existe duplicado, guardar el nuevo registro
         var formData = {
             nombre: nombre.value,
             telefono: telefono.value,
@@ -102,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
             password: passwordEncriptada
         };
 
-        var registros = JSON.parse(localStorage.getItem('formData')) || [];
         registros.push(formData);
         localStorage.setItem('formData', JSON.stringify(registros));
 
@@ -111,6 +130,16 @@ document.addEventListener('DOMContentLoaded', function () {
             text: 'Datos guardados en localStorage.',
             icon: 'success',
             confirmButtonText: 'Aceptar'
+        }).then(() => {
+            // Redirección a inicio de sesión
+            Swal.fire({
+                title: '¡Redirección!',
+                text: 'Serás redirigido a la página de inicio de sesión.',
+                icon: 'info',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
+            });
         });
 
         formulario.reset(); // Limpiar campos del formulario

@@ -1,0 +1,333 @@
+/*Paleta de colores*/
+:root {
+    --color1: #FFC107;
+    --color2: #FFEB3B;
+    --color3: #CC29E8;
+    --color4: #795548;
+    --color5: #4CAF50;
+    --color6: #B2FF59;
+    --color7: white;
+    --color8: black;
+  }
+  
+  
+  /*Estilos de texto (fuente y tamaño)*/
+  body {
+    font-family: 'Roboto', sans-serif !important;
+    padding-top: 60px;
+  }
+  
+  h1 {
+    font-size: 80px !important;
+    font-weight: bold !important;
+  }
+  h2 {
+    font-size: 45px !important;
+  }
+  h3 {
+    font-size: 35px !important;
+  }
+  h4 {
+    font-size: 30px !important;
+  }
+  h5 {
+    font-size: 25px !important;
+  }
+  h6 {
+    font-size: 20px !important;
+  }
+  
+  p {
+    font-size: 17px !important;
+  }
+
+  .container {
+    margin: 20px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.col-8 {
+    width: 66.66%;
+    padding-right: 20px;
+}
+
+.col-4 {
+    width: 33.33%;
+    padding-left: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.cart-item img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    color: #28a745;
+}
+
+.cart-summary {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.cart-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-summary th, .cart-summary td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.cart-summary tfoot {
+    font-size: 18px;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 20px;
+    color: #999;
+}
+
+.remove-btn, .increase-btn {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.increase-btn {
+    background-color: green;
+}
+
+
+/*---------------------------------Seccion del nav----------------------------------------*/
+/* Estilo general para la navbar */
+.navbar {
+    background-color: black;
+    padding: 0;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #B2FF59 !important;
+  }
+
+  .navbar-nav .nav-item .nav-link.active {
+    background: linear-gradient(100deg, #b8b89c, #4CAF50);
+    transform: rotate(360deg);
+    transition: transform 2s;
+    border-radius: 20px;
+    overflow: hidden;
+}
+  
+  .navbar-nav .nav-link {
+    padding: 8px 15px;
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #B2FF59 !important;
+  }
+  
+  /* Estilo especial para el botón "Contáctanos" */
+  .navbar-nav .highlight {
+    background-color: #4CAF50;
+    padding: 8px 20px;
+  }
+  
+  .navbar-nav .highlight:hover {
+    background-color: #000;
+  }
+  
+  /* Estilo para los íconos */
+  .navbar-nav .nav-link i {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .navbar-nav .nav-link i:hover {
+    color: #B2FF59;
+  }
+  
+  .navbar-brand:hover {
+    color: #B2FF59 !important;
+  }
+  
+  .navbar-toggler {
+    border-color: white;
+  }
+  
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .icon-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  #greeting-item {
+    padding: 8px 15px;
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+  }
+  
+  /* Ajuste para pantallas pequeñas */
+  @media (max-width: 768px) {
+    /* El logo y los enlaces deben centrarse en pantallas pequeñas */
+    .navbar {
+        padding: 10px;
+    }
+  
+    .navbar-collapse {
+        text-align: center;
+    }
+  
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .navbar-brand {
+        font-size: 20px;
+        justify-content: center;
+    }
+  
+    .navbar-nav .nav-link {
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+  
+    .navbar-toggler {
+        border: none;
+    }
+  }
+  /*------------------------------Fin Secciones del nav-------------------------------------*/
+  
+  /* ------------------------------Secciones del footer------------------------------------ */
+  /* Contenedor principal del footer */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px;
+  }
+  
+  /* Títulos de las secciones del footer */
+  .footer-section h5 {
+    margin-bottom: 25px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  /* Estilo para los enlaces del footer */
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--color5);
+  }
+  
+  /* Estilo para los iconos de redes sociales */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons li {
+    list-style: none;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  /* ----------------------------fin Secciones del footer---------------------------------- */
