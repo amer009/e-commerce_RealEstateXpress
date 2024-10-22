@@ -23,26 +23,41 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
+// Función para manejar el clic en el botón "Añadir al carrito"
+function addToCart(event) {
+    // Verifica si el clic fue en un botón "Añadir al carrito"
+    if (event.target.classList.contains('add-to-cart')) {
+        console.log('Botón Añadir al carrito clickeado');
+        event.preventDefault(); // Evitar el comportamiento por defecto del enlace
 
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function (event) {
-        event.preventDefault(); // No permitir que se ejecute el href = #.
+        const button = event.target; // Referencia al botón clickeado
 
-        // Obtener los datos de la propiedad y precio desde los atributos 'data-*'
-        const property = this.getAttribute('data-property');
-        const price = this.getAttribute('data-price');
+        // Encontrar el contenedor 'card' más cercano
+        const card = button.closest('.card');
 
-        // Crear un objeto con la propiedad y el precio
+        // Extraer los datos de la propiedad desde el DOM
+        const image = card.querySelector('.property-img img').getAttribute('src');
+        const price = card.querySelector('.price p').textContent.trim();
+        const title = card.querySelector('.card-title').textContent.trim();
+        const location = card.querySelector('.location-text').textContent.trim();
+        const status = card.querySelector('.status-text').textContent.trim();
+        const size = card.querySelectorAll('.details-text')[0].textContent.trim();
+        const area = card.querySelectorAll('.details-text')[1].textContent.trim();
+
+        // Crear un objeto con los datos de la propiedad
         const propertyData = {
-            property: property,
-            price: price
+            title: title,
+            price: price,
+            image: image,
+            location: location,
+            status: status,
+            size: size,
+            area: area,
         };
 
-        // Verificar si ya existe un carrito en el Local Storage
+        // Obtener el carrito del Local Storage o inicializarlo
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Añadir la propiedad al carrito
-        cart.push(propertyData);
+        cart.push(propertyData); // Agregar la nueva propiedad al carrito
 
         // Guardar el carrito actualizado en el Local Storage
         localStorage.setItem('cart', JSON.stringify(cart));

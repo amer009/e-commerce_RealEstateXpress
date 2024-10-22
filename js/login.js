@@ -91,8 +91,8 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
         // Si tanto el correo como la contraseña son correctos
         Swal.fire({
-            title: '¡Inicio de sesión exitoso!',
-            text: 'Serás redirigido a la página de inicio.',
+            title: `¡Hola, ${user.nombre}!`,
+            text: 'Inicio de sesión exitoso. Serás redirigido a la página de inicio.',
             icon: 'success',
             confirmButtonText: 'Aceptar'
         }).then(() => {
@@ -119,3 +119,20 @@ togglePassword.addEventListener('click', function () {
     this.classList.toggle('fa-eye-slash');
     this.classList.toggle('fa-eye');
 });
+function openGmailWithAlert() {
+    // Mostrar la alerta de SweetAlert2
+    Swal.fire({
+      icon: 'info',
+      title: '¿Olvidaste tu contraseña?',
+      text: 'Si lo deseas, envíanos un correo electrónico para ayudarte.',
+      showCancelButton: true,
+      confirmButtonText: 'Enviar correo',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma, abrir Gmail con el correo prellenado
+        var gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=realestatexpress2024@gmail.com&su=Recuperación%20de%20contraseña&body=Por%20favor%20ayúdenme%20a%20recuperar%20mi%20contraseña";
+        window.open(gmailUrl, '_blank'); // Abre en una nueva pestaña
+      }
+    });
+}

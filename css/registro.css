@@ -1,3 +1,6 @@
+
+
+
   body {
     font-family: 'Roboto', sans-serif !important;
     margin: 0;
@@ -18,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
   .register-form h2 {
     margin-bottom: 30px;
@@ -40,19 +44,13 @@
     width: 100%;
   }
 
-  .register-form button:hover {
-    background-color: white;
-    color: #4CAF50;
-    border: 1px solid #4CAF50;
-
-    }
+  
   
   .register-right {
     background-color: #4CAF50 !important;
     align-items: center;
     color: white;
     padding: 60px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +65,7 @@
     background-color: #4CAF50;
     border: 1px solid white;
     padding: 10px 30px;
-    border-radius: 0;
+    border-radius: 0!important;
     text-decoration: none;
   }
   .register-right a:hover {
@@ -97,6 +95,50 @@
   color: #aaa;
 }
 
+.register-form button:focus {
+  outline: none!important;
+  background-color: #4CAF50; /* Mantén el color verde */
+  color: white; /* Mantén el texto blanco */
+}
+/* Estilo general para los campos de entrada */
+input {
+  outline: none !important; /* Elimina cualquier outline predeterminado */
+  background-color: white !important; /* Fondo blanco siempre */
+  border: 1px solid #ccc; /* Define un borde gris claro por defecto */
+}
+
+/* Estilos para los campos cuando están en foco */
+input:focus {
+  background-color: white !important; /* Mantener fondo blanco al estar enfocado */
+  border: 2px solid black !important; /* Borde negro al enfocarse */
+  box-shadow: none !important; /* Elimina cualquier sombra */
+  -webkit-box-shadow: none !important; /* Elimina la sombra en navegadores Webkit (Chrome/Safari) */
+  -moz-box-shadow: none !important; /* Elimina la sombra en navegadores Mozilla */
+}
+
+/* Para Chrome y navegadores Webkit (Safari), si hay auto-relleno */
+input:-webkit-autofill {
+  border: 2px solid black !important; /* Aplica el borde negro en campos auto-rellenados */
+  background-color: white !important; /* Mantener fondo blanco en auto-relleno */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Elimina el fondo azul en autofill */
+}
+
+/* Mantener el fondo blanco en auto-rellenado para Firefox */
+input:-moz-autofill {
+  background-color: white !important; /* Fondo blanco en auto-relleno */
+  border: 2px solid black !important;
+  box-shadow: 0 0 0px 1000px white inset !important; /* Elimina el efecto azul en autofill */
+}
+
+
+
+/* Estilo para el botón cuando se hace clic */
+.register-form button:active {
+  background-color: #4CAF51 !important; /* Mantén el color verde también al hacer clic */
+  color: white; /* Mantén el texto blanco */
+  border: none; /* Evita cualquier borde azul predeterminado */
+}
+
 
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
@@ -104,6 +146,7 @@
   background-color: black;
   padding: 0;
 }
+
 /* Estilo para los enlaces de la navbar */
 .navbar-nav .nav-link.active {
   color: #B2FF59 !important;
@@ -163,6 +206,17 @@
   align-items: center;
 }
 
+#greeting-item {
+  padding: 8px 15px;
+  color: white !important;
+  transition: color 0.3s ease;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   /* El logo y los enlaces deben centrarse en pantallas pequeñas */
@@ -196,7 +250,9 @@
 /*------------------------------Fin Secciones del nav-------------------------------------*/
 
 
-/* ------------------------------Secciones del footer------------------------------------ */
+
+
+/*------------------------------Secciones del footer------------------------------------ */
 /* Contenedor principal del footer */
 .footer-container {
   display: flex;
@@ -242,7 +298,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: var(--color5);
+  color: var(--color5)!important;
 }
 
 /* Estilo para los iconos de redes sociales */
