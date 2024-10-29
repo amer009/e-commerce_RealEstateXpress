@@ -133,15 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Efecto para cambiar el estilo al hacer scroll
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 90) {
-        document.body.classList.add('scrolled');
-    } else {
-        document.body.classList.remove('scrolled');
-    }
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
     const loggedInUserEmail = localStorage.getItem('loggedInUser');
