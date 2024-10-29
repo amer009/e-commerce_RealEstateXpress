@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem('loggedInUser');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
-        window.location.href = "/html/contactanos.html";
+        window.location.href = "/html/acerca.html";
     });
 });
 

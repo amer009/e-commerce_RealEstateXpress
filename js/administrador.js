@@ -70,4 +70,3 @@ window.addEventListener('load', function() {
     verificarAccesoAdmin();
     // Aquí puedes agregar cualquier otra inicialización necesaria para la página de administración
 });
-

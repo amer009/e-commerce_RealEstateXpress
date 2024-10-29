@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Generar las cards para cada propiedad
     properties.forEach(function(property) {
         const propertyCard = `
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
+        <div class="col-12 col-sm-6 col-md-3">
             <div class="card">
                 <div class="property-img">
                     <img src="${property.image}" alt="Imagen de la propiedad ${property.title}" width="100%">
@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">${property.title}</h3>
-                    <p class="location-text">${property.location}</p>
                     <div class="row">
                         <div class="col-5">
                             <i class="bi bi-geo-alt-fill"></i>
@@ -134,8 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
     const loggedInUserEmail = localStorage.getItem('loggedInUser');
@@ -170,3 +167,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 90) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
+});
