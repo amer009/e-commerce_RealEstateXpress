@@ -57,3 +57,11 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "/html/contactanos.html";
     });
 });
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 90) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
+});

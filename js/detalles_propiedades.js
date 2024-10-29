@@ -23,13 +23,13 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
-
+// Mostrar saludo personalizado basado en usuario logueado
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
     const loggedInUserEmail = localStorage.getItem('loggedInUser');
     const loginIcon = document.getElementById('login-icon');
     const logoutIcon = document.getElementById('logout-icon');
-    
+
     if (loggedInUserEmail) {
         const registros = JSON.parse(localStorage.getItem('formData')) || [];
         const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
             logoutIcon.style.display = "block";
         } else {
             greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-            logoutIcon.style.display = "none";
             loginIcon.style.display = "block";
+            logoutIcon.style.display = "none";
         }
     } else {
         greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-        logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
+        logoutIcon.style.display = "none";
     }
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
@@ -58,44 +58,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Efecto para cambiar el estilo al hacer scroll
 window.addEventListener('scroll', function() {
-    if (window.scrollY > 360) {
+    if (window.scrollY > 90) {
         document.body.classList.add('scrolled');
     } else {
         document.body.classList.remove('scrolled');
     }
 });
 
-// Lista de las imágenes principales
-const images = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'];
-let currentIndex = 0; // Índice de la imagen actual
+// Cambiar la imagen principal cuando se hace clic en una miniatura
+function cambiarImagen(src) {
+    document.getElementById('mainImage').src = src;
 
-const mainImage = document.getElementById('mainImage'); // Imagen principal
-const thumbnails = document.querySelectorAll('.thumbnail'); // Miniaturas
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    thumbnails.forEach(img => img.classList.remove('active'));
 
-// Función para actualizar la imagen principal
-function updateMainImage(index) {
-  mainImage.src = images[index]; // Cambia el src de la imagen principal
+    event.target.classList.add('active');
 }
-
-// Evento para la flecha "siguiente"
-document.getElementById('nextImage').addEventListener('click', function() {
-  currentIndex = (currentIndex + 1) % images.length; // Avanza al siguiente índice
-  updateMainImage(currentIndex); // Actualiza la imagen principal
-});
-
-// Evento para la flecha "anterior"
-document.getElementById('prevImage').addEventListener('click', function() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length; // Retrocede al índice anterior
-  updateMainImage(currentIndex); // Actualiza la imagen principal
-});
-
-// Evento para seleccionar la imagen de la galería
-thumbnails.forEach((thumbnail, index) => {
-  thumbnail.addEventListener('click', function() {
-    const fullImageUrl = this.getAttribute('data-full'); // Obtén la imagen completa
-    mainImage.src = fullImageUrl; // Cambia la imagen principal
-    currentIndex = index; // Actualiza el índice actual
-  });
-});
-

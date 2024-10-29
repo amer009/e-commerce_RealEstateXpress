@@ -85,7 +85,6 @@ body.scrolled .transparent-nav {
 
     .navbar-collapse {
         text-align: center;
-        background-color: black;
     }
 
     .navbar-nav {
@@ -249,7 +248,7 @@ form input, form textarea {
 }
 
 .footer-section ul li a:hover {
-    color: var(--color5);
+    color: #B2FF59;
 }
 
 /* Estilo para los iconos de redes sociales */

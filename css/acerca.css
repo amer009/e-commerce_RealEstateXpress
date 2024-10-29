@@ -18,26 +18,22 @@
     filter: invert(1);
 }
 
-body {
-  padding-top: 60px;
-  font-family: 'Roboto', sans-serif !important;
-}
-
 /*---------------------------------Seccion del nav----------------------------------------*/
-/* Estilo general para la navbar */
-.navbar {
-    background-color: black;
-    padding: 0;
+/* Estilo para el navbar transparente */
+
+
+.transparent-nav .navbar-brand, .transparent-nav .nav-link .navbar-nav {
+    color: white !important; /* Texto en blanco para contrastar con la imagen */
 }
 
 /* Estilo para los enlaces de la navbar */
 .navbar-nav .nav-link.active {
-  color: #B2FF59 !important;
+    color: #B2FF59 !important;
 }
 
+/* Estilo para los enlaces de la navbar */
 .navbar-nav .nav-link {
     padding: 8px 15px;
-    color: white !important;
     transition: color 0.3s ease;
     font-size: 15px;
     display: flex;
@@ -100,6 +96,11 @@ body {
     height: 35px;
 }
 
+body.scrolled .transparent-nav {
+    background-color: black !important;
+    transition: color 0.3ms ease;
+}
+
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
     /* El logo y los enlaces deben centrarse en pantallas pequeñas */
@@ -129,8 +130,52 @@ body {
     .navbar-toggler {
         border: none;
     }
+
+    .map {
+        padding-top: 30px;
+    }
+
+    .banner-section h1 {
+        font-size: 65px !important;
+    }
 }
 /*------------------------------Fin Secciones del nav-------------------------------------*/
+
+/* Sección del banner */
+.banner-section {
+    background-image: url('/img/background_terminos.jpg'); /* Ruta a la imagen */
+    background-size: cover;
+    background-position: center;
+    height: 380px; /* La altura es 100% de la ventana */
+    position: relative;
+    padding-top: 60px; /* Ajuste por el navbar fijo */
+}
+
+.banner-section .container {
+    z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+}
+
+.banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Filtro oscuro sobre la imagen */
+    z-index: 0;
+}
+
+.banner-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.text-white {
+    color: white;
+}
+
+/* Fin de Sección del banner */
 
 /* ------------------------------Secciones del footer------------------------------------ */
 /* Contenedor principal del footer */
@@ -178,7 +223,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: var(--color5);
+    color: #B2FF59;
 }
 
 /* Estilo para los iconos de redes sociales */
