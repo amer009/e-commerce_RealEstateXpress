@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">${property.title}</h3>
-                    <p class="location-text">${property.location}</p>
                     <div class="row">
                         <div class="col-5">
                             <i class="bi bi-geo-alt-fill"></i>
