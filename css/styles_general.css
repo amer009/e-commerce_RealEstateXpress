@@ -52,6 +52,7 @@ p {
     text-decoration: none !important;
     transition: background-color 0.5s, color 0.5s !important;
     width: 132px !important;
+    border-radius: none !important;
   }
 
 .btn:hover {

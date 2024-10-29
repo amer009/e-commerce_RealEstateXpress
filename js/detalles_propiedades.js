@@ -23,13 +23,13 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
-
+// Mostrar saludo personalizado basado en usuario logueado
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
     const loggedInUserEmail = localStorage.getItem('loggedInUser');
     const loginIcon = document.getElementById('login-icon');
     const logoutIcon = document.getElementById('logout-icon');
-    
+
     if (loggedInUserEmail) {
         const registros = JSON.parse(localStorage.getItem('formData')) || [];
         const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
             logoutIcon.style.display = "block";
         } else {
             greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-            logoutIcon.style.display = "none";
             loginIcon.style.display = "block";
+            logoutIcon.style.display = "none";
         }
     } else {
         greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-        logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
+        logoutIcon.style.display = "none";
     }
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
@@ -54,10 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem('loggedInUser');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
-        window.location.href = "/html/contactanos.html";
+        window.location.href = "/html/acerca.html";
     });
 });
 
+// Efecto para cambiar el estilo al hacer scroll
 window.addEventListener('scroll', function() {
     if (window.scrollY > 90) {
         document.body.classList.add('scrolled');
@@ -65,3 +66,13 @@ window.addEventListener('scroll', function() {
         document.body.classList.remove('scrolled');
     }
 });
+
+// Cambiar la imagen principal cuando se hace clic en una miniatura
+function cambiarImagen(src) {
+    document.getElementById('mainImage').src = src;
+
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    thumbnails.forEach(img => img.classList.remove('active'));
+
+    event.target.classList.add('active');
+}

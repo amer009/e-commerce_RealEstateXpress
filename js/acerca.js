@@ -57,3 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "/html/acerca.html";
     });
 });
+
+// Efecto para cambiar el estilo al hacer scroll
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 90) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
+});

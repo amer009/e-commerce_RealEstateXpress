@@ -21,6 +21,7 @@ function activateCurrentNavLink() {
         }
     });
 }
+window.addEventListener('load', activateCurrentNavLink);
 
 window.addEventListener('load', activateCurrentNavLink);
 
@@ -56,4 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
         loginIcon.style.display = "block";
         window.location.href = "/html/preguntas_frecuentes.html";
     });
+});
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 90) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
 });
