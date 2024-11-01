@@ -182,7 +182,7 @@ h3 {
 
 .carousel-control-next, .carousel-control-prev {
 
-    width: 2%;
+    width: 7%!important;
 }
 
 .card-body{
