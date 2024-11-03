@@ -65,7 +65,7 @@ p {
 
 .card-img-top-andres  {
   width: 100%;
-  height: auto;
+  height: 350px;
   object-fit: cover; 
   max-height: 400px !important;
   background-color:#4CAF50;
@@ -73,7 +73,7 @@ p {
 
   .card-img-top {
       width: 100%;
-      height: auto;
+      height: 350px;
       object-fit: cover; 
       max-height: 400px !important;
       background-color:#4CAF50;
@@ -91,6 +91,18 @@ p {
       object-fit: cover;
     }
 
+    .swal2-title-small {
+      font-size: 40px !important;
+  }
+  
+  .swal2-text-small {
+      font-size: 20px !important;
+  }
+  
+  .swal2-confirm-small {
+      font-size: 14px;
+      padding: 10px 30px;
+  }
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo para el navbar transparente */
 

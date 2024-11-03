@@ -50,10 +50,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
         event.preventDefault();
+
+        Swal.fire({
+            title: '¡Sesión cerrada!',
+            text: 'Has cerrado sesión correctamente.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
+        }).then(() => {
         localStorage.removeItem('loggedInUser');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
         window.location.href = "/html/inicio.html";
+        });
     });
 });
 

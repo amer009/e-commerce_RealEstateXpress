@@ -37,6 +37,24 @@ p {
     width: 200px !important;
   }
 
+  .swal2-title-small {
+    font-size: 40px !important;
+}
+
+.swal2-text-small {
+    font-size: 20px !important;
+}
+
+.swal2-confirm-small {
+    font-size: 14px;
+    padding: 10px 30px;
+}
+
+.custom-width{
+        width: 500px !important;
+        max-width: 100%;
+}
+
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
 .navbar {

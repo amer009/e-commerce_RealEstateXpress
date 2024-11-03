@@ -139,6 +139,19 @@
     background-color: green;
 }
 
+.swal2-title-small {
+  font-size: 40px !important;
+}
+
+.swal2-text-small {
+  font-size: 20px !important;
+}
+
+.swal2-confirm-small {
+  font-size: 14px;
+  padding: 10px 30px;
+}
+
 
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo general para la navbar */
@@ -303,7 +316,7 @@
   }
   
   .footer-section ul li a:hover {
-    color: var(--color5);
+    color: #B2FF59;
   }
   
   /* Estilo para los iconos de redes sociales */

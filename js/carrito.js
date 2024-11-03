@@ -42,10 +42,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
         event.preventDefault();
+        Swal.fire({
+            title: '¡Sesión cerrada!',
+            text: 'Has cerrado sesión correctamente.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
+        }).then(() => {
         localStorage.removeItem('loggedInUser');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
-        window.location.href = "/html/asesores.html";
+        window.location.href = "/html/carrito.html";
+    });
     });
 });
 
@@ -146,7 +159,13 @@ function removeFromCart(title, cartItemElement) {
             icon: 'success',
             title: '¡Eliminado!',
             text: `Propiedad eliminada del carrito: ${title}`,
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         });
 
         localStorage.setItem('cart', JSON.stringify(newCart));
@@ -217,6 +236,30 @@ const payButton = document.getElementById('pay-button');
 
 // Añadir el evento de click para redirigir a la pasarela de pagos
 document.getElementById('pay-button').addEventListener('click', function() {
+    // Verificar si el usuario está logueado comprobando la existencia del correo en localStorage
+    const userEmail = localStorage.getItem('loggedInUser');
+
+    if (!userEmail) {
+        // Mostrar alerta de SweetAlert indicando que debe iniciar sesión
+        Swal.fire({
+            title: 'Iniciar sesión',
+            text: 'Debe iniciar sesión para poder proceder con el pago.',
+            icon: 'warning',
+            confirmButtonText: 'Iniciar sesión',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'login.html';
+            }
+        });
+        return;
+    }
+
     // Obtener el precio total del carrito
     const totalPriceElement = document.getElementById('total-price');
     const totalPrice = totalPriceElement.textContent.replace('$', ''); // Remover el símbolo de dólar
@@ -226,4 +269,5 @@ document.getElementById('pay-button').addEventListener('click', function() {
     const paypalUrl = `https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sb-dqzju33176189@business.example.com&item_name=Terreno RealStateXpress&amount=${amount}&currency_code=USD`;
     window.location.href = paypalUrl;
 });
+
 

@@ -67,7 +67,13 @@ function addToCart(event) {
             title: '¡Agregado!',
             text: `Propiedad añadida al carrito: ${title} - Precio: ${price}`,
             icon: 'success',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         });
     }
 }
@@ -160,10 +166,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
         event.preventDefault();
-        localStorage.removeItem('loggedInUser');
-        logoutIcon.style.display = "none";
-        loginIcon.style.display = "block";
-        window.location.href = "/html/propiedades.html";
+
+        Swal.fire({
+            title: '¡Sesión cerrada!',
+            text: 'Has cerrado sesión correctamente.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
+        }).then(() => {
+            // Después de cerrar el SweetAlert, se ejecutan los siguientes pasos
+            localStorage.removeItem('loggedInUser');
+            logoutIcon.style.display = "none";
+            loginIcon.style.display = "block";
+            window.location.href = "/html/propiedades.html";
+        });
     });
 });
 
