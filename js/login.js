@@ -36,8 +36,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const adminEmail = 'realestatexpress2024@gmail.com';
     const adminPassword = 'admin1234';
 
-    // Obtener los usuarios almacenados en el localStorage
-    const users = JSON.parse(localStorage.getItem('formData')) || [];
 
     // Verificar que los campos no estén vacíos
     if (!email || !password) {
@@ -50,13 +48,16 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         return;
     }
 
+    console.log("clave "+password)
+    const passwordEncriptada = CryptoJS.SHA256(password).toString();
+
     // Mostrar en consola los valores 
     console.log("Correo administrador esperado:", adminEmail);
     console.log("Contraseña administrador esperada:", adminPassword);
     console.log("Correo ingresado:", email);
     console.log("Contraseña ingresada:", password);
 
-    // Verificar si el correo y la contraseña son del administrador
+/*     // Verificar si el correo y la contraseña son del administrador
     if (email === adminEmail && password === adminPassword) {
         localStorage.setItem('userEmail', email);
         console.log("Correo y contraseña de administrador detectados");
@@ -69,47 +70,63 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             window.location.href = "administrador.html"; // Redirige a la vista de administrador
         });
         return; // Salimos de la función si es un administrador
-    }
+    } */
+   
+    
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    // Verificar las credenciales de usuario normal
-    const user = users.find(user => user.email === email);
+    const raw = JSON.stringify({
+        email: email,
+        clave:passwordEncriptada
+    });
 
-    if (user) {
-        // Desencriptar la contraseña almacenada
-        const passwordDesencriptada = CryptoJS.AES.decrypt(user.password, 'passwordEncrypted').toString(CryptoJS.enc.Utf8);
-        
-        // Si el correo es correcto pero la contraseña es incorrecta
-        if (passwordDesencriptada !== password) {
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+   
+    fetch("http://127.0.0.1:3000/usuario/login", requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log(result); 
+            if (result.codigoRespuesta === "00") {
+
+                Swal.fire({
+                    title: `¡Hola, ${email}!`,
+                    text: 'Inicio de sesión exitoso. Serás redirigido a la página de inicio.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then(() => {
+                    window.location.href = "inicio.html"; // Redirige a la página de inicio
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: result.message || 'Email o contraseña inválidos.',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
             Swal.fire({
                 title: 'Error',
-                text: 'Contraseña incorrecta.',
+                text: 'Ocurrió un error al iniciar sesión.',
                 icon: 'error',
                 confirmButtonText: 'Intentar de nuevo'
             });
-            return; // Salimos de la función si la contraseña es incorrecta
-        }
-
-        // Si tanto el correo como la contraseña son correctos
-        Swal.fire({
-            title: `¡Hola, ${user.nombre}!`,
-            text: 'Inicio de sesión exitoso. Serás redirigido a la página de inicio.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        }).then(() => {
-            localStorage.setItem('loggedInUser', email);
-            window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
         });
-    } else {
-        console.log("Usuario no encontrado o credenciales inválidas");
-        Swal.fire({
-            title: 'Error',
-            text: 'Email o contraseña inválidos.',
-            icon: 'error',
-            confirmButtonText: 'Intentar de nuevo'
-        });
-    }
 });
-
 // Evento para alternar la visibilidad de la contraseña
 const togglePassword = document.getElementById('togglePassword');
 togglePassword.addEventListener('click', function () {

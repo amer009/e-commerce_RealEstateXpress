@@ -10,7 +10,7 @@ function activateCurrentNavLink() {
     navbarLinks.forEach(link => {
         // Obtener solo el último fragmento del href del enlace
         const linkPath = link.getAttribute('href').split('/').pop();
-        
+
         // Si coincide con la ruta actual, agregar la clase 'active' y cambiar el color
         if (linkPath === currentPath) {
             link.classList.add('active');
@@ -22,8 +22,6 @@ function activateCurrentNavLink() {
     });
 }
 window.addEventListener('load', activateCurrentNavLink);
-
-
 document.addEventListener('DOMContentLoaded', function () {
     var formulario = document.getElementById('miFormulario');
     var togglePassword = document.getElementById('togglePassword');
@@ -92,59 +90,70 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const passwordEncriptada = CryptoJS.AES.encrypt(password.value, 'passwordEncrypted').toString();
+        console.log("clave "+password.value)
+        const passwordEncriptada = CryptoJS.SHA256(password.value).toString();
 
-        
-        // Obtener los registros previos de localStorage
-        var registros = JSON.parse(localStorage.getItem('formData')) || [];
+        // Crear objeto para enviar al backend A25794140*
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-        // Verificar si el correo ya está registrado (aquí agregamos la verificación)
-        var correoExistente = registros.find(function (registro) {
-            return registro.email === email.value;
+        const raw = JSON.stringify({
+            "nombre": nombre.value,
+            "email": email.value,
+            "telefono": telefono.value,
+            "clave": passwordEncriptada,
+            "id_rol": 2
         });
 
-        if (correoExistente) {
-            // Si el correo ya existe, mostrar una alerta y no guardar el registro
-            Swal.fire({
-                title: 'Error',
-                text: 'Este correo ya está registrado.',
-                icon: 'warning',
-                confirmButtonText: 'Aceptar'
-            });
-            return; // Salir de la función para no guardar el registro duplicado
-        }
-
-        // Si no existe duplicado, guardar el nuevo registro
-        var formData = {
-            nombre: nombre.value,
-            telefono: telefono.value,
-            email: email.value,
-            password: passwordEncriptada
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
         };
 
-        registros.push(formData);
-        localStorage.setItem('formData', JSON.stringify(registros));
+        fetch("http://127.0.0.1:3000/usuario/save", requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(result => {
 
-        Swal.fire({
-            title: '¡Éxito!',
-            text: 'Datos guardados en localStorage.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        }).then(() => {
-            // Redirección a inicio de sesión
-            Swal.fire({
-                title: '¡Redirección!',
-                text: 'Serás redirigido a la página de inicio de sesión.',
-                icon: 'info',
-                confirmButtonText: 'Aceptar'
-            }).then(() => {
-                window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
+                console.log(result)
+                if (result.codigoRespuesta === "00") {
+                    Swal.fire({
+                        title: '¡Éxito!',
+                        text: 'Datos guardados en el servidor.Seras redirigido a la pagina incio de sesion',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    }).then(() => {
+                        window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
+                       
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Ocurrió un problema al guardar los datos: ' + result.mensaje,
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ocurrió un problema al guardar los datos: ' + error,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
             });
-        });
 
         formulario.reset(); // Limpiar campos del formulario
     }, false);
-
+    7
     // Evento para alternar la visibilidad de la contraseña
     togglePassword.addEventListener('click', function () {
         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -161,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.toggle('fa-eye');
     });
 });
-
 
 
 
