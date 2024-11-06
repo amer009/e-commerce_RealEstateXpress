@@ -68,11 +68,9 @@ window.addEventListener('scroll', function() {
 });
 
 // Cambiar la imagen principal cuando se hace clic en una miniatura
-function cambiarImagen(src) {
+function cambiarImagen(event, src) {
     document.getElementById('mainImage').src = src;
-
     const thumbnails = document.querySelectorAll('.thumbnails img');
     thumbnails.forEach(img => img.classList.remove('active'));
-
     event.target.classList.add('active');
 }

@@ -1,46 +1,46 @@
 /* Para el formulario */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start; /* Alinea los elementos del formulario a la izquierda */
-    justify-content: center; /* Centra verticalmente */
-    margin: 0 auto; /* Centra horizontalmente dentro de la columna */
-  }
-  
-  /* Para la información de contacto */
-  .ContactInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start; /* Alinea los elementos de contacto a la izquierda */
-    justify-content: center; /* Centra verticalmente */
-    margin: 0 auto; /* Centra horizontalmente dentro de la columna */
-  }
-  
-  form input, form textarea {
-    width: 350px !important; /* Ocupa todo el ancho del contenedor */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde del input */
-    border-radius: 4px; /* Bordes redondeados */
-    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start; /* Alinea los elementos del formulario a la izquierda */
+  justify-content: center; /* Centra verticalmente */
+  margin: 0 auto; /* Centra horizontalmente dentro de la columna */
 }
-  
-  button:disabled {
-    background-color: #ccc;
-  }
-  
-  /* Para que los íconos de las redes sociales también se alineen a la izquierda */
-  p {
-    display: flex;
-    justify-content: flex-start; /* Alinea los íconos a la izquierda */
-  }
-  
-  /* Espaciado horizontal entre las columnas */
-  .row.with-gap {
-    display: flex;
-    gap: 30px; /* Ajusta el valor según el espaciado que prefieras */
-  }
+
+/* Para la información de contacto */
+.ContactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start; /* Alinea los elementos de contacto a la izquierda */
+  justify-content: center; /* Centra verticalmente */
+  margin: 0 auto; /* Centra horizontalmente dentro de la columna */
+}
+
+form input, form textarea {
+  width: 350px !important; /* Ocupa todo el ancho del contenedor */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 4px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+/* Para que los íconos de las redes sociales también se alineen a la izquierda */
+p {
+  display: flex;
+  justify-content: flex-start; /* Alinea los íconos a la izquierda */
+}
+
+/* Espaciado horizontal entre las columnas */
+.row.with-gap {
+  display: flex;
+  gap: 30px; /* Ajusta el valor según el espaciado que prefieras */
+}
 
 /*---------------------------------Seccion del nav----------------------------------------*/
 /* Estilo para el navbar transparente */
@@ -127,6 +127,10 @@ body.scrolled .transparent-nav {
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
+  .transparent-nav {
+    background-color: black !important; /* Fondo negro en mobile */
+  }
+  
   /* El logo y los enlaces deben centrarse en pantallas pequeñas */
   .navbar {
       padding: 10px;

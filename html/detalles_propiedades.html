@@ -66,40 +66,83 @@
             <h1 class="display-4 text-white"><u>Detalles del Terreno</u></h1>
         </div>
     </header>
-
+    
     <div class="container-fluid">
         <div class="row">
-            <div class="container-photos col-md-6">
-                <div class="thumbnails">
-                    <img src="/img/2991 W Redgate Dr.png" alt="Miniatura 1" class="active" onclick="cambiarImagen(this.src)">
-                    <img src="/img/402-E-Marquette-Ln.png" alt="Miniatura 2" onclick="cambiarImagen(this.src)">
-                    <img src="/img/7736-Altara-St.png" alt="Miniatura 3" onclick="cambiarImagen(this.src)">
-                    <img src="/img/9258 N Westminister Ave.jpeg" alt="Miniatura 4" onclick="cambiarImagen(this.src)">
-                    <img src="/img/Sioux-Ave.jpeg" alt="Miniatura 5" onclick="cambiarImagen(this.src)">
+            <div class="col-md-12">
+                <!-- Carrusel de imágenes Bootstrap -->
+                <div id="propertyCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/img/203-Kennedy-Av.jpeg" alt="Imagen 1 de la propiedad">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/2991 W Redgate Dr.png" alt="Imagen 2 de la propiedad">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/906-Hillcrest-Ave.png" alt="Imagen 3 de la propiedad">
+                        </div>
+                        <!-- Agrega más imágenes aquí si es necesario -->
+                    </div>
+                    
+                    <!-- Controles de navegación del carrusel -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 </div>
-
-                <img src="/img/2991 W Redgate Dr.png" alt="Imagen principal de la propiedad" class="main-img" id="mainImage">
             </div>
+        </div>
+        <div class="row">
+            <!-- Columna principal para la información de la propiedad -->
+            <div class="col-md-8">
+                <!-- Fila para la dirección y detalles de la propiedad -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>402 E Marquette Ln</h4>
+                        <p>Citrus Springs, FL 34434</p>
+                        <!-- Contenedor de íconos y detalles -->
+                        <div class="property-details">
+                            <i class="bi bi-bounding-box-circles"></i>
+                            <span class="details-text">0.21 Acres</span>
+                            <i class="bi bi-rulers"></i>
+                            <span class="details-text">9,359 sq. ft.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna para el precio y tamaño del lote -->
+                    <div class="col-md-6">
+                        <h4>$16,499</h4>
+                        <p>No aplica para financiamiento.</p>
+                    </div>
+                </div>
+                
+                <p style="text-align: justify;">Ubicada en el creciente y atractivo sector de Citrus Springs, esta propiedad de 0.21 acres (9,359 pies cuadrados) en 402 E Marquette Ln es una oportunidad única para quienes buscan invertir en el estado de Florida. Con un excelente potencial para el desarrollo de una vivienda unifamiliar, esta propiedad se encuentra cerca de servicios clave, parques, y áreas de recreación natural, lo que la convierte en una opción ideal tanto para el desarrollo residencial como para el crecimiento de valor a largo plazo. Aprovecha esta oportunidad de asegurar tu inversión en una de las áreas con mayor proyección del condado.</p>
+                <button class="btn btn-add-cart">Añadir al carrito</button>                
+            </div>
+            
 
-            <div class="col-md-6">
-                <h4 id="propertyName">Portulaca Dr, Indian Lake, FL 33855</h4>
-                <p id="propertyPrice" class="text-success">$20,999</p>
-                <p><strong>Ubicación:</strong> Indian Lake, Florida</p>
-                <p><strong>Tamaño:</strong> 0.50 Acres / 21,780 sq. ft.</p>
-                <p><strong>Servicios Públicos:</strong> Electricidad, Agua, Alcantarillado</p>
-                <p><strong>Zonificación:</strong> R-1: Permite construir Mobile Home, Manufactura Home, etc.</p>
-                <button class="btn btn-primary btn-lg mt-3" id="addToCart">Añadir al carrito</button>
+            <!-- Columna Formulario de Contacto -->
+            <div class="col-md-4">
+                <form action="https://formspree.io/f/xzzpnplz" method="POST">
+                    <h5><b>Compra tu terreno: ¡Empieza a continuación!</b></h5>
+                    <input type="text" name="full-name" required placeholder="Ingrese su nombre completo">
+                    <input type="number" name="phone" required placeholder="Ingrese su número de teléfono">
+                    <input type="email" name="email" required placeholder="Ingrese su correo electrónico">
+                    <textarea name="message" required placeholder="Déjanos tu comentario"></textarea>
+                    <button class="btn btn_polpriv w-100" type="submit">Enviar</button>
+                </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <!-- Columna para la descripción y el mapa (8/12 del ancho) -->
-            <div class="col-md-8">
-                <h3>Descripción de la Propiedad</h3>
-                <p id="propertyDetails">Aquí va la descripción detallada de la propiedad. Incluye información sobre los servicios cercanos, características del terreno, etc.</p>
-    
-                <!-- Mapa de Google -->
-                <h4>Ubicación</h4>
+        <!-- Fila para el mapa -->
+        <div class="row">
+            <div class="col-md-12">
+                <h4 style="text-align: center;">Ubicación</h4>
                 <div id="propertyMap">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=...your_map_code_here..." 
@@ -111,26 +154,6 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div>
-    
-            <!-- Columna para el formulario de contacto (4/12 del ancho) -->
-            <div class="col-md-4">
-                <h3>Contacto</h3>
-                <form id="contactForm">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
             </div>
         </div>
     </div>

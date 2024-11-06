@@ -226,6 +226,10 @@
   
   /* Ajuste para pantallas pequeñas */
   @media (max-width: 768px) {
+    .transparent-nav {
+      background-color: black !important; /* Fondo negro en mobile */
+    }
+
     /* El logo y los enlaces deben centrarse en pantallas pequeñas */
     .navbar {
         padding: 10px;
