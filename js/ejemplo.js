@@ -1,163 +1,135 @@
-// Función para activar el enlace del navbar correspondiente a la vista actual
-function activateCurrentNavLink() {
-    // Obtener todos los enlaces del navbar
-    const navbarLinks = document.querySelectorAll('.nav-link');
-
-    // Obtener el path actual de la URL (sin la parte del dominio)
-    const currentPath = window.location.pathname.split('/').pop();
-
-    // Recorrer cada enlace del navbar y verificar si el href coincide con la ruta actual
-    navbarLinks.forEach(link => {
-        // Obtener solo el último fragmento del href del enlace
-        const linkPath = link.getAttribute('href').split('/').pop();
-        
-        // Si coincide con la ruta actual, agregar la clase 'active' y cambiar el color
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-            link.style.color = '#4CAF50'; // Cambia el color a verde
-        } else {
-            link.classList.remove('active');
-            link.style.color = 'white'; // Restablecer el color para otros enlaces
-        }
-    });
-}
 window.addEventListener('load', activateCurrentNavLink);
+document.addEventListener('DOMContentLoaded', function () {
+    var formulario = document.getElementById('miFormulario');
+    var togglePassword = document.getElementById('togglePassword');
+    var toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    var password = document.getElementById('password');
+    var confirmPassword = document.getElementById('confirmPassword');
+    var email = document.getElementById('email');
+    var nombre = document.getElementById('nombre');
+    var telefono = document.getElementById('telefono');
 
-document.getElementById('propertyContainer').addEventListener('click', function (event) {
-    if (event.target.classList.contains('add-to-cart')) {
-        console.log('Botón Añadir al carrito clickeado');
-        event.preventDefault();
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita el envío del formulario
 
-        const button = event.target;
+        // Expresión regular para validar el correo
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Encontrar el contenedor 'card' más cercano
-        const card = button.closest('.card');
+        // Expresión regular para validar la contraseña
+        var passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\*\#\$])[A-Za-z0-9\*\#\$]{8,}$/;
 
-        // Extraer los datos de la propiedad desde el DOM
-        const image = card.querySelector('.property-img img').getAttribute('src');
-        const price = card.querySelector('.price p').textContent.trim();
-        const title = card.querySelector('.card-title').textContent.trim();
-        const location = card.querySelector('.location-text').textContent.trim();
-        const status = card.querySelector('.status-text').textContent.trim();
-        const size = card.querySelectorAll('.details-text')[0].textContent.trim();
-        const area = card.querySelectorAll('.details-text')[1].textContent.trim();
+        // Limpiar mensajes de error previos
+        confirmPassword.setCustomValidity('');
+        email.setCustomValidity('');
+        password.setCustomValidity('');
 
-        // Crear un objeto con los datos de la propiedad
-        const propertyData = {
-            title: title,
-            price: price,
-            image: image,
-            location: location,
-            status: status,
-            size: size,
-            area: area,
+        // Validación general de campos vacíos
+        if (nombre.value.trim() === '' || telefono.value.trim() === '' || email.value.trim() === '' || password.value.trim() === '' || confirmPassword.value.trim() === '') {
+            Swal.fire({
+                title: 'Error',
+                text: 'Por favor, completa todos los campos correctamente.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return; // Salir de la función si hay campos vacíos
+        }
+
+        // Validar estructura de correo electrónico
+        if (!emailRegex.test(email.value)) {
+            Swal.fire({
+                title: 'Error',
+                text: 'El correo electrónico debe tener una estructura válida.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        // Validar la estructura de la contraseña
+        if (!passwordRegex.test(password.value)) {
+            Swal.fire({
+                title: 'Error',
+                text: 'La contraseña debe tener al menos 8 caracteres, con al menos una mayúscula, un número y un carácter especial (*, #, $).',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        // Validar que las contraseñas coincidan
+        if (password.value !== confirmPassword.value) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Las contraseñas no coinciden.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        const passwordEncriptada = CryptoJS.AES.encrypt(password.value, 'passwordEncrypted').toString();
+
+        // Crear objeto para enviar al backend
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "nombre": nombre.value,
+            "email": email.value,
+            "telefono": telefono.value,
+            "clave": passwordEncriptada,
+            "id_rol": 2 // Ajusta el idRol según tu lógica
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
         };
 
-        // Obtener el carrito del Local Storage o inicializarlo
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(propertyData);
+        fetch("http://127.0.0.1:3000/usuario/save", requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(result => {
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: 'Datos guardados en el servidor.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then(() => {
+                    window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ocurrió un problema al guardar los datos: ' + error,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            });
 
-        // Guardar el carrito actualizado en el Local Storage
-        localStorage.setItem('cart', JSON.stringify(cart));
+        formulario.reset(); // Limpiar campos del formulario
+    });
 
-        // Mostrar alerta de confirmación con SweetAlert
-        Swal.fire({
-            title: '¡Agregado!',
-            text: `Propiedad añadida al carrito: ${title} - Precio: ${price}`,
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        });
-    }
-});
+    // Evento para alternar la visibilidad de la contraseña
+    togglePassword.addEventListener('click', function () {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');
+    });
 
-// Llamar a la función al cargar la página
-window.onload = activateCurrentNavLink;
-
-document.addEventListener('DOMContentLoaded', function() {
-    const properties = JSON.parse(localStorage.getItem('properties')) || [];
-    const propertyContainer = document.getElementById('propertyContainer');
-
-    // Limpiar el contenedor antes de agregar nuevas propiedades
-    propertyContainer.innerHTML = '';
-
-    properties.forEach(function(property) {
-        const propertyCard = `
-        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Ajusta el margen como sea necesario -->
-            <div class="card">
-                <div class="property-img">
-                    <img src="${property.image}" alt="Imagen de la propiedad ${property.title}," width="100%">
-                    <div class="price">
-                        <p>$${property.price}</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">${property.title}</h3> <!-- Solo el título aquí -->
-                    <p class="location-text">${property.location}</p> <!-- Ubicación por separado -->
-                    <div class="row">
-                        <div class="col-5">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span class="location-text">${property.location}</span>
-                        </div>
-                        <div class="col-7">
-                            <span class="status-text">${property.status}</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-5">
-                            <i class="bi bi-bounding-box-circles"></i>
-                            <span class="details-text">${property.acres} Acres</span>
-                        </div>
-                        <div class="col-7">
-                            <i class="bi bi-rulers"></i>
-                            <span class="details-text">${property.sqft} sq. ft.</span> 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="d-flex mt-3">
-                            <a href="#" class="btn btn-primary flex-fill">Detalles</a>
-                            <a href="#" class="btn btn-secondary flex-fill add-to-cart" style="min-width: 150px;">Añadir al carrito</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-        propertyContainer.innerHTML += propertyCard;
+    // Evento para alternar la visibilidad de la confirmación de contraseña
+    toggleConfirmPassword.addEventListener('click', function () {
+        const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+        confirmPassword.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');
     });
 });
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const greetingMessage = document.getElementById("greeting-message");
-    const loggedInUserEmail = localStorage.getItem('loggedInUser');
-    const loginIcon = document.getElementById('login-icon');
-    const logoutIcon = document.getElementById('logout-icon');
-    
-    if (loggedInUserEmail) {
-        const registros = JSON.parse(localStorage.getItem('formData')) || [];
-        const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
-        
-        if (usuario) {
-            greetingMessage.textContent = `¡Saludos, ${usuario.nombre}! Tu nuevo terreno te está esperando`;
-            loginIcon.style.display = "none";
-            logoutIcon.style.display = "block";
-        } else {
-            greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-            logoutIcon.style.display = "none";
-            loginIcon.style.display = "block";
-        }
-    } else {
-        greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-        logoutIcon.style.display = "none";
-        loginIcon.style.display = "block";
-    }
-
-    document.getElementById('logoutButton').addEventListener('click', function(event) {
-        event.preventDefault();
-        localStorage.removeItem('loggedInUser');
-        logoutIcon.style.display = "none";
-        loginIcon.style.display = "block";
-        window.location.href = "/html/propiedades.html";
-    });
-});
-

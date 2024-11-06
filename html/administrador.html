@@ -19,49 +19,54 @@
             </button>
         </div>
     </nav>
+    <br><br>
+    <h2 class="text-center"><strong>Añadir Nueva Propiedad</strong></h2>
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <!-- Columna izquierda: Formulario -->
+            <div class="col-md-6">
+                <form id="adminForm" novalidate>
+                    <!-- Formulario para agregar propiedades -->
+                    <div class="mb-3">
+                        <label for="propertyName" class="form-label">Dirección de la propiedad</label>
+                        <input type="text" class="form-control custom-width" id="propertyName" placeholder="Ingresa la dirección de la propiedad" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertyPrice" class="form-label">Precio</label>
+                        <input type="number" class="form-control custom-width" id="propertyPrice" placeholder="Ingresa el precio" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertyLocation" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control custom-width" id="propertyLocation" placeholder="Ingresa la ciudad" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertyStatus" class="form-label">Estado de la Propiedad</label>
+                        <select class="form-control custom-width" id="propertyStatus" required>
+                            <option value="En venta">En venta</option>
+                            <option value="Vendido">Vendido</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertyAcres" class="form-label">Tamaño en Acres</label>
+                        <input type="number" class="form-control custom-width" id="propertyAcres" placeholder="Ingresa el tamaño en acres" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertySqft" class="form-label">Tamaño en pies cuadrados (sq. ft.)</label>
+                        <input type="number" class="form-control custom-width" id="propertySqft" placeholder="Ingresa los pies cuadrados" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertyImage" class="form-label">Subir Imagen</label>
+                        <input type="file" class="form-control custom-width" id="propertyImage" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Propiedad</button>
+                </form>
+            </div>
 
-    <div class="container">
-        <h2 class="text-center"><strong>Añadir Nueva Propiedad</strong></h2>
-        <br>
-        <form id="adminForm" novalidate>
-            <!-- Formulario para agregar propiedades -->
-            <div class="mb-3">
-                <label for="propertyName" class="form-label">Dirección de la propiedad</label>
-                <input type="text" class="form-control" id="propertyName" placeholder="Ingresa la dirección de la propiedad" required>
+            <!-- Columna derecha: Imagen -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <img src="/img/admin.avif" class="img-fluid">
             </div>
-            <div class="mb-3">
-                <label for="propertyPrice" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="propertyPrice" placeholder="Ingresa el precio" required>
-            </div>
-            <div class="mb-3">
-                <label for="propertyLocation" class="form-label">Ciudad</label>
-                <input type="text" class="form-control" id="propertyLocation" placeholder="Ingresa la ciudad" required>
-            </div>
-            <div class="mb-3">
-                <label for="propertyStatus" class="form-label">Estado de la Propiedad</label>
-                <select class="form-control" id="propertyStatus" required>
-                    <option value="En venta">En venta</option>
-                    <option value="Vendido">Vendido</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="propertyAcres" class="form-label">Tamaño en Acres</label>
-                <input type="number" class="form-control" id="propertyAcres" placeholder="Ingresa el tamaño en acres" required>
-            </div>
-            <div class="mb-3">
-                <label for="propertySqft" class="form-label">Tamaño en pies cuadrados (sq. ft.)</label>
-                <input type="number" class="form-control" id="propertySqft" placeholder="Ingresa los pies cuadrados" required>
-            </div>
-            <div class="mb-3">
-                <label for="propertyImage" class="form-label">Subir Imagen</label>
-                <input type="file" class="form-control" id="propertyImage" accept="image/*" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Agregar Propiedad</button>
-        </form>
-
-        <!-- Contenedor de propiedades cargadas -->
-        <div id="propertyContainer" class="row mt-5"></div>
+        </div>
     </div>
     
     <!-- Scripts -->

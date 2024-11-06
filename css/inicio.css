@@ -205,7 +205,7 @@ h3 {
 
 .carousel-control-next, .carousel-control-prev {
 
-    width: 2%;
+    width: 7%!important;
 }
 
 .card-body{
@@ -214,6 +214,19 @@ h3 {
 
 .card-body-tes{
     height: 200px;
+}
+
+.swal2-title-small {
+    font-size: 40px !important;
+}
+
+.swal2-text-small {
+    font-size: 20px !important;
+}
+
+.swal2-confirm-small {
+    font-size: 14px;
+    padding: 10px 30px;
 }
 
 /*---------------------------------Seccion del nav----------------------------------------*/

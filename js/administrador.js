@@ -16,6 +16,12 @@ document.getElementById('adminForm').addEventListener('submit', function(e) {
             icon: 'error',
             title: 'Oops...',
             text: 'Por favor, completa todos los campos.',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         });
         return;
     }
@@ -44,7 +50,13 @@ document.getElementById('adminForm').addEventListener('submit', function(e) {
             icon: 'success',
             title: 'Éxito',
             text: 'Propiedad añadida exitosamente!',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         }).then(() => {
             // Limpiar el formulario después de que el usuario cierre la alerta de éxito
             document.getElementById('adminForm').reset();

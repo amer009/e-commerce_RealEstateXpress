@@ -54,7 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Error',
                 text: 'Por favor, completa todos los campos correctamente.',
                 icon: 'error',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             });
             return; // Salir de la función si hay campos vacíos
         }
@@ -65,7 +71,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Error',
                 text: 'El correo electrónico debe tener una estructura válida.',
                 icon: 'error',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             });
             return;
         }
@@ -76,7 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Error',
                 text: 'La contraseña debe tener al menos 8 caracteres, con al menos una mayúscula, un número y un carácter especial (*, #, $).',
                 icon: 'error',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             });
             return;
         }
@@ -87,7 +105,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Error',
                 text: 'Las contraseñas no coinciden.',
                 icon: 'error',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             });
             return;
         }
@@ -109,7 +133,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Error',
                 text: 'Este correo ya está registrado.',
                 icon: 'warning',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             });
             return; // Salir de la función para no guardar el registro duplicado
         }
@@ -129,14 +159,26 @@ document.addEventListener('DOMContentLoaded', function () {
             title: '¡Éxito!',
             text: 'Datos guardados en localStorage.',
             icon: 'success',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         }).then(() => {
             // Redirección a inicio de sesión
             Swal.fire({
                 title: '¡Redirección!',
                 text: 'Serás redirigido a la página de inicio de sesión.',
                 icon: 'info',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             }).then(() => {
                 window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
             });

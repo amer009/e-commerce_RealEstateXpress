@@ -45,7 +45,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             title: 'Error',
             text: 'Completa todos los campos.',
             icon: 'error',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         });
         return;
     }
@@ -64,7 +70,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             title: '¡Inicio de sesión como administrador!',
             text: 'Serás redirigido a la vista de administrador.',
             icon: 'success',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         }).then(() => {
             window.location.href = "administrador.html"; // Redirige a la vista de administrador
         });
@@ -84,7 +96,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
                 title: 'Error',
                 text: 'Contraseña incorrecta.',
                 icon: 'error',
-                confirmButtonText: 'Intentar de nuevo'
+                confirmButtonText: 'Intentar de nuevo',
+                width: '400px',
+                customClass: {
+                    title: 'swal2-title-small',
+                    content: 'swal2-text-small',
+                    confirmButton: 'swal2-confirm-small'
+                }
             });
             return; // Salimos de la función si la contraseña es incorrecta
         }
@@ -94,7 +112,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             title: `¡Hola, ${user.nombre}!`,
             text: 'Inicio de sesión exitoso. Serás redirigido a la página de inicio.',
             icon: 'success',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         }).then(() => {
             localStorage.setItem('loggedInUser', email);
             window.location.href = "inicio.html"; // Redirige a la vista de usuario normal
@@ -105,7 +129,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             title: 'Error',
             text: 'Email o contraseña inválidos.',
             icon: 'error',
-            confirmButtonText: 'Intentar de nuevo'
+            confirmButtonText: 'Intentar de nuevo',
+            width: '400px',
+            customClass: {
+                title: 'swal2-title-small',
+                content: 'swal2-text-small',
+                confirmButton: 'swal2-confirm-small'
+            }
         });
     }
 });
@@ -127,7 +157,13 @@ function openGmailWithAlert() {
       text: 'Si lo deseas, envíanos un correo electrónico para ayudarte.',
       showCancelButton: true,
       confirmButtonText: 'Enviar correo',
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: 'Cancelar',
+      width: '400px',
+      customClass: {
+          title: 'swal2-title-small',
+          content: 'swal2-text-small',
+          confirmButton: 'swal2-confirm-small'
+      }
     }).then((result) => {
       if (result.isConfirmed) {
         // Si el usuario confirma, abrir Gmail con el correo prellenado
