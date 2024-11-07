@@ -61,7 +61,7 @@
   <div class="container">
     <div class="row">
         <!-- Columna izquierda: Propiedades añadidas al carrito -->
-        <div class="col-8">
+        <div class="col-lg-8 col-md-8 col-sm-12 mb-4">
             <h2>Propiedades en el carrito</h2>
             <div id="cart-items" class="cart-items">
                 <p class="empty-cart">No hay propiedades en el carrito.</p>
@@ -69,10 +69,10 @@
         </div>
 
         <!-- Columna derecha: Resumen de precios -->
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="cart-summary">
                 <h2>Resumen del carrito</h2>
-                <table id="cart-summary-table">
+                <table id="cart-summary-table" class="table">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -90,7 +90,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <button id="pay-button" class="btn btn-primary" style="margin-top: 20px; width: 100%;">
+                <button id="pay-button" class="btn btn-primary btn-block">
                     Proceder a Pagar
                 </button>
             </div>

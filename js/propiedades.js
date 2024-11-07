@@ -78,66 +78,85 @@ function addToCart(event) {
     }
 }
 
-// Agregar el manejador de eventos para el contenedor de propiedades
-document.addEventListener('DOMContentLoaded', function() {
-    const properties = JSON.parse(localStorage.getItem('properties')) || [];
-    console.log('Propiedades cargadas:', properties); // Verificar las propiedades
-    const propertyContainer = document.getElementById('propertyContainer');
+// Función para cargar propiedades desde el backend
+async function loadProperties() {
+    const url = 'http://localhost:3000/producto/all'; // Cambia la URL según tu endpoint
 
-    // Limpiar el contenedor antes de agregar nuevas propiedades
-    propertyContainer.innerHTML = '';
+    try {
+        const response = await fetch(url);
 
-    // Generar las cards para cada propiedad
-    properties.forEach(function(property) {
-        const propertyCard = `
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="card">
-                <div class="property-img">
-                    <img src="${property.image}" alt="Imagen de la propiedad ${property.title}" width="100%">
-                    <div class="price">
-                        <p>$${property.price}</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">${property.title}</h3>
-                    <div class="row">
-                        <div class="col-5">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span class="location-text">${property.location}</span>
-                        </div>
-                        <div class="col-7">
-                            <span class="status-text">${property.status}</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-5">
-                            <i class="bi bi-bounding-box-circles"></i>
-                            <span class="details-text">${property.acres} Acres</span>
-                        </div>
-                        <div class="col-7">
-                            <i class="bi bi-rulers"></i>
-                            <span class="details-text">${property.sqft} sq. ft.</span> 
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+
+        const result = await response.json(); // Obtener toda la respuesta JSON
+        const properties = result.data; // Extraer el array de propiedades desde "data"
+        console.log('Propiedades cargadas:', properties); // Verificar las propiedades
+
+        const propertyContainer = document.getElementById('propertyContainer');
+        propertyContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas propiedades
+
+        // Generar las cards para cada propiedad
+        properties.forEach(function(property) {
+            const propertyCard = `
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <div class="property-img">
+                        <img src="${property.imagen}" alt="Imagen de la propiedad ${property.nombre_producto}" width="100%">
+                        <div class="price">
+                            <p>$${property.precio}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="d-flex mt-3">
-                            <a href="#" class="btn btn-primary flex-fill">Detalles</a>
-                            <a href="#" class="btn btn-secondary flex-fill add-to-cart" style="min-width: 150px;">Añadir al carrito</a>
+                    <div class="card-body">
+                        <h3 class="card-title">${property.nombre_producto}</h3>
+                        <div class="row">
+                            <div class="col-5">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="location-text">${property.ubicacion}</span>
+                            </div>
+                            <div class="col-7">
+                                <span class="status-text">${property.id_estado === 2 ? 'En venta' : 'Vendido'}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <i class="bi bi-bounding-box-circles"></i>
+                                <span class="details-text">${property.tamanio} Acres</span>
+                            </div>
+                            <div class="col-7">
+                                <i class="bi bi-rulers"></i>
+                                <span class="details-text">${property.area} sq. ft.</span> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex mt-3">
+                                <a href="#" class="btn btn-primary flex-fill">Detalles</a>
+                                <a href="#" class="btn btn-secondary flex-fill add-to-cart" style="min-width: 150px;">Añadir al carrito</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        `;
-        propertyContainer.innerHTML += propertyCard; // Agregar la card al contenedor
-    });
+            `;
+            propertyContainer.innerHTML += propertyCard; // Agregar la card al contenedor
+        });
 
-    // Asignar el evento de clic a los botones "Añadir al carrito" generados dinámicamente
-    const dynamicAddToCartButtons = document.querySelectorAll('.add-to-cart');
-    dynamicAddToCartButtons.forEach(button => {
-        button.addEventListener('click', addToCart);
-    });
-});
+        // Asignar el evento de clic a los botones "Añadir al carrito" generados dinámicamente
+        const dynamicAddToCartButtons = document.querySelectorAll('.add-to-cart');
+        dynamicAddToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+        
+    } catch (error) {
+        console.error('Error al cargar propiedades:', error);
+    }
+}
+
+
+
+// Cargar las propiedades al cargar la página
+document.addEventListener('DOMContentLoaded', loadProperties);
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
