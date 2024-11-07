@@ -4,7 +4,7 @@ function activateCurrentNavLink() {
     const navbarLinks = document.querySelectorAll('.nav-link');
 
     // Obtener el path actual de la URL (sin la parte del dominio)
-    const currentPath = window.location.pathname.split('/').pop();
+   const currentPath = window.location.pathname.split('/').pop();
 
     // Recorrer cada enlace del navbar y verificar si el href coincide con la ruta actual
     navbarLinks.forEach(link => {
@@ -18,23 +18,22 @@ function activateCurrentNavLink() {
         } else {
             link.classList.remove('active');
             link.style.color = 'white'; // Restablecer el color para otros enlaces
-        }
+        } 
     });
 }
 window.addEventListener('load', activateCurrentNavLink);
 
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
-    const loggedInUserEmail = localStorage.getItem('loggedInUser');
     const loginIcon = document.getElementById('login-icon');
     const logoutIcon = document.getElementById('logout-icon');
+    const usuario = localStorage.getItem('user');
     
-    if (loggedInUserEmail) {
-        const registros = JSON.parse(localStorage.getItem('formData')) || [];
-        const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
+    if (usuario) {
+        
         
         if (usuario) {
-            greetingMessage.textContent = `¡Saludos, ${usuario.nombre}! Tu nuevo terreno te está esperando`;
+            greetingMessage.textContent = `¡Saludos, ${usuario}! Tu nuevo terreno te está esperando`;
             loginIcon.style.display = "none";
             logoutIcon.style.display = "block";
         } else {
@@ -50,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
         event.preventDefault();
-        localStorage.removeItem('loggedInUser');
+        localStorage.removeItem('user');
+        localStorage.removeItem('userEmail');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
         window.location.href = "/html/inicio.html";

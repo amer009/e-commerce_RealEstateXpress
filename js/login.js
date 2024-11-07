@@ -91,6 +91,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
                         icon: 'success',
                         confirmButtonText: 'Aceptar'
                     }).then(() => {
+                        localStorage.setItem('user', result.data.nombre)
                         window.location.href = "inicio.html"; // Redirige a la página de inicio
                     });
                 }

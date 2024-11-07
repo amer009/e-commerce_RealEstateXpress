@@ -23,19 +23,17 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
-    const loggedInUserEmail = localStorage.getItem('loggedInUser');
     const loginIcon = document.getElementById('login-icon');
     const logoutIcon = document.getElementById('logout-icon');
+    const usuario = localStorage.getItem('user');
     
-    if (loggedInUserEmail) {
-        const registros = JSON.parse(localStorage.getItem('formData')) || [];
-        const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
+    if (usuario) {
+        
         
         if (usuario) {
-            greetingMessage.textContent = `¡Saludos, ${usuario.nombre}! Tu nuevo terreno te está esperando`;
+            greetingMessage.textContent = `¡Saludos, ${usuario}! Tu nuevo terreno te está esperando`;
             loginIcon.style.display = "none";
             logoutIcon.style.display = "block";
         } else {
@@ -51,14 +49,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
         event.preventDefault();
-        localStorage.removeItem('loggedInUser');
+        localStorage.removeItem('user');
+        localStorage.removeItem('userEmail');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
         window.location.href = "/html/acerca.html";
     });
 });
 
-// Efecto para cambiar el estilo al hacer scroll
 window.addEventListener('scroll', function() {
     if (window.scrollY > 90) {
         document.body.classList.add('scrolled');

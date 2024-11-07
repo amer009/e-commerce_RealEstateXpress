@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("clave "+password.value)
         const passwordEncriptada = CryptoJS.SHA256(password.value).toString();
 
-        // Crear objeto para enviar al backend A25794140*
+        // Crear objeto para enviar al backend 
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (result.codigoRespuesta === "00") {
                     Swal.fire({
                         title: '¡Éxito!',
-                        text: 'Datos guardados en el servidor.Seras redirigido a la pagina incio de sesion',
+                        text: 'Datos guardados en el servidor.Seras redirigido a la pagina inicio de sesion',
                         icon: 'success',
                         confirmButtonText: 'Aceptar'
                     }).then(() => {

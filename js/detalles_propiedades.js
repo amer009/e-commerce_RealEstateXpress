@@ -23,39 +23,48 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
-// Mostrar saludo personalizado basado en usuario logueado
+//Mostrar saludo perzonalizad
+
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
-    const loggedInUserEmail = localStorage.getItem('loggedInUser');
     const loginIcon = document.getElementById('login-icon');
     const logoutIcon = document.getElementById('logout-icon');
-
-    if (loggedInUserEmail) {
-        const registros = JSON.parse(localStorage.getItem('formData')) || [];
-        const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
+    const usuario = localStorage.getItem('user');
+    
+    if (usuario) {
+        
         
         if (usuario) {
-            greetingMessage.textContent = `¡Saludos, ${usuario.nombre}! Tu nuevo terreno te está esperando`;
+            greetingMessage.textContent = `¡Saludos, ${usuario}! Tu nuevo terreno te está esperando`;
             loginIcon.style.display = "none";
             logoutIcon.style.display = "block";
         } else {
             greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-            loginIcon.style.display = "block";
             logoutIcon.style.display = "none";
+            loginIcon.style.display = "block";
         }
     } else {
         greetingMessage.textContent = "¡Saludos, visitante! Tu nuevo terreno te está esperando";
-        loginIcon.style.display = "block";
         logoutIcon.style.display = "none";
+        loginIcon.style.display = "block";
     }
 
     document.getElementById('logoutButton').addEventListener('click', function(event) {
         event.preventDefault();
-        localStorage.removeItem('loggedInUser');
+        localStorage.removeItem('user');
+        localStorage.removeItem('userEmail');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
-        window.location.href = "/html/acerca.html";
+        window.location.href = "/html/detalles_propiedades.html";
     });
+});
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 90) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
 });
 
 // Efecto para cambiar el estilo al hacer scroll
