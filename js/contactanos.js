@@ -23,19 +23,17 @@ function activateCurrentNavLink() {
 }
 window.addEventListener('load', activateCurrentNavLink);
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const greetingMessage = document.getElementById("greeting-message");
-    const loggedInUserEmail = localStorage.getItem('loggedInUser');
     const loginIcon = document.getElementById('login-icon');
     const logoutIcon = document.getElementById('logout-icon');
+    const usuario = localStorage.getItem('user');
     
-    if (loggedInUserEmail) {
-        const registros = JSON.parse(localStorage.getItem('formData')) || [];
-        const usuario = registros.find(reg => reg.email.trim() === loggedInUserEmail.trim());
+    if (usuario) {
+        
         
         if (usuario) {
-            greetingMessage.textContent = `¡Saludos, ${usuario.nombre}! Tu nuevo terreno te está esperando`;
+            greetingMessage.textContent = `¡Saludos, ${usuario}! Tu nuevo terreno te está esperando`;
             loginIcon.style.display = "none";
             logoutIcon.style.display = "block";
         } else {
@@ -64,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }).then(() => {
         localStorage.removeItem('loggedInUser');
+        localStorage.removeItem('user');
+        localStorage.removeItem('userEmail');
         logoutIcon.style.display = "none";
         loginIcon.style.display = "block";
         window.location.href = "/html/contactanos.html";
