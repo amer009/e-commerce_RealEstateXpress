@@ -92,6 +92,68 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         
         // Si el correo es correcto pero la contraseña es incorrecta
         if (passwordDesencriptada !== password) {
+
+    const passwordEncriptada = CryptoJS.SHA256(password).toString();
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        email: email,
+        clave: passwordEncriptada
+    });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+
+    fetch("http://127.0.0.1:3000/usuario/login", requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log(result);
+            if (result.codigoRespuesta === "00") {
+
+                if (result.data.rol === "Administrador") {
+                    Swal.fire({
+                        title: '¡Inicio de sesión como administrador!',
+                        text: 'Serás redirigido a la vista de administrador.',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    }).then(() => {
+                        localStorage.setItem('userEmail', email);
+                        window.location.href = "administrador.html"; // Redirige a la vista de administrador
+                    });
+                } else {
+                    Swal.fire({
+                        title: `¡Hola, ${result.data.nombre}!`,
+                        text: 'Inicio de sesión exitoso. Serás redirigido a la página de inicio.',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    }).then(() => {
+                        localStorage.setItem('user', result.data.nombre)
+                        window.location.href = "inicio.html"; // Redirige a la página de inicio
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: result.message || 'Email o contraseña inválidos.',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
             Swal.fire({
                 title: 'Error',
                 text: 'Contraseña incorrecta.',
@@ -140,6 +202,8 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
 });
 
+        });
+});
 // Evento para alternar la visibilidad de la contraseña
 const togglePassword = document.getElementById('togglePassword');
 togglePassword.addEventListener('click', function () {
@@ -164,6 +228,12 @@ function openGmailWithAlert() {
           content: 'swal2-text-small',
           confirmButton: 'swal2-confirm-small'
       }
+        icon: 'info',
+        title: '¿Olvidaste tu contraseña?',
+        text: 'Si lo deseas, envíanos un correo electrónico para ayudarte.',
+        showCancelButton: true,
+        confirmButtonText: 'Enviar correo',
+        cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
         // Si el usuario confirma, abrir Gmail con el correo prellenado
