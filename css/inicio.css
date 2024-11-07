@@ -53,12 +53,34 @@
 }
 
 .bottom-banner {
-    background-image: url('../img/Lote1.jpeg');
+    position: relative;
+    background-image: url('../img/Lote.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
     padding: 50px 0;
     color: white;
+}
+
+.bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según necesites */
+    z-index: 0;
+}
+
+.bottom-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-banner h2,
+.bottom-banner h4 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra oscura */
 }
 
 .bottom-banner .btn {
@@ -72,6 +94,7 @@
     display: inline-block;
     border-radius: 0; 
     cursor: pointer; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Product Cards */
@@ -291,13 +314,18 @@ body.scrolled .transparent-nav {
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
+
+    .transparent-nav {
+        background-color: black !important; /* Fondo negro en mobile */
+    }
+
     /* El logo y los enlaces deben centrarse en pantallas pequeñas */
     .navbar {
         padding: 10px;
     }
 
     .navbar-collapse {
-        text-align: center;
+        text-align: center;        
     }
 
     .navbar-nav {
@@ -324,7 +352,8 @@ body.scrolled .transparent-nav {
     }
 
     .banner-section h1 {
-        font-size: 65px !important;
+        font-size: 50px !important;
+        word-wrap: break-word; /* Permite el salto de línea */
     }
 }
 /*------------------------------Fin Secciones del nav-------------------------------------*/

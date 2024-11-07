@@ -76,6 +76,10 @@ body.scrolled .transparent-nav {
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
+    .transparent-nav {
+        background-color: black !important; /* Fondo negro en mobile */
+    }
+    
     /* El logo y los enlaces deben centrarse en pantallas pequeñas */
     .navbar {
         padding: 10px;
@@ -145,66 +149,44 @@ body.scrolled .transparent-nav {
 }
 
 .row {
-    padding: 2%;
+    padding: 2% !important;
 }
 /* Fin de Sección del banner */
 
-.container-photos {
-    display: flex; /* Permitir que el contenedor de columnas use flexbox */
-    align-items: center; /* Centrar verticalmente los elementos en la columna */
-}
-
-.main-img {
-    width: 600px;
-    height: 440px;
-    object-fit: cover;
-    margin-left: 15px; /* Espacio entre las miniaturas y la imagen principal */
-}
-
-.thumbnails {
-    display: flex;
-    flex-direction: column; /* Colocar las miniaturas en una columna */
-    gap: 10px;
-}
-
-.thumbnails img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-.thumbnails img:hover {
-    border-color: #4CAF50;
-}
-
-/* Nueva clase para miniatura activa */
-.thumbnails img.active {
-    border-color: #4CAF50;
+/* CSS para mantener el tamaño de las imágenes constante */
+.carousel-inner img {
+    width: 100%;         /* Hace que la imagen ocupe todo el ancho */
+    height: 500px;       /* Fija una altura constante para todas las imágenes */
+    object-fit: cover;   /* Recorta la imagen para que llene el área sin distorsión */
 }
 
 /* Para el formulario */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start; /* Alinea los elementos del formulario a la izquierda */
-    justify-content: center; /* Centra verticalmente */
-    margin: 0 auto; /* Centra horizontalmente dentro de la columna */
+form input, form textarea, form button {
+    width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; /* Borde del input */
 }
 
-form input, form textarea {
-    width: 350px !important; /* Ocupa todo el ancho del contenedor */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde del input */
-    border-radius: 4px; /* Bordes redondeados */
-    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+.btn_polpriv {
+    border-radius: 0px !important;
 }
 
-button:disabled {
-    background-color: #ccc;
+/* Asegurarse de que el mapa tenga un borde redondeado */
+#propertyMap iframe {
+    border-radius: 8px;
+}
+
+/* Estilo para el contenedor de detalles */
+.property-details {
+    display: inline-flex;
+    gap: 10px; /* Espacio entre íconos y texto */
+    align-items: center; /* Alinea verticalmente en el centro */
+    flex-wrap: wrap;
+}
+
+.btn-add-cart {
+    width: 100% !important;
+    border-radius: 0 !important;
+    color: white !important;
+    font-weight: bold !important;
 }
 
 /* ------------------------------Secciones del footer------------------------------------ */
