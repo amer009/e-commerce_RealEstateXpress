@@ -163,34 +163,54 @@ function removeFromCart(title, cartItemElement) {
     
     console.log('Carrito después de la eliminación:', newCart);
 
-    // Si el carrito ha cambiado, actualiza el Local Storage
     if (newCart.length !== cart.length) {
-        // Mostrar alerta de eliminación usando SweetAlert
+        // Mostrar alerta de confirmación antes de eliminar usando SweetAlert
         Swal.fire({
-            icon: 'success',
-            title: '¡Eliminado!',
-            text: `Propiedad eliminada del carrito: ${title}`,
-            confirmButtonText: 'Aceptar',
+            icon: 'warning',
+            title: '¿Estás seguro?',
+            text: `¿Quieres eliminar la propiedad del carrito: ${title}?`,
+            showCancelButton: true,  // Añade el botón de cancelación
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar',
             width: '400px',
             customClass: {
                 title: 'swal2-title-small',
                 content: 'swal2-text-small',
-                confirmButton: 'swal2-confirm-small'
+                confirmButton: 'swal2-confirm-small',
+                cancelButton: 'swal2-cancel-small'
+            }
+        }).then((result) => {
+            // Verificar si el usuario confirmó la eliminación
+            if (result.isConfirmed) {
+                // Si el usuario confirma, muestra alerta de éxito
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Eliminado!',
+                    text: `Propiedad eliminada del carrito: ${title}`,
+                    confirmButtonText: 'Aceptar',
+                    width: '400px',
+                    customClass: {
+                        title: 'swal2-title-small',
+                        content: 'swal2-text-small',
+                        confirmButton: 'swal2-confirm-small'
+                    }
+                }).then(() => {
+                    // Actualizar el carrito en el almacenamiento local
+                    localStorage.setItem('cart', JSON.stringify(newCart));
+    
+                    // Eliminar el elemento del DOM
+                    cartItemElement.remove();
+    
+                    // Si el carrito queda vacío, mostrar el mensaje de "carrito vacío"
+                    if (newCart.length === 0) {
+                        document.getElementById('cart-items').innerHTML = '<p class="empty-cart">No hay propiedades en el carrito.</p>';
+                    }
+    
+                    // Actualizar el resumen de precios
+                    updateCartSummary();
+                });
             }
         });
-
-        localStorage.setItem('cart', JSON.stringify(newCart));
-
-        // Eliminar el elemento del DOM
-        cartItemElement.remove();
-
-        // Si el carrito queda vacío, mostrar el mensaje de "carrito vacío"
-        if (newCart.length === 0) {
-            document.getElementById('cart-items').innerHTML = '<p class="empty-cart">No hay propiedades en el carrito.</p>';
-        }
-
-        // Actualizar el resumen de precios
-        updateCartSummary();
     } else {
         console.error('No se encontró la propiedad para eliminar.');
     }
@@ -248,7 +268,7 @@ const payButton = document.getElementById('pay-button');
 // Añadir el evento de click para redirigir a la pasarela de pagos
 document.getElementById('pay-button').addEventListener('click', function() {
     // Verificar si el usuario está logueado comprobando la existencia del correo en localStorage
-    const userEmail = localStorage.getItem('loggedInUser');
+    const userEmail = localStorage.getItem('user');
 
     if (!userEmail) {
         // Mostrar alerta de SweetAlert indicando que debe iniciar sesión

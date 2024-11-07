@@ -151,7 +151,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: '¡Éxito!',
                         text: 'Datos guardados en el servidor.Seras redirigido a la pagina inicio de sesion',
                         icon: 'success',
-                        confirmButtonText: 'Aceptar'
+                        confirmButtonText: 'Aceptar',
+                        width: '400px',
+                        customClass: {
+                            title: 'swal2-title-small',
+                            content: 'swal2-text-small',
+                            confirmButton: 'swal2-confirm-small'
+                        }
+                        
                     }).then(() => {
                         window.location.href = "login.html"; // Redirigir a la página de inicio de sesión
                        
@@ -161,7 +168,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: 'Error',
                         text: 'Ocurrió un problema al guardar los datos: ' + result.mensaje,
                         icon: 'error',
-                        confirmButtonText: 'Aceptar'
+                        confirmButtonText: 'Aceptar',
+                        width: '400px',
+                        customClass: {
+                            title: 'swal2-title-small',
+                            content: 'swal2-text-small',
+                            confirmButton: 'swal2-confirm-small'
+                        }
                     });
                 }
 
@@ -171,7 +184,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: 'Error',
                     text: 'Ocurrió un problema al guardar los datos: ' + error,
                     icon: 'error',
-                    confirmButtonText: 'Aceptar'
+                    confirmButtonText: 'Aceptar',
+                    width: '400px',
+                    customClass: {
+                        title: 'swal2-title-small',
+                        content: 'swal2-text-small',
+                        confirmButton: 'swal2-confirm-small'
+                    }
                 });
             });
 
